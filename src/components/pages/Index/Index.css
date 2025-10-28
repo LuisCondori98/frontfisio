@@ -1,0 +1,9 @@
+.index-wall {
+  background-image: url(/img/wall-fisio.jpg);
+  padding: 400px 100px;
+	text-align: center;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
