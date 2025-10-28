@@ -2,7 +2,6 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
-import FacebookLogin from "react-facebook-login";
 
 const Login = () => {
 
