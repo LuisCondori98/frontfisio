@@ -17,7 +17,7 @@ const EditProfile = () => {
     return (
         <form action="https://back-fisioterapia.onrender.com/api/user/user-update" method="POST" className="container mt-4" style={{ maxWidth: "600px" }}>
             <div>
-                <input type="hidden" name="id" value={`${user.id}`} />
+                <input type="hidden" name="id" value={user.id} />
             </div>
              <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">Nombre completo</label>
