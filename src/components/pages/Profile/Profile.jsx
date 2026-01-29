@@ -437,6 +437,9 @@ const Profile = () => {
                     <button onClick={handleLogout} className="btn btn-outline-light">
                       <i className="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
                     </button>
+                    <button>
+                      <i>Editar perfil</i>
+                    </button>
                   </div>
                 </div>
               </div>
