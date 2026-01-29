@@ -14,6 +14,8 @@ const EditProfile = () => {
             .then(response => setUser(response.data))
     }, [])
 
+    console.log(user)
+
     return (
         <form action="https://back-fisioterapia.onrender.com/api/user/user-update" method="POST" className="container mt-4" style={{ maxWidth: "600px" }}>
             <div>
