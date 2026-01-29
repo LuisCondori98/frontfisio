@@ -11,6 +11,7 @@ import Contacto from './components/pages/Contacto/Contacto'
 import Servicios from './components/pages/Servicios/Servicios'
 import ViewContacto from './components/pages/ViewContacto/ViewContacto'
 import GenerarCita from './components/pages/GenerarCita/GenerarCita'
+import EditProfile from './components/pages/EditProfile/EditProfile'
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Index />} />
         <Route path={"/perfil"} element={<Profile />} />
-        <Route path={"/edit-perfil/:id"} element={<Profile />} />
+        <Route path={"/edit-perfil/:id"} element={<EditProfile />} />
         <Route path={"/usuarios"} element={<Usuarios />} />
         <Route path={"/login"} element={<Login />} />
         <Route path={"/cita"} element={<Citas />} />
