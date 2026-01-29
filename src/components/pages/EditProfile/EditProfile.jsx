@@ -11,15 +11,10 @@ const EditProfile = () => {
     axios.get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
         .then(response => setUser(response.data))
 
+    console.log(user)
+
     return (
         <>
-            Edit
-            {
-                dni
-            }
-            {
-                user
-            }
         </>
     )
 }
