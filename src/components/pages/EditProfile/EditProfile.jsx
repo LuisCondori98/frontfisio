@@ -7,7 +7,7 @@ const EditProfile = () => {
     const [user, setUser] = useState({})
 
     const {dni} = useParams()
-
+    console.log(dni)
     axios.get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
         .then(response => console.log(response.data))
 
