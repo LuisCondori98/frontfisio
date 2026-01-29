@@ -23,11 +23,6 @@ const Profile = () => {
     window.location.reload()
   }
 
-  const handleConfigProfile = () => {
-
-    console.log(user.id)
-  }
-
   const statsData = {
     admin: {
       totalUsuarios: 156,
@@ -440,9 +435,7 @@ const Profile = () => {
                     <button onClick={handleLogout} className="btn btn-outline-light">
                       <i className="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
                     </button>
-                    <button onClick={handleConfigProfile} className="btn btn-success">
-                      <i className="bi bi-box-arrow-right me-2"></i>Editar perfil
-                    </button>
+                    <Link to={`/edit-perfil/${user.id}`} className="btn btn-success">Editar Perfil</Link>
                   </div>
                 </div>
               </div>

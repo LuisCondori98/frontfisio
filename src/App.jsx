@@ -21,6 +21,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Index />} />
         <Route path={"/perfil"} element={<Profile />} />
+        <Route path={"/edit-perfil/:id"} element={<Profile />} />
         <Route path={"/usuarios"} element={<Usuarios />} />
         <Route path={"/login"} element={<Login />} />
         <Route path={"/cita"} element={<Citas />} />
