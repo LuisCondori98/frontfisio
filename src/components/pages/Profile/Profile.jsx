@@ -435,7 +435,7 @@ const Profile = () => {
                     <button onClick={handleLogout} className="btn btn-outline-light">
                       <i className="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
                     </button>
-                    <Link to={`/edit-perfil/:${user.dni}`} className="btn btn-success">Editar Perfil</Link>
+                    <Link to={`/edit-perfil/${user.dni}`} className="btn btn-success">Editar Perfil</Link>
                   </div>
                 </div>
               </div>
