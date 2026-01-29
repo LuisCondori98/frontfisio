@@ -7,9 +7,12 @@ const EditProfile = () => {
     const [user, setUser] = useState({})
 
     const {dni} = useParams()
-    console.log(dni)
-    axios.get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
-        .then(response => setUser(response.data))
+
+    useEffect(() => {
+
+        axios.get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
+            .then(response => setUser(response.data))
+    }, [])
 
     return (
         <form action="https://back-fisioterapia.onrender.com/api/user/user-update" className="container mt-4" style={{ maxWidth: "600px" }}>
