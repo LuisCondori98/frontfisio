@@ -9,12 +9,13 @@ const EditProfile = () => {
     const {dni} = useParams()
     console.log(dni)
     axios.get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
-        .then(response => console.log(response.data))
-
-    //console.log(user)
+        .then(response => setUser(response.data))
 
     return (
         <>
+        <div>
+            <input type="text" placeholder={`${user.nombre}`} />
+        </div>
         </>
     )
 }
