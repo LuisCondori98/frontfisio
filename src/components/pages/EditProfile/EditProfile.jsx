@@ -1,14 +1,24 @@
+import axios from "axios";
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 
 const EditProfile = () => {
 
-    const {id} = useParams()
+    const [user, setUser] = useState({})
+
+    const {dni} = useParams()
+
+    axios.get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
+        .then(response => setUser(response.data))
 
     return (
         <>
             Edit
             {
-                id
+                dni
+            }
+            {
+                user
             }
         </>
     )
