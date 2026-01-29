@@ -49,7 +49,7 @@ const Profile = () => {
     }
   }
 
-  console.log(citas)
+  console.log(user)
 
   return (
     <main className="min-vh-100 bg-light">
