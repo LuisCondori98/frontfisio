@@ -12,11 +12,18 @@ const EditProfile = () => {
         .then(response => setUser(response.data))
 
     return (
-        <>
-        <div>
-            <input type="text" placeholder={`${user.nombre}`} />
-        </div>
-        </>
+        <form className="container mt-4" style={{ maxWidth: "600px" }}>
+             <div className="mb-3">
+                <label htmlFor="nombre" className="form-label">Nombre completo</label>
+                <input
+                type="text"
+                className="form-control"
+                id="nombre"
+                name="nombre"
+                placeholder={`${user.nombre}`}
+                />
+            </div>
+        </form>
     )
 }
 
