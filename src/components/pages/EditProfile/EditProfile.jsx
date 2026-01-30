@@ -32,6 +32,16 @@ const EditProfile = () => {
                 />
             </div>
             <div className="mb-3">
+                <label htmlFor="apellido" className="form-label">Apellido Paterno</label>
+                <input
+                type="text"
+                className="form-control"
+                id="apePaterno"
+                name="apePaterno"
+                placeholder={`${user.apePaterno}`}
+                />
+            </div>
+            <div className="mb-3">
                 <input type="submit" value="Actualizar" className="btn btn-success" />
             </div>
         </form>
