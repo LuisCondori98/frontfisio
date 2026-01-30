@@ -81,6 +81,7 @@ const Profile = () => {
                             Cerrar Sesión
                           </button>
                         </li>
+                        <Link to={`/edit-perfil/${user.dni}`} className="btn btn-success">Editar Perfil</Link>
                       </ul>
                     </div>
                   </div>
