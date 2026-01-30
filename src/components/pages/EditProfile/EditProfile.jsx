@@ -38,7 +38,17 @@ const EditProfile = () => {
                 className="form-control"
                 id="apePaterno"
                 name="apePaterno"
-                placeholder={`${user.apePaterno}`}
+                placeholder={`${user.apellidoPaterno}`}
+                />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="apellido" className="form-label">Apellido Materno</label>
+                <input
+                type="text"
+                className="form-control"
+                id="apeMaterno"
+                name="apeMaterno"
+                value={`${user.apellidoMaterno}`}
                 />
             </div>
             <div className="mb-3">
