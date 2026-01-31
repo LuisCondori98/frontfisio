@@ -61,14 +61,11 @@ console.log(paciente)
                 </Link>
               </li>
             }
-            {
-              paciente?
+            {paciente.length > 0 && (
               <div>
                 <button className="btn btn-success">S/. {total}</button>
               </div>
-              :
-              <></>
-            }
+            )}
           </ul>
         </div>
       </div>
