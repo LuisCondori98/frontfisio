@@ -16,7 +16,9 @@ export const CartProvider = ({children}) => {
             .then(response => setPaciente(response.data))
     }, [user?.id])
 
-    const total = () => Number(paciente.map(p=>p.precio));
+    let total
+
+    paciente.map(p => total = p.precio)
 
     console.log(total)
 
