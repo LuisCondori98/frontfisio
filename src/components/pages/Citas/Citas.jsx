@@ -78,7 +78,7 @@ const Citas = () => {
 
                   {
                     terapeuta.map((t) => (
-                      <option key={t.id} value={t.id}>
+                      <option key={t._id} value={t._id}>
                         {t.nombre} {t.apePaterno}
                       </option>
                     ))
