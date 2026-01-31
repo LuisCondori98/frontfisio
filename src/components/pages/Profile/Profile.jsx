@@ -4,6 +4,7 @@ import { AuthContext } from "../../../context/AuthContext"
 import axios from "axios"
 
 const Profile = () => {
+  
   const { user } = useContext(AuthContext)
   const [citas, setCitas] = useState([])
   const navigate = useNavigate()
@@ -48,8 +49,6 @@ const Profile = () => {
       eficiencia: 92
     }
   }
-
-  console.log(user)
 
   return (
     <main className="min-vh-100 bg-light">

@@ -95,7 +95,7 @@ const Citas = () => {
                 ))
             }
           </div>
-        ): user.rol === "fisiterapeuta"        
+        ): user.rol === "fisioterapeuta"        
         (
           <div>
             <div className="container mt-4">
