@@ -12,11 +12,13 @@ import Servicios from './components/pages/Servicios/Servicios'
 import ViewContacto from './components/pages/ViewContacto/ViewContacto'
 import GenerarCita from './components/pages/GenerarCita/GenerarCita'
 import EditProfile from './components/pages/EditProfile/EditProfile'
+import { CartContext } from './context/CartContext'
 
 function App() {
 
   return (
     <AuthProvider>
+    <CartContext>
       <BrowserRouter>
       <NavBar />
       <Routes>
@@ -33,6 +35,7 @@ function App() {
         <Route path={"/register"} element={<Register />} />
       </Routes>
       </BrowserRouter>
+    </CartContext>
     </AuthProvider>
   )
 }

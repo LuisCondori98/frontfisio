@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext";
+import { CartContext } from "../../context/CartContext";
 
 const NavBar = () => {
 
   const {isAuthenticated, logout, user} = useContext(AuthContext)
+  const {total} = useContext(CartContext)
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -58,6 +60,9 @@ const NavBar = () => {
                   Iniciar sesión
                 </Link>
               </li>
+            }
+            {
+              total
             }
           </ul>
         </div>
