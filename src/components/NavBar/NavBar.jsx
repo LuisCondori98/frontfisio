@@ -7,7 +7,7 @@ const NavBar = () => {
 
   const {isAuthenticated, logout, user} = useContext(AuthContext)
   const {total, paciente} = useContext(CartContext)
-
+console.log(paciente)
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
