@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useContext, useState } from "react"
+import { useContext, useState, useNavigate } from "react"
 import { AuthContext } from "../../../context/AuthContext"
 
 const Contacto = () => {
@@ -11,6 +11,8 @@ const Contacto = () => {
   const [asunto, setAsunto] = useState("")
   const [mensaje, setMensaje] = useState("")
 
+  const navigate = useNavigate()
+
   const handleContacto = () => {
 
     axios.post("https://back-fisioterapia.onrender.com/api/contacto", {
@@ -21,6 +23,8 @@ const Contacto = () => {
       mensaje
     })
       .then(response => response.data)
+
+    navigate("/contacto")
   }
 
   return (

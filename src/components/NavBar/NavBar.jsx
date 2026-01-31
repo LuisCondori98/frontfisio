@@ -61,11 +61,13 @@ console.log(paciente)
                 </Link>
               </li>
             }
-            {paciente.length > 0 && (
-              <div>
-                <button className="btn btn-success">S/. {total}</button>
-              </div>
-            )}
+            {
+              paciente.length > 0 && (
+                <div>
+                  <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
+                </div>
+              )
+            }
           </ul>
         </div>
       </div>
