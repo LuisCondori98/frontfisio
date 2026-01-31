@@ -1,0 +1,55 @@
+/* Contenedor principal */
+main {
+  flex-wrap: wrap;
+}
+
+/* Columna filtros */
+main > section:first-child {
+  flex: 1 1 250px;
+}
+
+/* Columna usuarios */
+main > section:last-child {
+  flex: 3 1 600px;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  main {
+    gap: 1.5rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  main > section:first-child {
+    max-width: 100%;
+  }
+
+  main > section:last-child {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  main {
+    padding: 10px !important;
+  }
+
+  main > section:last-child {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+  }
+}
