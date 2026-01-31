@@ -3,9 +3,17 @@ import { useEffect, useState } from "react"
 
 const Citas = () => {
 
-  const [user, setUser] = useState({})
+  const { user } = useContext(AuthContext)
+  const [users, setUsers] = useState({})
+  const [cita, setcita] = useState([])
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
+
+  useEffect(() => {
+
+    axios.get(`https://back-fisioterapia.onrender.com/api/cita/${user.id}`)
+      .then(response => setCita(response.data))
+  }, [])
 
   useEffect(() => {
 
@@ -13,11 +21,11 @@ const Citas = () => {
 
       axios
         .get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
-        .then(response => setUser(response.data))
-        .catch(() => setUser(null));
+        .then(response => setUsers(response.data))
+        .catch(() => setUsers(null));
     } else {
 
-      setUser(null);
+      setUsers(null);
     }
   }, [dni]);
 
@@ -30,6 +38,18 @@ const Citas = () => {
 
   return (
     <main>
+
+      <div>
+      {
+        cita.map((c) => {
+
+          <div>
+            {c.paciente}
+          </div>
+        })
+      }
+      </div>
+
       <div>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Registrar cita</button>
       </div>
@@ -53,11 +73,11 @@ const Citas = () => {
                         readOnly
                         name="paciente"
                         disabled
-                        value={`${user?.nombre ?? ""} ${user?.apellidoPaterno ?? ""} ${user?.apellidoMaterno ?? ""}`} class="form-control" id="recipient-name" />
+                        value={`${users?.nombre ?? ""} ${users?.apellidoPaterno ?? ""} ${users?.apellidoMaterno ?? ""}`} class="form-control" id="recipient-name" />
                 <input
                   type="hidden"
                   name="paciente"
-                  value={user?._id ?? ""}
+                  value={users?._id ?? ""}
                 />        
               </div>
               <div class="mb-3">
