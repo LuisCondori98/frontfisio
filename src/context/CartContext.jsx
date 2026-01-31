@@ -8,12 +8,13 @@ export const CartProvider = ({children}) => {
 
     const { user } = useContext(AuthContext)
     const [paciente, setPaciente] = useState([])
+    
 
     useEffect(() => {
-
+        if(!user?.id) return; 
         axios.get(`https://back-fisioterapia.onrender.com/api/cita/paciente/${user.id}`)
             .then(response => setPaciente(response.data))
-    }, [])
+    }, [user?.id])
 
     const total = () => Number(paciente.precio || 0);
 
