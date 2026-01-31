@@ -9,7 +9,7 @@ const Citas = () => {
   const [cita, setCita] = useState([])
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
-
+console.log(user)
   useEffect(() => {
 
     axios.get(`https://back-fisioterapia.onrender.com/api/cita/${user.id}`)
