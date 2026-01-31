@@ -62,7 +62,9 @@ const NavBar = () => {
               </li>
             }
             {
-              <div>S/. {total}</div>
+              <div>
+                <button className="btn btn-success">S/. {total}</button>
+              </div>
             }
           </ul>
         </div>

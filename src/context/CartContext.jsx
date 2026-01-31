@@ -7,7 +7,7 @@ export const CartContext = createContext()
 export const CartProvider = ({children}) => {
 
     const { user } = useContext(AuthContext)
-    const [paciente, setPaciente] = useState({})
+    const [paciente, setPaciente] = useState([])
     
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export const CartProvider = ({children}) => {
             .then(response => setPaciente(response.data))
     }, [user?.id])
 
-    const total = () => Number(paciente.precio || 0);
+    const total = () => Number(paciente.map(p=>p.precio));
 
     console.log(paciente)
 
