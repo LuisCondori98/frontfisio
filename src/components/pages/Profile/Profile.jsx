@@ -510,7 +510,7 @@ const Profile = () => {
                     <i className="bi bi-calendar-check display-4 text-primary mb-3"></i>
                     <h5 className="card-title">Mis Citas</h5>
                     <p className="card-text">Gestionar mis citas programadas</p>
-                    <Link to="/citas" className="btn btn-primary w-100">
+                    <Link to="/cita" className="btn btn-primary w-100">
                       <i className="bi bi-list-ul me-2"></i>Ver Mis Citas
                     </Link>
                   </div>
