@@ -42,7 +42,7 @@ const Citas = () => {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action={"https://back-fisioterapia.onrender.com/api/cita"} method="POST">
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Buscar:</label>
                 <input type="number" value={dni} onChange={e => setDni(e.target.value)} class="form-control" id="recipient-name" />
@@ -50,10 +50,15 @@ const Citas = () => {
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Paciente:</label>
                 <input type="text"
-                        readOnly="true"
+                        readOnly
                         name="paciente"
                         disabled
                         value={`${user?.nombre ?? ""} ${user?.apellidoPaterno ?? ""} ${user?.apellidoMaterno ?? ""}`} class="form-control" id="recipient-name" />
+                <input
+                  type="hidden"
+                  name="paciente"
+                  value={user?._id ?? ""}
+                />        
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Motivo:</label>
@@ -61,15 +66,14 @@ const Citas = () => {
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Fecha:</label>
-                <input type="text" class="form-control" id="message-text" name="fecha"></input>
+                <input type="date" class="form-control" id="message-text" name="fecha"></input>
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Hora:</label>
                 <input type="time" class="form-control" id="message-text" name="hora"></input>
               </div>
-              <div>
-                <select
-                >
+              <div class="mb-3">
+                <select class="form-control" name="terapeuta">
                   <option value="">-- Elige uno --</option>
 
                   {
