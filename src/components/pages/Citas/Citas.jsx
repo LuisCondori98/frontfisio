@@ -6,7 +6,7 @@ const Citas = () => {
 
   const { user } = useContext(AuthContext)
   const [users, setUsers] = useState({})
-  const [cita, setcita] = useState([])
+  const [cita, setCita] = useState([])
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
 
