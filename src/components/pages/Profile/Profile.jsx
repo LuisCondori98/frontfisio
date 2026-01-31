@@ -291,8 +291,10 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{citas.length}</h4>
-                        <p className="mb-0">Citas</p>
+                        <Link to="/citas">
+                          <h4 className="mb-0">{citas.length}</h4>
+                          <p className="mb-0">Citas</p>
+                        </Link>
                       </div>
                       <i className="bi bi-calendar-day display-6 opacity-50"></i>
                     </div>
