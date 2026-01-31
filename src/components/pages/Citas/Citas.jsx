@@ -41,7 +41,7 @@ console.log(cita)
     <main>
       <h2>Mis citas</h2>
       <div>
-      {
+      (
         cita.map((c) => {
 
           <div key={c._id}>
@@ -51,7 +51,7 @@ console.log(cita)
             <h3>{c.motivo}</h3>
           </div>
         })
-      }
+      )
       </div>
 
       <div>
