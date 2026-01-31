@@ -85,11 +85,10 @@ const Citas = () => {
                   }
                 </select>
               </div>
+              <div>
+                <input type="submit" value="Generar" className="btn btn-success" />
+              </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Send message</button>
           </div>
         </div>
       </div>
