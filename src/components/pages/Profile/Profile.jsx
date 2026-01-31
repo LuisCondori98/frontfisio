@@ -5,7 +5,7 @@ import axios from "axios"
 
 const Profile = () => {
   const { user } = useContext(AuthContext)
-  const [citas, setCitas] = useState()
+  const [citas, setCitas] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
