@@ -90,7 +90,7 @@ const Usuarios = () => {
   };
 
   return (
-    <main style={{ display: "flex", gap: "2rem", padding: "20px" }}>
+    <main className="usuarios-layout" style={{ display: "flex", gap: "2rem", padding: "20px" }}>
   {/* 🔹 Columna izquierda (filtros) */}
   <section style={{ flex: "1", maxWidth: "250px" }}>
     <h3>Filtros</h3>
