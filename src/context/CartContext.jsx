@@ -17,7 +17,7 @@ export const CartProvider = ({children}) => {
 
     const total = () => Number(paciente.precio || 0);
 
-    console.log(paciente)
+    console.log(user)
 
     return (
         <CartContext.Provider value={{total}}>
