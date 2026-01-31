@@ -62,7 +62,7 @@ const NavBar = () => {
               </li>
             }
             {
-              total
+              <div>S/. {total}</div>
             }
           </ul>
         </div>
