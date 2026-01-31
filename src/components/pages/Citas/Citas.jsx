@@ -128,6 +128,10 @@ const Citas = () => {
                 <input type="time" class="form-control" id="message-text" name="hora"></input>
               </div>
               <div class="mb-3">
+                <label for="message-text" class="col-form-label">Precio:</label>
+                <input type="number" class="form-control" name="precio"></input>
+              </div>
+              <div class="mb-3">
                 <select class="form-control" name="terapeuta">
                   <option value="">-- Elige uno --</option>
 
