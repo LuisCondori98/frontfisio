@@ -9,17 +9,24 @@ const Citas = () => {
 
   useEffect(() => {
 
-  if (dni.length === 8) {
+    if (dni.length === 8) {
 
-    axios
-      .get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
-      .then(response => setUser(response.data))
-      .catch(() => setUser(null));
-  } else {
+      axios
+        .get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
+        .then(response => setUser(response.data))
+        .catch(() => setUser(null));
+    } else {
 
-    setUser(null);
-  }
-}, [dni]);
+      setUser(null);
+    }
+  }, [dni]);
+
+  useEffect(() => {
+
+      axios
+        .get("https://back-fisioterapia.onrender.com/api/fisioterapeuta")
+          .then(response => setTerapeuta(response.data))
+  }, []);
 
   return (
     <main>
@@ -44,23 +51,35 @@ const Citas = () => {
                 <label for="recipient-name" class="col-form-label">Paciente:</label>
                 <input type="text"
                         readOnly="true"
+                        name="paciente"
                         disabled
                         value={`${user?.nombre ?? ""} ${user?.apellidoPaterno ?? ""} ${user?.apellidoMaterno ?? ""}`} class="form-control" id="recipient-name" />
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Motivo:</label>
-                <input type="text" class="form-control" id="recipient-name" />
+                <input type="text" class="form-control" id="recipient-name" name="motivo" />
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Fecha:</label>
-                <input type="text" class="form-control" id="message-text"></input>
+                <input type="text" class="form-control" id="message-text" name="fecha"></input>
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Hora:</label>
-                <input type="time" class="form-control" id="message-text"></input>
+                <input type="time" class="form-control" id="message-text" name="hora"></input>
               </div>
               <div>
+                <select
+                >
+                  <option value="">-- Elige uno --</option>
 
+                  {
+                    terapeuta.map((t) => (
+                      <option key={t.id} value={t.id}>
+                        {t.nombre} {t.apePaterno}
+                      </option>
+                    ))
+                  }
+                </select>
               </div>
             </form>
           </div>
