@@ -9,7 +9,7 @@ const Citas = () => {
   const [cita, setCita] = useState([])
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
-  
+
   useEffect(() => {
 
     axios.get(`https://back-fisioterapia.onrender.com/api/cita/${user.id}`)
@@ -40,20 +40,51 @@ const Citas = () => {
   return (
     <main>
       <h2>Mis citas</h2>
-      <div>
-      {
-        cita.map((c) => (
+      <div className="container mt-4">
+          <div className="row">
+            {cita.map((c) => (
+              <div key={c._id} className="col-md-6 col-lg-4 mb-4">
+                <div className="card shadow-sm h-100">
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      📅 {new Date(c.fecha).toLocaleDateString()}
+                    </h5>
 
-          <div key={c._id}>
-            <h3>Fecha: {c.fecha}</h3>
-            <h3>Fecha: {c.hora}</h3>
-            Paciente {c.paciente.nombre} {c.paciente.apellidoPaterno}
-            <h3>{c.motivo}</h3>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      ⏰ {c.hora}
+                    </h6>
+
+                    <p className="card-text mb-1">
+                      <strong>Paciente:</strong>{" "}
+                      {c.paciente?.nombre} {c.paciente?.apellidoPaterno}
+                    </p>
+
+                    <p className="card-text mb-1">
+                      <strong>Motivo:</strong> {c.motivo}
+                    </p>
+
+                    <p className="card-text">
+                      <strong>Estado:</strong>{" "}
+                      <span
+                        className={`badge ${
+                          c.estado === "pendiente"
+                            ? "bg-warning text-dark"
+                            : c.estado === "confirmada"
+                            ? "bg-success"
+                            : c.estado === "cancelada"
+                            ? "bg-danger"
+                            : "bg-secondary"
+                        }`}
+                      >
+                        {c.estado}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))
-      }
-      </div>
-
+        </div>
       <div>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Registrar cita</button>
       </div>
