@@ -15,10 +15,7 @@ export const CartProvider = ({children}) => {
             .then(response => setPaciente(response.data))
     }, [])
 
-    const total = () => {
-
-        return paciente.precio
-    }
+    const total = () => Number(paciente.precio || 0);
 
     return (
         <CartContext.Provider value={{total}}>
