@@ -67,7 +67,7 @@ const NavBar = () => {
                 <button className="btn btn-success">S/. {total}</button>
               </div>
               :
-              null
+              <></>
             }
           </ul>
         </div>
