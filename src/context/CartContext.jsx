@@ -21,7 +21,7 @@ export const CartProvider = ({children}) => {
     paciente.map(p => total = p.precio)
 
     return (
-        <CartContext.Provider value={{total}}>
+        <CartContext.Provider value={{total, paciente}}>
             {children}
         </CartContext.Provider>
     )
