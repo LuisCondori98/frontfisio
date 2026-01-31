@@ -291,7 +291,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{statsData.admin.citasHoy}</h4>
+                        <h4 className="mb-0">{citas.length}</h4>
                         <p className="mb-0">Citas Hoy</p>
                       </div>
                       <i className="bi bi-calendar-day display-6 opacity-50"></i>

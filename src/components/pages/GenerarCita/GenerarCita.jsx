@@ -13,7 +13,6 @@ const GenerarCita = () => {
   const [hora, setHora] = useState("");
   const [terapeuta, setTerapeuta] = useState("");
   const [motivo, setMotivo] = useState("");
-  const [estado, setEstado] = useState("pendiente");
 
   useEffect(() => {
     if (user?.id) {
@@ -30,8 +29,7 @@ const GenerarCita = () => {
       fecha,
       hora,
       terapeuta: terapeuta,
-      motivo,
-      estado,
+      motivo
     };
 
     axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
@@ -110,21 +108,6 @@ const GenerarCita = () => {
           placeholder="Motivo de la cita"
         ></textarea>
       </div>
-
-      <div className="mb-3">
-        <label className="form-label">Estado</label>
-        <select
-          className="form-select"
-          value={estado}
-          onChange={(e) => setEstado(e.target.value)}
-        >
-          <option value="pendiente">Pendiente</option>
-          <option value="confirmada">Confirmada</option>
-          <option value="cancelada">Cancelada</option>
-          <option value="completada">Completada</option>
-        </select>
-      </div>
-
       <button type="submit" className="btn btn-primary w-100">
         Guardar Cita
       </button>
