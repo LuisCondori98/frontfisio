@@ -28,7 +28,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="nombre"
                 name="nombre"
-                value={`${user.nombre}`}
+                placeholder={`${user.nombre}`}
                 />
             </div>
             <div className="mb-3">
@@ -38,7 +38,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="apePaterno"
                 name="apePaterno"
-                value={`${user.apellidoPaterno}`}
+                placeholder={`${user.apellidoPaterno}`}
                 />
             </div>
             <div className="mb-3">
@@ -48,7 +48,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="apeMaterno"
                 name="apeMaterno"
-                value={`${user.apellidoMaterno}`}
+                placeholder={`${user.apellidoMaterno}`}
                 />
             </div>
             <div className="mb-3">
@@ -58,7 +58,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="calular"
                 name="celular"
-                value={`${user.celular}`}
+                placeholder={`${user.celular}`}
                 />
             </div>
             <div className="mb-3">
@@ -68,7 +68,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="direccion"
                 name="direccion"
-                value={`${user.direccion}`}
+                placeholder={`${user.direccion}`}
                 />
             </div>
             <div className="mb-3">
@@ -78,7 +78,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="correo"
                 name="correo"
-                value={`${user.correo}`}
+                placeholder={`${user.correo}`}
                 />
             </div>
             <Link to={"/perfil"} className="btn btn-danger">Volver</Link>
