@@ -7,7 +7,7 @@ export const CartContext = createContext()
 export const CartProvider = ({children}) => {
 
     const { user } = useContext(AuthContext)
-    const [paciente, setPaciente] = useState([])
+    const [paciente, setPaciente] = useState({})
     
 
     useEffect(() => {
