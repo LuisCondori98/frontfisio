@@ -1,5 +1,6 @@
 import axios from "axios"
-import { useContext, useState, useNavigate } from "react"
+import {useNavigate} from "react-router-dom"
+import { useContext, useState } from "react"
 import { AuthContext } from "../../../context/AuthContext"
 
 const Contacto = () => {
@@ -91,7 +92,6 @@ const Contacto = () => {
                         <input type="text"
                                className="form-control"
                                value={user.celular}
-                               readOnly
                                onChange={e => setTelefono(e.target.value)}
                                name="telefono" placeholder="+51 999 999 999" />
                       </div>
