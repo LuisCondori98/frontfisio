@@ -11,7 +11,7 @@ export const CartProvider = ({children}) => {
 
     useEffect(() => {
 
-        axios.get(`https://back-fisioterapia.onrender.com/api/fisioterapeuta/paciente/${user.id}`)
+        axios.get(`https://back-fisioterapia.onrender.com/api/cita/paciente/${user.id}`)
             .then(response => setPaciente(response.data))
     }, [])
 
