@@ -9,7 +9,7 @@ const Citas = () => {
   const [cita, setCita] = useState([])
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
-console.log(cita)
+  
   useEffect(() => {
 
     axios.get(`https://back-fisioterapia.onrender.com/api/cita/${user.id}`)
@@ -41,8 +41,8 @@ console.log(cita)
     <main>
       <h2>Mis citas</h2>
       <div>
-      (
-        cita.map((c) => {
+      {
+        cita.map((c) => (
 
           <div key={c._id}>
             <h3>Fecha: {c.fecha}</h3>
@@ -50,8 +50,8 @@ console.log(cita)
             Paciente {c.paciente.nombre} {c.paciente.apellidoPaterno}
             <h3>{c.motivo}</h3>
           </div>
-        })
-      )
+        ))
+      }
       </div>
 
       <div>
