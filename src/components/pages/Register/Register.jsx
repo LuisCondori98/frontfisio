@@ -54,9 +54,12 @@ const Register = () => {
   return (
     <main>
       {
-        isAuthenticated && user.rol !== "admin" ?(
-        <Navigate to={"/"}/>)
-        :(
+        isAuthenticated && user.rol !== "admin" ?
+        (
+          <Navigate to={"/"}/>
+        )
+        :
+        (
         <div className="container mt-5 p-4 rounded shadow" style={{ backgroundColor: "#f7fdf9" }}>
           <div className="text-center mb-4">
             <h2 className="fw-bold" style={{ color: "#009688" }}>
@@ -215,8 +218,6 @@ const Register = () => {
               :
               <></>
             }
-
-            {/* Paciente */}
             {typeUsuatio === "paciente" && (
               <div className="col-md-6">
                 <label className="form-label fw-semibold">Alergias</label>
@@ -250,25 +251,26 @@ const Register = () => {
                       onChange={handleChange}
                       className="form-control" placeholder="Ej: 12345-CMP" />
               </div>
-            )}
-
-            {/* Admin */}
-            {typeUsuatio === "admin" && (
-              <div className="col-md-6">
-                <label className="form-label fw-semibold">Cargo</label>
-                <select
-                  className="form-select"
-                  onChange={handleChange}
-                  name="cargo"
-                  value={formData.cargo}
-                >
-                  <option value="-1">Seleccione</option>
-                  <option value="gerente">Gerente</option>
-                  <option value="cajero">Cajero</option>
-                  <option value="recepcionista">Recepcionista</option>
-                </select>
-              </div>
-            )}
+            )
+            }
+            {
+              user.cargo === "gerente" && (
+                <div className="col-md-6">
+                  <label className="form-label fw-semibold">Cargo</label>
+                  <select
+                    className="form-select"
+                    onChange={handleChange}
+                    name="cargo"
+                    value={formData.cargo}
+                  >
+                    <option value="-1">Seleccione</option>
+                    <option value="gerente">Gerente</option>
+                    <option value="cajero">Cajero</option>
+                    <option value="recepcionista">Recepcionista</option>
+                  </select>
+                </div>
+              )
+            }
 
             <div className="col-12 text-center mt-4">
               <button type="submit" className="btn btn-success px-5 py-2 fw-semibold">

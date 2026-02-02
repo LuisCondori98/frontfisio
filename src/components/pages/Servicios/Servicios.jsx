@@ -4,7 +4,7 @@ const Servicios = () => {
       <div className="text-center mb-5">
         <h2 className="fw-bold text-success">Nuestros Servicios</h2>
         <p className="text-muted fs-5">
-          En <strong>FisioSalud</strong> te ayudamos a recuperar tu bienestar físico con terapias personalizadas
+          En <strong>Vivir en movimiento</strong> te ayudamos a recuperar tu bienestar físico con terapias personalizadas
           y profesionales certificados.
         </p>
       </div>
