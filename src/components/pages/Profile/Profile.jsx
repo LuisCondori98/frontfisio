@@ -108,16 +108,21 @@ const Profile = () => {
                     <div className="row align-items-center">
                       <div className="col-md-8">
                         <h4 className="text-success mb-3">Terapia de Rehabilitación</h4>
-                        <div className="row">
-                          <div className="col-sm-6">
-                            <p className="mb-2"><strong>Fecha:</strong>{cita.fecha}</p>
-                            <p className="mb-2"><strong>Hora:</strong>{cita.hora}</p>
-                          </div>
-                          <div className="col-sm-6">
-                            <p className="mb-2"><strong>Fisioterapeuta:</strong>{cita.terapeuta}</p>
-                            <p className="mb-0"><strong>Ubicación:</strong>Av Perez 879</p>
-                          </div>
-                        </div>
+                        {
+                          cita.map(c => (
+                            <div className="row">
+                              <div className="col-sm-6">
+                                <p className="mb-2"><strong>Fecha:</strong>{c.fecha}</p>
+                                <p className="mb-2"><strong>Hora:</strong>{c.hora}</p>
+                              </div>
+                              <div className="col-sm-6">
+                                <p className="mb-2"><strong>Fisioterapeuta:</strong>{c.terapeuta}</p>
+                                <p className="mb-0"><strong>Ubicación:</strong>Av Perez 879</p>
+                              </div>
+                            </div>
+                          ))
+                        }
+                        
                       </div>
                       <div className="col-md-4 text-center text-md-end">
                         <div className="d-grid gap-2 d-md-block">
