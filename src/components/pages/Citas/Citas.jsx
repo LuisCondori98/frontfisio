@@ -65,8 +65,13 @@ const Citas = () => {
                         </h6>
 
                         <p className="card-text mb-1">
+                          <strong>Terapeuta:</strong>{" "}
+                          {c.terapeuta?.nombre} {c.terapeuta?.apellidoPaterno}
+                        </p>
+
+                        <p className="card-text mb-1">
                           <strong>Paciente:</strong>{" "}
-                          {c.paciente?.nombre} {c.paciente?.apellidoPaterno}
+                          {c.paciente?.nombre} {c.paciente?.apePaterno}
                         </p>
 
                         <p className="card-text mb-1">
