@@ -13,6 +13,7 @@ const GenerarCita = () => {
   const [hora, setHora] = useState("");
   const [terapeuta, setTerapeuta] = useState("");
   const [motivo, setMotivo] = useState("");
+  const [precio, setPrecio] = useState("")
 
   useEffect(() => {
     if (user?.id) {
@@ -29,7 +30,8 @@ const GenerarCita = () => {
       fecha,
       hora,
       terapeuta: terapeuta,
-      motivo
+      motivo,
+      precio
     };
 
     axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
@@ -88,13 +90,16 @@ const GenerarCita = () => {
           className="form-select"
           value={terapeuta}
           onChange={(e) => setTerapeuta(e.target.value)}
+          disabled
           required
         >
           <option value="">Seleccione terapeuta...</option>
           {fisios.map((f) => (
+            <>
             <option key={f._id} value={f._id}>
               {f.nombre}
             </option>
+            </>
           ))}
         </select>
       </div>
@@ -106,11 +111,22 @@ const GenerarCita = () => {
           value={motivo}
           onChange={(e) => setMotivo(e.target.value)}
           placeholder="Motivo de la cita"
+          required
         ></textarea>
       </div>
-      <button type="submit" className="btn btn-primary w-100">
-        Guardar Cita
-      </button>
+
+      <div className="mb-3">
+        <label className="form-label">Precio</label>
+        <input
+          className="form-control"
+          value={precio}
+          onChange={(e) => setPrecio(e.target.value)}
+          placeholder="Precio de la cita"
+          required
+        />
+      </div>
+
+      <input type="submit" value={"Generar Cita"} className="btn btn-primary w-100" />
     </form>
   )
 }

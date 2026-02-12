@@ -56,13 +56,13 @@ const Citas = () => {
                   <div key={c._id} className="col-md-6 col-lg-4 mb-4">
                     <div className="card shadow-sm h-100">
                       <div className="card-body">
-                        <h5 className="card-title">
-                          📅 {new Date(c.fecha).toLocaleString()}
-                        </h5>
+                        <h4 className="card-title">
+                          Fecha {new Date(c.fecha).toLocaleString()}
+                        </h4>
 
-                        <h6 className="card-subtitle mb-2 text-muted">
-                          ⏰ {c.hora}
-                        </h6>
+                        <h5 className="card-subtitle mb-2 text-muted">
+                          HORA {c.hora}
+                        </h5>
 
                         <p className="card-text mb-1">
                           <strong>Terapeuta:</strong>{" "}
