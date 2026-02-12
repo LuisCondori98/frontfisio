@@ -13,9 +13,7 @@ const GenerarCita = () => {
   const [fecha, setFecha] = useState("");
   const [hora, setHora] = useState("");
   const [terapeuta, setTerapeuta] = useState("");
-  const [motivo, setMotivo] = useState("");
-  const [precio, setPrecio] = useState("")
-
+  const [motivo, setMotivo] = useState("")
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -36,8 +34,7 @@ const GenerarCita = () => {
       fecha,
       hora,
       terapeuta: terapeuta,
-      motivo,
-      precio
+      motivo
     };
 
     let response = axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
