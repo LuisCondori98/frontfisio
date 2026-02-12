@@ -29,20 +29,15 @@ const GenerarCita = () => {
 
     try {
 
-    const nuevaCita = {
+    await axios.post("https://back-fisioterapia.onrender.com/api/cita", {
       paciente: pacienteId,
       fecha,
       hora,
       terapeuta: terapeuta,
       motivo
-    };
-
-    let response = await axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
-
-    if(response.status === 200) {
-      
-      navigate("/perfil")
-    }
+    })      
+    
+    navigate("/perfil")
 
     } catch(err) {
 
