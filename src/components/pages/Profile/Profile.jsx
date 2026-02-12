@@ -112,12 +112,12 @@ const Profile = () => {
                           cita.map(c => (
                             <div className="row">
                               <div className="col-sm-6">
-                                <p className="mb-2"><strong>Fecha:</strong>{c.fecha}</p>
-                                <p className="mb-2"><strong>Hora:</strong>{c.hora}</p>
+                                <p className="mb-2"><strong>Fecha:</strong><br /> {c.fecha.toLocalDateString()}</p>
+                                <p className="mb-2"><strong>Hora:</strong><br /> {c.hora}</p>
                               </div>
                               <div className="col-sm-6">
-                                <p className="mb-2"><strong>Fisioterapeuta:</strong>{c.terapeuta.nombre}</p>
-                                <p className="mb-0"><strong>Ubicación:</strong>Av Perez 879</p>
+                                <p className="mb-2"><strong>Fisioterapeuta:</strong><br /> {c.terapeuta.nombre} {c.terapeuta.apellidoMaterno}</p>
+                                <p className="mb-0"><strong>Ubicación:</strong><br /> Av Perez 879</p>
                               </div>
                             </div>
                           ))
