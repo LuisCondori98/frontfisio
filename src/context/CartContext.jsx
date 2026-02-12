@@ -7,21 +7,23 @@ export const CartContext = createContext()
 export const CartProvider = ({children}) => {
 
     const { user } = useContext(AuthContext)
-    const [paciente, setPaciente] = useState([])
-    
+    const [cita, setCita] = useState([])
 
     useEffect(() => {
+
         if(!user?.id) return; 
+
         axios.get(`https://back-fisioterapia.onrender.com/api/cita/paciente/${user.id}`)
-            .then(response => setPaciente(response.data))
+            .then(response => setCita(response.data))
+            
     }, [user?.id])
 
     let total
 
-    paciente.map(p => total = p.precio)
+    cita.map(c => total = c.precio)
 
     return (
-        <CartContext.Provider value={{total, paciente}}>
+        <CartContext.Provider value={{total, cita}}>
             {children}
         </CartContext.Provider>
     )

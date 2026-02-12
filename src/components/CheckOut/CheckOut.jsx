@@ -4,9 +4,9 @@ import { CartContext } from "../../context/CartContext";
 const CheckOut = () => {
   const [metodo, setMetodo] = useState("");
 
-  const {total, paciente} = useContext(CartContext)
+  const {total, cita} = useContext(CartContext)
 
-  console.log(total, paciente)
+  console.log(total, cita)
 
   return (
     <div className="container py-5">

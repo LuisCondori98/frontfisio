@@ -23,7 +23,7 @@ const GenerarCita = () => {
   }, [user]);
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
 
     e.preventDefault();
 
@@ -37,17 +37,17 @@ const GenerarCita = () => {
       motivo
     };
 
-    let response = axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
+    let response = await axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
 
-      if(response === 200) {
-        
-        navigate("/perfil")
-      }
+    if(response.status === 200) {
+      
+      navigate("/perfil")
+    }
 
     } catch(err) {
 
       console.error(err)
-      alert("envie el precio o por defecto ponga 100")
+      alert("Error al crear cita", err)
     }
   }
 
