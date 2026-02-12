@@ -28,7 +28,7 @@ const CheckOut = () => {
                   onChange={() => setMetodo("tarjeta")}
                 />
                 <label className="form-check-label fw-medium">
-                  💳 Tarjeta de Crédito / Débito
+                  Tarjeta de Crédito / Débito
                 </label>
               </div>
 
@@ -69,7 +69,7 @@ const CheckOut = () => {
                   onChange={() => setMetodo("billetera")}
                 />
                 <label className="form-check-label fw-medium">
-                  📱 Billeteras Digitales
+                  Billeteras Digitales
                 </label>
               </div>
 
@@ -79,7 +79,7 @@ const CheckOut = () => {
 
                     <button className="btn btn-light border w-100">
                       <img
-                        src="https://seeklogo.com/images/Y/yape-logo-3E473EEBA4-seeklogo.com.png"
+                        src="/img/yape-logo.jpg"
                         alt="Yape"
                         width="60"
                       />
@@ -87,14 +87,18 @@ const CheckOut = () => {
 
                     <button className="btn btn-light border w-100">
                       <img
-                        src="https://seeklogo.com/images/P/plin-logo-2F8D1C91C6-seeklogo.com.png"
+                        src="/img/plin-logo.jpg"
                         alt="Plin"
                         width="60"
                       />
                     </button>
 
                     <button className="btn btn-light border w-100">
-                      Mercado Pago
+                      <img
+                        src="/img/mercado-logo.png"
+                        alt="MercadoPago"
+                        width="60"
+                      />
                     </button>
 
                   </div>
@@ -133,7 +137,7 @@ const CheckOut = () => {
 
               <div className="d-flex justify-content-between mb-2">
                 <span>Subtotal</span>
-                <span>{total}</span>
+                <span>S/. {total}</span>
               </div>
 
               <div className="d-flex justify-content-between mb-3">
@@ -145,7 +149,7 @@ const CheckOut = () => {
 
               <div className="d-flex justify-content-between fw-bold fs-5">
                 <span>Total</span>
-                <span>{total + 18}</span>
+                <span>S/. {total + 18}</span>
               </div>
 
             </div>
