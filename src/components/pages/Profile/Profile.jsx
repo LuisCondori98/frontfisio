@@ -290,7 +290,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <Link to="/cita">
+                        <Link to="/cita" className="text-white no-underline">
                           <h4 className="mb-0">{citas.length}</h4>
                           <p className="mb-0">Citas</p>
                         </Link>

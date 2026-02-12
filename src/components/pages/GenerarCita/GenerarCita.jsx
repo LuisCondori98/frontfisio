@@ -23,7 +23,10 @@ const GenerarCita = () => {
 
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
+
+    try {
 
     const nuevaCita = {
       paciente: pacienteId,
@@ -34,7 +37,17 @@ const GenerarCita = () => {
       precio
     };
 
-    axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
+    let response = axios.post("https://back-fisioterapia.onrender.com/api/cita", nuevaCita)
+
+      if(response === 200) {
+        
+        navigate("/perfil")
+      }
+
+    } catch(err) {
+
+      console.error(err)
+    }
   }
 
   useEffect(() => {
