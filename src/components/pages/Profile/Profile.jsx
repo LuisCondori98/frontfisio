@@ -2,10 +2,12 @@ import { useContext, useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../context/AuthContext"
 import axios from "axios"
+import { CartContext } from "../../../context/CartContext"
 
 const Profile = () => {
   
   const { user } = useContext(AuthContext)
+  const {cita} = useContext(CartContext)
   const [citas, setCitas] = useState([])
   const navigate = useNavigate()
 
@@ -108,12 +110,12 @@ const Profile = () => {
                         <h4 className="text-success mb-3">Terapia de Rehabilitación</h4>
                         <div className="row">
                           <div className="col-sm-6">
-                            <p className="mb-2"><strong>Fecha:</strong> 25 de Octubre, 2024</p>
-                            <p className="mb-2"><strong>Hora:</strong> 10:00 AM</p>
+                            <p className="mb-2"><strong>Fecha:</strong>{cita.fecha}</p>
+                            <p className="mb-2"><strong>Hora:</strong>{cita.hora}</p>
                           </div>
                           <div className="col-sm-6">
-                            <p className="mb-2"><strong>Fisioterapeuta:</strong> Dra. Ana García</p>
-                            <p className="mb-0"><strong>Ubicación:</strong> Consultorio 304</p>
+                            <p className="mb-2"><strong>Fisioterapeuta:</strong>{cita.terapeuta.nombre}</p>
+                            <p className="mb-0"><strong>Ubicación:</strong>Av Perez 879</p>
                           </div>
                         </div>
                       </div>
