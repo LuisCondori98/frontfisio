@@ -50,7 +50,7 @@ const Servicios = () => {
         <div className="col-md-4">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
-              src="https://images.unsplash.com/photo-1609840114035-3c3d4a7ef5f2"
+              src="/img/MASOTERAPIA.jpg"
               className="card-img-top rounded-3"
               alt="Masoterapia"
               style={{ height: '220px', objectFit: 'cover' }}
