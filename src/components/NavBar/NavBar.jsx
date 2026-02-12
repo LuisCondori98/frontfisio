@@ -6,8 +6,8 @@ import { CartContext } from "../../context/CartContext";
 const NavBar = () => {
 
   const {isAuthenticated, logout, user} = useContext(AuthContext)
-  const {total, paciente} = useContext(CartContext)
-  
+  const {total, cita} = useContext(CartContext)
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -62,7 +62,7 @@ const NavBar = () => {
               </li>
             }
             {
-              paciente.length > 0 && (
+              cita.length > 0 && (
                 <Link to={"checkout"} className="text-white">
                   <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
                 </Link>
