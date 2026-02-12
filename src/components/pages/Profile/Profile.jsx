@@ -112,7 +112,7 @@ const Profile = () => {
                           cita.map(c => (
                             <div className="row">
                               <div className="col-sm-6">
-                                <p className="mb-2"><strong>Fecha:</strong><br /> {c.fecha.toLocalDateString()}</p>
+                                <p className="mb-2"><strong>Fecha:</strong><br /> {c.fecha.toLocaleDateString()}</p>
                                 <p className="mb-2"><strong>Hora:</strong><br /> {c.hora}</p>
                               </div>
                               <div className="col-sm-6">
