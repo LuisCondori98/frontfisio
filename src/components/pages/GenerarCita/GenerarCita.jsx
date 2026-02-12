@@ -131,16 +131,17 @@ const GenerarCita = () => {
         ></textarea>
       </div>
 
-      <div className="mb-3">
+      {/*<div className="mb-3">
         <label className="form-label">Precio</label>
         <input
           className="form-control"
           value={precio}
+          
           onChange={(e) => setPrecio(e.target.value)}
           placeholder="Precio de la cita"
           required
         />
-      </div>
+      </div>*/}
 
       <input type="submit" value={"Generar Cita"} className="btn btn-primary w-100" />
     </form>
