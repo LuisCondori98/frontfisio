@@ -260,7 +260,7 @@ const Register = () => {
               )
             }
             {
-              typeUsuatio === "gerente" && (
+              typeUsuatio === "admin" && (
                 <div className="col-md-6">
                   <label className="form-label fw-semibold">Cargo</label>
                   <select
