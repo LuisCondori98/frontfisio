@@ -90,7 +90,6 @@ const GenerarCita = () => {
           className="form-select"
           value={terapeuta}
           onChange={(e) => setTerapeuta(e.target.value)}
-          disabled
           required
         >
           <option value="">Seleccione terapeuta...</option>
