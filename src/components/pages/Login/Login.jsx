@@ -5,6 +5,8 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const Login = () => {
 
+  document.title = "Login"
+
   let id=817846854540409
   const {isAuthenticated, login} = useContext(AuthContext)
   const [email, setEmail] = useState("");

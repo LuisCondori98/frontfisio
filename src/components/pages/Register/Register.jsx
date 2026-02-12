@@ -5,6 +5,8 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const Register = () => {
 
+  document.title = "Registro"
+
   const {user, isAuthenticated} = useContext(AuthContext)
   const navigate = useNavigate()
   const [typeUsuatio, setTypeUsuario] = useState("")

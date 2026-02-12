@@ -1,4 +1,7 @@
 const Servicios = () => {
+
+  document.title = "Servicios"
+
   return (
     <div className="container my-5">
       <div className="text-center mb-5">

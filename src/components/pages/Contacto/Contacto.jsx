@@ -5,6 +5,8 @@ import { AuthContext } from "../../../context/AuthContext"
 
 const Contacto = () => {
 
+  document.title = "Contacto"
+
   const {user} = useContext(AuthContext)
   const [nombre, setNombre] = useState("")
   const [correo, setCorreo] = useState("")
