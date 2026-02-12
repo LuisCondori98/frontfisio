@@ -63,9 +63,9 @@ console.log(paciente)
             }
             {
               paciente.length > 0 && (
-                <div>
+                <Link to={"checkout"} className="text-white">
                   <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
-                </div>
+                </Link>
               )
             }
           </ul>

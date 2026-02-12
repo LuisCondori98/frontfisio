@@ -13,6 +13,7 @@ import ViewContacto from './components/pages/ViewContacto/ViewContacto'
 import GenerarCita from './components/pages/GenerarCita/GenerarCita'
 import EditProfile from './components/pages/EditProfile/EditProfile'
 import { CartProvider } from './context/CartContext'
+import CheckOut from './components/CheckOut/CheckOut'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         <Route path={"/vista-contacto"} element={<ViewContacto />} />
         <Route path={"/generar-cita"} element={<GenerarCita />} />
         <Route path={"/register"} element={<Register />} />
+        <Route path={"/checkout"} element={<CheckOut />} />
       </Routes>
       </BrowserRouter>
     </CartProvider>
