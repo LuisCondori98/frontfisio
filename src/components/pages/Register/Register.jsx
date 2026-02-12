@@ -220,43 +220,47 @@ const Register = () => {
               :
               <></>
             }
-            {typeUsuatio === "paciente" && (
-              <div className="col-md-6">
-                <label className="form-label fw-semibold">Alergias</label>
-                <input
-                      type="text"
-                      name="alergias"
-                      value={formData.alergias}
-                      onChange={handleChange}
-                      className="form-control mb-2"
-                      placeholder="Ej: Polvo, medicamentos..." />
-                <label className="form-label fw-semibold">Historial médico</label>
-                <input type="text" name="historialMedico"
-                      value={formData.historialMedico}
-                      onChange={handleChange} className="form-control" placeholder="Ej: Asma, operaciones, etc." />
-              </div>
-            )}
+            {
+              typeUsuatio === "paciente" &&
+              (
+                <div className="col-md-6">
+                  <label className="form-label fw-semibold">Alergias</label>
+                  <input
+                        type="text"
+                        name="alergias"
+                        value={formData.alergias}
+                        onChange={handleChange}
+                        className="form-control mb-2"
+                        placeholder="Ej: Polvo, medicamentos..." />
+                  <label className="form-label fw-semibold">Historial médico</label>
+                  <input type="text" name="historialMedico"
+                        value={formData.historialMedico}
+                        onChange={handleChange} className="form-control" placeholder="Ej: Asma, operaciones, etc." />
+                </div>
+                
+              )
+            }
 
-            {/* Fisioterapeuta */}
-            {typeUsuatio === "fisioterapeuta" && (
-              <div className="col-md-6">
-                <label className="form-label fw-semibold">Especialidad</label>
-                <input type="text"
-                      name="especialidad"
-                      value={formData.especialidad}
-                      onChange={handleChange}
-                      className="form-control mb-2" placeholder="Ej: Fisioterapia pediátrica" />
-                <label className="form-label fw-semibold">Colegiatura</label>
-                <input type="text"
-                      name="colegiatura"
-                      value={formData.colegiatura}
-                      onChange={handleChange}
-                      className="form-control" placeholder="Ej: 12345-CMP" />
-              </div>
-            )
+            {
+              typeUsuatio === "fisioterapeuta" && (
+                <div className="col-md-6">
+                  <label className="form-label fw-semibold">Especialidad</label>
+                  <input type="text"
+                        name="especialidad"
+                        value={formData.especialidad}
+                        onChange={handleChange}
+                        className="form-control mb-2" placeholder="Ej: Fisioterapia pediátrica" />
+                  <label className="form-label fw-semibold">Colegiatura</label>
+                  <input type="text"
+                        name="colegiatura"
+                        value={formData.colegiatura}
+                        onChange={handleChange}
+                        className="form-control" placeholder="Ej: 12345-CMP" />
+                </div>
+              )
             }
             {
-              user.cargo === "gerente" && (
+              typeUsuatio === "gerente" && (
                 <div className="col-md-6">
                   <label className="form-label fw-semibold">Cargo</label>
                   <select
