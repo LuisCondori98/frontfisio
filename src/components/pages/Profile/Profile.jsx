@@ -116,7 +116,7 @@ const Profile = () => {
                                 <p className="mb-2"><strong>Hora:</strong>{c.hora}</p>
                               </div>
                               <div className="col-sm-6">
-                                <p className="mb-2"><strong>Fisioterapeuta:</strong>{c.terapeuta}</p>
+                                <p className="mb-2"><strong>Fisioterapeuta:</strong>{c.terapeuta.nombre}</p>
                                 <p className="mb-0"><strong>Ubicación:</strong>Av Perez 879</p>
                               </div>
                             </div>
