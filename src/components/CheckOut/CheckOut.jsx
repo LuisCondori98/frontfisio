@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const CheckOut = () => {
   const [metodo, setMetodo] = useState("");
+
+  const {total, paciente} = useContext(CartContext)
+
+  console.log(total, paciente)
 
   return (
     <div className="container py-5">
@@ -128,19 +133,19 @@ const CheckOut = () => {
 
               <div className="d-flex justify-content-between mb-2">
                 <span>Subtotal</span>
-                <span>S/ 250.00</span>
+                <span>{total}</span>
               </div>
 
               <div className="d-flex justify-content-between mb-3">
                 <span>IGV</span>
-                <span>S/ 45.00</span>
+                <span>S/ 18.00</span>
               </div>
 
               <hr />
 
               <div className="d-flex justify-content-between fw-bold fs-5">
                 <span>Total</span>
-                <span>S/ 295.00</span>
+                <span>{total + 18}</span>
               </div>
 
             </div>
