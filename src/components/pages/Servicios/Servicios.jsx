@@ -68,7 +68,7 @@ const Servicios = () => {
         <div className="col-md-4">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
-              src="https://images.unsplash.com/photo-1615936423050-4bda2b8a70ab"
+              src="/img/fisioPedia.png"
               className="card-img-top rounded-3"
               alt="Terapia pediátrica"
               style={{ height: '220px', objectFit: 'cover' }}
@@ -86,7 +86,7 @@ const Servicios = () => {
         <div className="col-md-4">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
-              src="https://images.unsplash.com/photo-1604079628040-94301bb21b91"
+              src="/img/fisioDeportivo.webp"
               className="card-img-top rounded-3"
               alt="Terapia deportiva"
               style={{ height: '220px', objectFit: 'cover' }}
@@ -104,7 +104,7 @@ const Servicios = () => {
         <div className="col-md-4">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
-              src="https://images.unsplash.com/photo-1611691546011-3d8481d3c802"
+              src="/img/fisioOcupa.jpg"
               className="card-img-top rounded-3"
               alt="Terapia ocupacional"
               style={{ height: '220px', objectFit: 'cover' }}
