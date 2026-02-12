@@ -10,7 +10,7 @@ const Profile = () => {
   const {cita} = useContext(CartContext)
   const [citas, setCitas] = useState([])
   const navigate = useNavigate()
-
+  console.log(cita)
   useEffect(() => {
 
     axios.get("https://back-fisioterapia.onrender.com/api/cita")
@@ -114,7 +114,7 @@ const Profile = () => {
                             <p className="mb-2"><strong>Hora:</strong>{cita.hora}</p>
                           </div>
                           <div className="col-sm-6">
-                            <p className="mb-2"><strong>Fisioterapeuta:</strong>{cita.terapeuta.nombre}</p>
+                            <p className="mb-2"><strong>Fisioterapeuta:</strong>{cita.terapeuta}</p>
                             <p className="mb-0"><strong>Ubicación:</strong>Av Perez 879</p>
                           </div>
                         </div>
