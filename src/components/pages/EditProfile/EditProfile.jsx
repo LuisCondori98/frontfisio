@@ -68,6 +68,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="direccion"
                 name="direccion"
+                value={user.direccion}
                 placeholder={`${user.direccion}`}
                 />
             </div>
@@ -78,6 +79,7 @@ const EditProfile = () => {
                 className="form-control"
                 id="correo"
                 name="correo"
+                value={user.correo}
                 placeholder={`${user.correo}`}
                 />
             </div>
