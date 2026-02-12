@@ -1,58 +1,102 @@
+import { useState } from "react";
+
 const CheckOut = () => {
+  const [metodo, setMetodo] = useState("");
 
   return (
     <div className="container py-5">
-      <div className="row justify-content-center">
-        <div className="col-md-8">
+      <div className="row g-4">
 
+        {/* COLUMNA IZQUIERDA - MÉTODOS DE PAGO */}
+        <div className="col-md-7">
           <div className="card shadow-sm border-0">
             <div className="card-body p-4">
 
-              <h4 className="mb-4 text-center fw-semibold">
-                Realizar Pago
-              </h4>
+              <h5 className="mb-4 fw-semibold">Método de Pago</h5>
 
-              {/* Monto */}
-              <div className="mb-3">
-                <label className="form-label">Monto</label>
+              {/* TARJETA */}
+              <div className="form-check mb-3">
                 <input
-                  type="number"
-                  className="form-control"
-                  placeholder="Ingrese el monto"
+                  className="form-check-input"
+                  type="radio"
+                  name="metodoPago"
+                  onChange={() => setMetodo("tarjeta")}
                 />
+                <label className="form-check-label fw-medium">
+                  💳 Tarjeta de Crédito / Débito
+                </label>
               </div>
 
-              {/* Método de pago */}
-              <div className="mb-4">
-                <label className="form-label">Método de Pago</label>
-
-                <div className="d-flex justify-content-between gap-3">
-
-                  <button className="btn btn-light border w-100 d-flex align-items-center justify-content-center">
-                    <img
-                      src="https://seeklogo.com/images/Y/yape-logo-3E473EEBA4-seeklogo.com.png"
-                      alt="Yape"
-                      width="60"
+              {metodo === "tarjeta" && (
+                <div className="border rounded p-3 mb-3 bg-light">
+                  <div className="mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Número de tarjeta"
                     />
-                  </button>
-
-                  <button className="btn btn-light border w-100 d-flex align-items-center justify-content-center">
-                    <img
-                      src="https://seeklogo.com/images/P/plin-logo-2F8D1C91C6-seeklogo.com.png"
-                      alt="Plin"
-                      width="60"
-                    />
-                  </button>
-
-                  <button className="btn btn-light border w-100 d-flex align-items-center justify-content-center">
-                    💳
-                  </button>
-
+                  </div>
+                  <div className="row">
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="MM/AA"
+                      />
+                    </div>
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="CVV"
+                      />
+                    </div>
+                  </div>
                 </div>
+              )}
+
+              {/* BILLETERAS */}
+              <div className="form-check mb-3">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="metodoPago"
+                  onChange={() => setMetodo("billetera")}
+                />
+                <label className="form-check-label fw-medium">
+                  📱 Billeteras Digitales
+                </label>
               </div>
 
-              {/* Botón pagar */}
-              <div className="d-grid">
+              {metodo === "billetera" && (
+                <div className="border rounded p-3 bg-light">
+                  <div className="d-flex justify-content-between gap-3">
+
+                    <button className="btn btn-light border w-100">
+                      <img
+                        src="https://seeklogo.com/images/Y/yape-logo-3E473EEBA4-seeklogo.com.png"
+                        alt="Yape"
+                        width="60"
+                      />
+                    </button>
+
+                    <button className="btn btn-light border w-100">
+                      <img
+                        src="https://seeklogo.com/images/P/plin-logo-2F8D1C91C6-seeklogo.com.png"
+                        alt="Plin"
+                        width="60"
+                      />
+                    </button>
+
+                    <button className="btn btn-light border w-100">
+                      Mercado Pago
+                    </button>
+
+                  </div>
+                </div>
+              )}
+
+              <div className="d-grid mt-4">
                 <button className="btn btn-primary">
                   Confirmar Pago
                 </button>
@@ -60,8 +104,49 @@ const CheckOut = () => {
 
             </div>
           </div>
-
         </div>
+
+        {/* COLUMNA DERECHA - RESUMEN */}
+        <div className="col-md-5">
+          <div className="card shadow-sm border-0">
+            <div className="card-body p-4">
+
+              <h5 className="mb-4 fw-semibold">Resumen del Tratamiento</h5>
+
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Tratamiento"
+                className="img-fluid rounded mb-3"
+              />
+
+              <h6 className="fw-medium">Nombre del Tratamiento</h6>
+              <p className="text-muted small">
+                Breve descripción del tratamiento seleccionado.
+              </p>
+
+              <hr />
+
+              <div className="d-flex justify-content-between mb-2">
+                <span>Subtotal</span>
+                <span>S/ 250.00</span>
+              </div>
+
+              <div className="d-flex justify-content-between mb-3">
+                <span>IGV</span>
+                <span>S/ 45.00</span>
+              </div>
+
+              <hr />
+
+              <div className="d-flex justify-content-between fw-bold fs-5">
+                <span>Total</span>
+                <span>S/ 295.00</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
