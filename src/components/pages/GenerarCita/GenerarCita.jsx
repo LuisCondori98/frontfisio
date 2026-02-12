@@ -1,6 +1,7 @@
 import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../../context/AuthContext";
 
@@ -14,6 +15,8 @@ const GenerarCita = () => {
   const [terapeuta, setTerapeuta] = useState("");
   const [motivo, setMotivo] = useState("");
   const [precio, setPrecio] = useState("")
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (user?.id) {
@@ -47,6 +50,7 @@ const GenerarCita = () => {
     } catch(err) {
 
       console.error(err)
+      alert("envie el precio o por defecto ponga 100")
     }
   }
 
@@ -109,7 +113,7 @@ const GenerarCita = () => {
           {fisios.map((f) => (
             <>
             <option key={f._id} value={f._id}>
-              {f.nombre}
+              {f.nombre} {f.apellidoMaterno} {f.apellidoMaterno}
             </option>
             </>
           ))}
