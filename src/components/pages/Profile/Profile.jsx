@@ -27,9 +27,9 @@ const Profile = () => {
     window.location.reload()
   }
 
-  const handleDeleteCita = async () => {
+  const handleDeleteCita = async (id) => {
 
-    await axios.delete(`https://back-fisioterapia.onrender.com/api/cita/delete/paciente/${user.id}`)
+    await axios.delete(`https://back-fisioterapia.onrender.com/api/cita/delete/${id}`)
   }
 
   const statsData = {
