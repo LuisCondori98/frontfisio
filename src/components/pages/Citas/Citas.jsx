@@ -46,7 +46,7 @@ const Citas = () => {
 
   return (
     <main>
-      <h2>Citas</h2>
+      <h3 className="bg-dark text-white text-center">Todas las citas</h3>
       {
         user.rol === "admin"?
         (
