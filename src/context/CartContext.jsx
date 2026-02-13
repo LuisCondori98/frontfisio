@@ -16,7 +16,7 @@ export const CartProvider = ({children}) => {
         axios.get(`https://back-fisioterapia.onrender.com/api/cita/paciente/${user.id}`)
             .then(response => setCita(response.data))
             
-    }, [cita])
+    }, [user?.id])
 
     let total = 0
 

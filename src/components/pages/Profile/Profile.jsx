@@ -30,6 +30,8 @@ const Profile = () => {
   const handleDeleteCita = async (id) => {
 
     await axios.delete(`https://back-fisioterapia.onrender.com/api/cita/delete/${id}`)
+
+    window.location("/perfil")
   }
 
   const statsData = {
