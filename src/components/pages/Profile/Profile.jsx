@@ -31,7 +31,7 @@ const Profile = () => {
 
     await axios.delete(`https://back-fisioterapia.onrender.com/api/cita/delete/${id}`)
 
-    window.location("/perfil")
+    window.location.href = "/perfil"
   }
 
   const statsData = {
