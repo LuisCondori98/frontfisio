@@ -18,12 +18,11 @@ export const CartProvider = ({children}) => {
             
     }, [user?.id])
 
-    let total
+    let total = 0
 
-    cita.map(c => {
-        total = c.precio
-        console.log(total =+ c.precio)
-    })
+    cita.forEach(c => {
+        total += c.precio || 0;
+    });
 
     return (
         <CartContext.Provider value={{total, cita}}>
