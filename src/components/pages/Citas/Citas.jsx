@@ -57,7 +57,7 @@ const Citas = () => {
                     <div className="card shadow-sm h-100">
                       <div className="card-body">
                         <h4 className="card-title">
-                          Fecha {new Date(c.fecha).toLocaleString()}
+                          Fecha {new Date(c.fecha).toLocaleDateString()}
                         </h4>
 
                         <h5 className="card-subtitle mb-2 text-muted">
@@ -98,6 +98,9 @@ const Citas = () => {
                         </p>
                       </div>
                     </div>
+                    <button>
+                      Cobrar
+                    </button>
                   </div>
                 ))
             }
