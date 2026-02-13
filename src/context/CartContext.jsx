@@ -20,7 +20,7 @@ export const CartProvider = ({children}) => {
 
     let total
 
-    cita.map(c => total = c.precio)
+    cita.map(c => total += c.precio)
 
     return (
         <CartContext.Provider value={{total, cita}}>
