@@ -13,7 +13,7 @@ const Citas = () => {
 
   const handleCobrarTerapia = async (id) => {
 console.log(id)
-    await axios.post(`https://back-fisioterapia.onrender.com/api/cita/update/${id}`, {
+    await axios.put(`https://back-fisioterapia.onrender.com/api/cita/update/${id}`, {
       estado: "confirmada"
     })
 
