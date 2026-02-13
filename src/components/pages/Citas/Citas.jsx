@@ -50,58 +50,62 @@ const Citas = () => {
       {
         user.rol === "admin"?
         (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+          <div className="container py-4">
+          <div className="row g-4">
             {citas.map((c) => (
-              <div key={c._id} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full">
-                <div className="p-4 flex-1">
-                  <h4 className="text-lg font-semibold mb-1">
-                    Fecha {new Date(c.fecha).toLocaleDateString()}
-                  </h4>
+              <div key={c._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body d-flex flex-column">
+                    <h4 className="card-title mb-2">
+                      Fecha {new Date(c.fecha).toLocaleDateString()}
+                    </h4>
 
-                  <h5 className="text-sm text-gray-500 mb-2">
-                    HORA {c.hora}
-                  </h5>
+                    <h5 className="card-subtitle mb-2 text-muted">
+                      HORA {c.hora}
+                    </h5>
 
-                  <p className="text-gray-700 mb-1">
-                    <strong>Terapeuta:</strong> {c.terapeuta?.nombre} {c.terapeuta?.apellidoPaterno}
-                  </p>
+                    <p className="card-text mb-1">
+                      <strong>Terapeuta:</strong> {c.terapeuta?.nombre} {c.terapeuta?.apellidoPaterno}
+                    </p>
 
-                  <p className="text-gray-700 mb-1">
-                    <strong>Paciente:</strong> {c.paciente?.nombre} {c.paciente?.apePaterno}
-                  </p>
+                    <p className="card-text mb-1">
+                      <strong>Paciente:</strong> {c.paciente?.nombre} {c.paciente?.apePaterno}
+                    </p>
 
-                  <p className="text-gray-700 mb-1">
-                    <strong>Motivo:</strong> {c.motivo}
-                  </p>
+                    <p className="card-text mb-1">
+                      <strong>Motivo:</strong> {c.motivo}
+                    </p>
 
-                  <p className="text-gray-700 mb-1">
-                    <strong>Precio:</strong> {c.precio}
-                  </p>
+                    <p className="card-text mb-1">
+                      <strong>Precio:</strong> {c.precio}
+                    </p>
 
-                  <p className="mt-2">
-                    <strong>Estado:</strong>{" "}
-                    <span
-                      className={`inline-block px-2 py-1 text-sm font-medium rounded ${
-                        c.estado === "pendiente"
-                          ? "bg-yellow-300 text-yellow-900"
-                          : c.estado === "confirmada"
-                          ? "bg-green-500 text-white"
-                          : c.estado === "cancelada"
-                          ? "bg-red-500 text-white"
-                          : "bg-gray-400 text-white"
-                      }`}
-                    >
-                      {c.estado}
-                    </span>
-                  </p>
+                    <p className="card-text mt-auto">
+                      <strong>Estado:</strong>{" "}
+                      <span
+                        className={`badge ${
+                          c.estado === "pendiente"
+                            ? "bg-warning text-dark"
+                            : c.estado === "confirmada"
+                            ? "bg-success"
+                            : c.estado === "cancelada"
+                            ? "bg-danger"
+                            : "bg-secondary"
+                        }`}
+                      >
+                        {c.estado}
+                      </span>
+                    </p>
+                  </div>
+
+                  <button className="btn btn-success mt-3 w-100">
+                    Cobrar
+                  </button>
                 </div>
-
-                <button className="bg-green-500 text-white py-2 px-4 m-4 rounded-lg hover:bg-green-600 transition-colors">
-                  Cobrar
-                </button>
               </div>
             ))}
           </div>
+        </div>
         ): user.rol === "fisioterapeuta" ?
         (
           <div>
