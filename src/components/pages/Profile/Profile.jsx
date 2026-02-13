@@ -9,8 +9,9 @@ const Profile = () => {
   const { user } = useContext(AuthContext)
   const {cita} = useContext(CartContext)
   const [citas, setCitas] = useState([])
+
   const navigate = useNavigate()
-  console.log(cita)
+
   useEffect(() => {
 
     axios.get("https://back-fisioterapia.onrender.com/api/cita")
@@ -24,6 +25,11 @@ const Profile = () => {
     navigate("/")
 
     window.location.reload()
+  }
+
+  const handleDeleteCita = () => {
+
+    axios.delete(`https://back-fisioterapia.onrender.com/api/cita/delete/paciente/${user.id}`)
   }
 
   const statsData = {
@@ -105,36 +111,35 @@ const Profile = () => {
                     </h5>
                   </div>
                   <div className="card-body">
-                    <div className="row align-items-center">
-                      <div className="col-md-8">
-                        <h4 className="text-success mb-3">Terapia de Rehabilitación</h4>
                         {
                           cita.map(c => (
-                            <div className="row">
-                              <div className="col-sm-6">
-                                <p className="mb-2"><strong>Fecha:</strong><br /> {new Date(c.fecha).toLocaleDateString()}</p>
-                                <p className="mb-2"><strong>Hora:</strong><br /> {c.hora}</p>
+                            <div className="row align-items-center">
+                              <div className="col-md-8">
+                              <h4 className="text-success mb-3">Terapia de Rehabilitación</h4>
+                                <div className="row">
+                                  <div className="col-sm-6">
+                                    <p className="mb-2"><strong>Fecha:</strong><br /> {new Date(c.fecha).toLocaleDateString()}</p>
+                                    <p className="mb-2"><strong>Hora:</strong><br /> {c.hora}</p>
+                                  </div>
+                                  <div className="col-sm-6">
+                                    <p className="mb-2"><strong>Fisioterapeuta:</strong><br /> {c.terapeuta.nombre} {c.terapeuta.apellidoMaterno}</p>
+                                    <p className="mb-0"><strong>Ubicación:</strong><br /> Av Perez 879</p>
+                                  </div>
+                                </div>
                               </div>
-                              <div className="col-sm-6">
-                                <p className="mb-2"><strong>Fisioterapeuta:</strong><br /> {c.terapeuta.nombre} {c.terapeuta.apellidoMaterno}</p>
-                                <p className="mb-0"><strong>Ubicación:</strong><br /> Av Perez 879</p>
+                              <div className="col-md-4 text-center text-md-end">
+                                <div className="d-grid gap-2 d-md-block">
+                                  <button className="btn btn-outline-primary btn-lg me-md-2 mb-2">
+                                    <i className="bi bi-pencil me-2"></i>Reprogramar
+                                  </button>
+                                  <button className="btn btn-danger btn-lg" onClick={() => handleDeleteCita(c._id)}>
+                                    <i className="bi bi-x-circle me-2"></i>Cancelar
+                                  </button>
+                                </div>
                               </div>
                             </div>
                           ))
                         }
-                        
-                      </div>
-                      <div className="col-md-4 text-center text-md-end">
-                        <div className="d-grid gap-2 d-md-block">
-                          <button className="btn btn-outline-primary btn-lg me-md-2 mb-2">
-                            <i className="bi bi-pencil me-2"></i>Reprogramar
-                          </button>
-                          <button className="btn btn-danger btn-lg">
-                            <i className="bi bi-x-circle me-2"></i>Cancelar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

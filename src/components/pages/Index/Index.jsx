@@ -4,8 +4,6 @@ import { AuthContext } from "../../../context/AuthContext"
 
 const Index = () => {
 
-  const {isAuthenticated} = useContext(AuthContext)
-
   document.title = "Inicio"
 
   return (
