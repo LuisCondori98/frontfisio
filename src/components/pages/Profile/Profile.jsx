@@ -126,6 +126,7 @@ const Profile = () => {
                                   <div className="col-sm-6">
                                     <p className="mb-2"><strong>Fisioterapeuta:</strong><br /> {c.terapeuta.nombre} {c.terapeuta.apellidoMaterno}</p>
                                     <p className="mb-0"><strong>Ubicación:</strong><br /> Av Perez 879</p>
+                                    <p className="mb-0 badge"><strong>Estado:</strong><br /> {c.estado}</p>
                                   </div>
                                 </div>
                               </div>

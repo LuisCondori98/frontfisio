@@ -62,7 +62,7 @@ const NavBar = () => {
               </li>
             }
             {
-              cita.length > 0 && (
+              cita.length > 0 &&  (
                 <Link to={"checkout"} className="text-white">
                   <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
                 </Link>
