@@ -50,38 +50,60 @@ const Citas = () => {
       {
         user.rol === "admin"?
         (
-          <div>
-            {cita.length === 0 ? (
-      <p className="text-gray-500 text-center">No tienes citas programadas.</p>
-    ) : (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cita.map(c => (
-          <div key={c._id} className="bg-white shadow-md rounded-xl p-5 hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-xl font-semibold text-green-600 mb-2">Terapia de Rehabilitación</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+              citas.map((c) => (
+                  <div key={c._id} className="col-md-6 col-lg-4 mb-4">
+                    <div className="card shadow-sm h-100">
+                      <div className="card-body">
+                        <h4 className="card-title">
+                          Fecha {new Date(c.fecha).toLocaleDateString()}
+                        </h4>
 
-            <div className="mb-4">
-              <p className="text-gray-700"><strong>Fecha:</strong> {new Date(c.fecha).toLocaleDateString()}</p>
-              <p className="text-gray-700"><strong>Hora:</strong> {c.hora}</p>
-              <p className="text-gray-700"><strong>Fisioterapeuta:</strong> {c.terapeuta.nombre} {c.terapeuta.apellidoMaterno}</p>
-              <p className="text-gray-700"><strong>Ubicación:</strong> Av Perez 879</p>
-            </div>
+                        <h5 className="card-subtitle mb-2 text-muted">
+                          HORA {c.hora}
+                        </h5>
 
-            <div className="flex justify-between mt-4">
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 flex-1 mr-2">
-                Reprogramar
-              </button>
+                        <p className="card-text mb-1">
+                          <strong>Terapeuta:</strong>{" "}
+                          {c.terapeuta?.nombre} {c.terapeuta?.apellidoPaterno}
+                        </p>
 
-              <button
-                className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors duration-200 flex-1"
-                onClick={() => handleDeleteCita(c._id)}
-              >
-                Cancelar
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    )}
+                        <p className="card-text mb-1">
+                          <strong>Paciente:</strong>{" "}
+                          {c.paciente?.nombre} {c.paciente?.apePaterno}
+                        </p>
+
+                        <p className="card-text mb-1">
+                          <strong>Motivo:</strong> {c.motivo}
+                        </p>
+                        <p className="card-text mb-1">
+                          <strong>Precio:</strong> {c.precio}
+                        </p>
+                        <p className="card-text">
+                          <strong>Estado:</strong>{" "}
+                          <span
+                            className={`badge ${
+                              c.estado === "pendiente"
+                                ? "bg-warning text-dark"
+                                : c.estado === "confirmada"
+                                ? "bg-success"
+                                : c.estado === "cancelada"
+                                ? "bg-danger"
+                                : "bg-secondary"
+                            }`}
+                          >
+                            {c.estado}
+                          </span>
+                        </p>
+                      </div>
+                      <button className="btn btn-success">
+                        Cobrar
+                    </button>
+                    </div>
+                  </div>
+                ))
+            }
           </div>
         ): user.rol === "fisioterapeuta" ?
         (
