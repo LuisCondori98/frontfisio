@@ -11,6 +11,19 @@ const Citas = () => {
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
 
+  const handleCobrarTerapia = async (id) => {
+
+    axios.post(`https://back-fisioterapia.onrender.com/api/cita/update/${id}`, {
+      estado: "confirmada"
+    })
+
+    Swal.fire({
+      title: "Pago exitoso",
+      text: "Realizado con exito",
+      icon: "success"
+    });
+  }
+
   useEffect(() => {
 
     axios.get(`https://back-fisioterapia.onrender.com/api/cita`)
@@ -163,7 +176,7 @@ const Citas = () => {
                         <button
                           type="button"
                           className="btn btn-success"
-                          onClick={() => handleCobrar(c._id)}
+                          onClick={() => handleCobrarTerapia(c._id)}
                           data-bs-dismiss="modal"
                         >
                           Cobrar
