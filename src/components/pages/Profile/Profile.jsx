@@ -16,7 +16,7 @@ const Profile = () => {
 
     axios.get("https://back-fisioterapia.onrender.com/api/cita")
       .then(response => setCitas(response.data))
-  }, [citas])
+  }, [])
 
   const handleLogout = () => {
 
