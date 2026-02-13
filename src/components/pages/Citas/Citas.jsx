@@ -98,7 +98,12 @@ const Citas = () => {
                     </p>
                   </div>
 
-                  <button className="btn btn-success mt-3 w-100">
+                  <button
+                    type="button"
+                    className="btn btn-success w-100"
+                    data-bs-toggle="modal"
+                    data-bs-target={`#cobrarModal-${c._id}`}
+                  >
                     Cobrar
                   </button>
                 </div>
@@ -224,6 +229,71 @@ const Citas = () => {
           </div>
         ) : null
       }
+      
+
+
+      {/*************************************** MODAL PAGAR ***************************************/}
+
+      <div
+        className="modal fade"
+        id={`cobrarModal-${c._id}`}
+        tabIndex="-1"
+        aria-labelledby={`cobrarModalLabel-${c._id}`}
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id={`cobrarModalLabel-${c._id}`}>
+                Cobrar Cita
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div className="modal-body">
+              <p><strong>Paciente:</strong> {c.paciente?.nombre} {c.paciente?.apePaterno}</p>
+              <p><strong>Terapeuta:</strong> {c.terapeuta?.nombre} {c.terapeuta?.apellidoPaterno}</p>
+              <p><strong>Fecha:</strong> {new Date(c.fecha).toLocaleDateString()}</p>
+              <p><strong>Hora:</strong> {c.hora}</p>
+              <p><strong>Precio:</strong> {c.precio}</p>
+
+              {/* Aquí podrías poner un input si quieres registrar pago o método */}
+              <div className="mb-3">
+                <label htmlFor={`montoPago-${c._id}`} className="form-label">Monto a cobrar</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id={`montoPago-${c._id}`}
+                  defaultValue={c.precio}
+                />
+              </div>
+            </div>
+
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={() => handleCobrar(c._id)}
+                data-bs-dismiss="modal"
+              >
+                Cobrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       
     </main>
   )
