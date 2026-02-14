@@ -105,7 +105,7 @@ const GenerarCita = () => {
           {fisios.map((f) => (
             <>
             <option key={f._id} value={f._id}>
-              {f.nombre} {f.apellidoMaterno} {f.apellidoPaterno}
+              {f.nombre} {f.apellidoPaterno} {f.apellidoMaterno}
             </option>
             </>
           ))}
