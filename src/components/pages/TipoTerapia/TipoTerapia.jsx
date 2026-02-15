@@ -40,7 +40,7 @@ const TipoTerapia = () => {
                             onHoverStart={() => console.log('hover started!')}
                             className="btn btn-primary px-4"
                             >
-                            <Link to={"/agendar-cita"}>
+                            <Link to={"/agendar-cita"} className="text-decoration-none">
                                 Agendar Cita
                             </Link>
                             </motion.button>
@@ -81,7 +81,7 @@ const TipoTerapia = () => {
                             onHoverStart={() => console.log('hover started!')}
                             className="btn btn-success px-4"
                             >
-                            <Link to={"/agendar-cita"}>
+                            <Link to={"/agendar-cita"} className="text-decoration-none">
                                 Agendar Cita
                             </Link>
                             </motion.button>
@@ -122,7 +122,7 @@ const TipoTerapia = () => {
                             onHoverStart={() => console.log('hover started!')}
                             className="btn btn-warning text-white px-4"
                             >
-                            <Link to={"/agendar-cita"}>
+                            <Link to={"/agendar-cita"} className="text-decoration-none">
                                 Agendar Cita
                             </Link>
                             </motion.button>
@@ -163,7 +163,7 @@ const TipoTerapia = () => {
                             onHoverStart={() => console.log('hover started!')}
                             className="btn btn-danger px-4"
                             >
-                            <Link to={"/agendar-cita"}>
+                            <Link to={"/agendar-cita"} className="text-decoration-none">
                                 Agendar Cita
                             </Link>
                             </motion.button>
