@@ -1,28 +1,35 @@
 import "./Index.css"
 import {Link} from "react-router-dom"
 import { motion } from "motion/react"
+import { useState } from "react"
+import { useEffect } from "react"
 
 const Index = () => {
 
+  const [fisio, setFisios] = useState([])
+
   document.title = "Inicio"
 
-  const equipo = [
-  {
-    nombre: "Dr. Carlos Mendoza",
-    especialidad: "Fisioterapia Ortopédica",
-    img: "https://via.placeholder.com/300x300"
-  },
-  {
-    nombre: "Lic. Ana Torres",
-    especialidad: "Fisioterapia Pediátrica",
-    img: "https://via.placeholder.com/300x300"
-  },
-  {
-    nombre: "Lic. Jorge Ramírez",
-    especialidad: "Fisioterapia Geriátrica",
-    img: "https://via.placeholder.com/300x300"
-  }
-];
+  useEffect(() => {
+
+    const obtenerFisios = async () => {
+
+      try {
+
+        const response = await axios.get(
+          "https://back-fisioterapia.onrender.com/api/fisioterapeuta"
+        );
+
+        setFisios(response.data);
+      } catch (err) {
+
+        console.error("Error al obtener fisioterapeutas:", err);
+      }
+    };
+
+    obtenerFisios();
+
+  }, []);
 
   return (
     <main>
@@ -101,9 +108,10 @@ const Index = () => {
         </motion.h2>
 
         <div className="row">
-          {equipo.map((persona, index) => (
+          {
+            fisio.map(() => (
             <motion.div
-              key={index}
+              key={fisio._id}
               className="col-md-4 mb-4"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -115,16 +123,16 @@ const Index = () => {
                 className="card shadow border-0"
               >
                 <img
-                  src={persona.img}
+                  src={""}
                   className="card-img-top"
-                  alt={persona.nombre}
+                  alt={fisio.nombre}
                 />
                 <div className="card-body">
                   <h5 className="card-title fw-bold">
-                    {persona.nombre}
+                    {fisio.nombre}
                   </h5>
                   <p className="card-text text-muted">
-                    {persona.especialidad}
+                    {fisio.especialidad}
                   </p>
                   <button className="btn btn-primary btn-sm">
                     Ver Perfil
