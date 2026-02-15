@@ -1,6 +1,5 @@
-import { useContext } from "react"
 import "./Index.css"
-import { AuthContext } from "../../../context/AuthContext"
+import {Link} from "react-router-dom"
 
 const Index = () => {
 
@@ -60,6 +59,7 @@ const Index = () => {
               <p className="text-muted">
                 Tratamos lesiones en huesos, músculos, ligamentos y articulaciones para una recuperación segura.
               </p>
+              <Link className="btn btn-warning" to={`/tratamiento/terapia-ortopedica`}>Ver mas</Link>
             </div>
           </div>
 
@@ -79,6 +79,7 @@ const Index = () => {
               <p className="text-muted">
                 Diseñada para adultos mayores, ayudando a mantener la autonomía y prevenir caídas.
               </p>
+              <Link className="btn btn-warning" to={`/tratamiento/terapia-geriatrica`}>Ver mas</Link>
             </div>
           </div>
 
@@ -98,6 +99,7 @@ const Index = () => {
               <p className="text-muted">
                 Especial para niños y bebés con retrasos motores o discapacidades, fomentando su desarrollo.
               </p>
+              <Link className="btn btn-warning" to={`/tratamiento/terapia-pediatrica`}>Ver mas</Link>
             </div>
           </div>
 
@@ -117,6 +119,7 @@ const Index = () => {
               <p className="text-muted">
                 Tratamiento para enfermedades crónicas inflamatorias que afectan las articulaciones.
               </p>
+              <Link className="btn btn-warning" to={`/tratamiento/terapia-reumatologica`}>Ver mas</Link>
             </div>
           </div>
         </div>

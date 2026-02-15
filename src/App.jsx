@@ -14,6 +14,7 @@ import GenerarCita from './components/pages/GenerarCita/GenerarCita'
 import EditProfile from './components/pages/EditProfile/EditProfile'
 import { CartProvider } from './context/CartContext'
 import CheckOut from './components/CheckOut/CheckOut'
+import TipoTerapia from './components/pages/TipoTerapia/TipoTerapia'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path={"/"} element={<Index />} />
+        <Route path={"/tratamiento/:terapia"} element={<TipoTerapia />} />
         <Route path={"/perfil"} element={<Profile />} />
         <Route path={"/edit-perfil/:dni"} element={<EditProfile />} />
         <Route path={"/usuarios"} element={<Usuarios />} />
