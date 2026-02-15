@@ -1,9 +1,28 @@
 import "./Index.css"
 import {Link} from "react-router-dom"
+import { motion } from "motion/react"
 
 const Index = () => {
 
   document.title = "Inicio"
+
+  const equipo = [
+  {
+    nombre: "Dr. Carlos Mendoza",
+    especialidad: "Fisioterapia Ortopédica",
+    img: "https://via.placeholder.com/300x300"
+  },
+  {
+    nombre: "Lic. Ana Torres",
+    especialidad: "Fisioterapia Pediátrica",
+    img: "https://via.placeholder.com/300x300"
+  },
+  {
+    nombre: "Lic. Jorge Ramírez",
+    especialidad: "Fisioterapia Geriátrica",
+    img: "https://via.placeholder.com/300x300"
+  }
+];
 
   return (
     <main>
@@ -29,6 +48,94 @@ const Index = () => {
           </a>
         </div>
       </section>
+
+      <section class="py-5 bg-light">
+        <div class="container text-center">
+          <h2 class="fw-bold mb-4">¿Por qué elegirnos?</h2>
+          <div class="row">
+            
+            <div class="col-md-3">
+              <div class="p-4 shadow-sm rounded bg-white">
+                <h5>Atención Personalizada</h5>
+                <p class="text-muted">Planes adaptados a cada paciente.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="p-4 shadow-sm rounded bg-white">
+                <h5>Profesionales Certificados</h5>
+                <p class="text-muted">Especialistas con experiencia clínica.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="p-4 shadow-sm rounded bg-white">
+                <h5>Equipamiento Moderno</h5>
+                <p class="text-muted">Tecnología avanzada para rehabilitación.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="p-4 shadow-sm rounded bg-white">
+                <h5>Resultados Comprobados</h5>
+                <p class="text-muted">Pacientes satisfechos nos respaldan.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/*============================== NUESTRO EQUIPO  ======================= */ }
+
+      <section className="py-5 bg-light">
+      <div className="container text-center">
+        <motion.h2
+          className="fw-bold mb-5"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Nuestro Equipo
+        </motion.h2>
+
+        <div className="row">
+          {equipo.map((persona, index) => (
+            <motion.div
+              key={index}
+              className="col-md-4 mb-4"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="card shadow border-0"
+              >
+                <img
+                  src={persona.img}
+                  className="card-img-top"
+                  alt={persona.nombre}
+                />
+                <div className="card-body">
+                  <h5 className="card-title fw-bold">
+                    {persona.nombre}
+                  </h5>
+                  <p className="card-text text-muted">
+                    {persona.especialidad}
+                  </p>
+                  <button className="btn btn-primary btn-sm">
+                    Ver Perfil
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
 
       {/* Sección de Servicios */}
       <section id="servicios" className="py-5">
@@ -59,7 +166,7 @@ const Index = () => {
               <p className="text-muted">
                 Tratamos lesiones en huesos, músculos, ligamentos y articulaciones para una recuperación segura.
               </p>
-              <Link className="btn btn-warning" to={`/tratamiento/terapia-ortopedica`}>Ver mas</Link>
+              <Link className="btn btn-primary" to={`/tratamiento/terapia-ortopedica`}>Ver mas</Link>
             </div>
           </div>
 
@@ -99,7 +206,7 @@ const Index = () => {
               <p className="text-muted">
                 Especial para niños y bebés con retrasos motores o discapacidades, fomentando su desarrollo.
               </p>
-              <Link className="btn btn-warning" to={`/tratamiento/terapia-pediatrica`}>Ver mas</Link>
+              <Link className="btn btn-primary" to={`/tratamiento/terapia-pediatrica`}>Ver mas</Link>
             </div>
           </div>
 
@@ -119,7 +226,7 @@ const Index = () => {
               <p className="text-muted">
                 Tratamiento para enfermedades crónicas inflamatorias que afectan las articulaciones.
               </p>
-              <Link className="btn btn-warning" to={`/tratamiento/terapia-reumatologica`}>Ver mas</Link>
+              <Link className="btn btn-primary" to={`/tratamiento/terapia-reumatologica`}>Ver mas</Link>
             </div>
           </div>
         </div>
