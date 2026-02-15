@@ -1,4 +1,5 @@
 import "./Index.css"
+import axios from "axios";
 import {Link} from "react-router-dom"
 import { motion } from "motion/react"
 import { useState } from "react"
