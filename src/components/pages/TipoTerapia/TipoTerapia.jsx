@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { motion } from "motion/react"
 
 const TipoTerapia = () => {
@@ -17,7 +17,7 @@ const TipoTerapia = () => {
                         <div class="row align-items-center">
                         
                         <div class="col-md-6">
-                            <img src="img/ortopedica.jpg" class="img-fluid rounded shadow" alt="Fisioterapia Ortopédica" />
+                            <img src="/img/fisioOrtop.webp" class="img-fluid rounded shadow" alt="Fisioterapia Ortopédica" />
                         </div>
 
                         <div class="col-md-6">
@@ -40,9 +40,10 @@ const TipoTerapia = () => {
                             onHoverStart={() => console.log('hover started!')}
                             className="btn btn-primary px-4"
                             >
-                            Agendar Cita
+                            <Link to={"/agendar-cita"}>
+                                Agendar Cita
+                            </Link>
                             </motion.button>
-
                         </div>
 
                         </div>
@@ -57,7 +58,7 @@ const TipoTerapia = () => {
                         <div class="row align-items-center">
 
                         <div class="col-md-6 order-md-2">
-                            <img src="img/geriatrica.jpg" class="img-fluid rounded shadow" alt="Fisioterapia Geriátrica" />
+                            <img src="/img/fisioGeria.jpg" class="img-fluid rounded shadow" alt="Fisioterapia Geriátrica" />
                         </div>
 
                         <div class="col-md-6 order-md-1">
@@ -74,7 +75,16 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Mejora del equilibrio</li>
                             </ul>
 
-                            <a href="#" class="btn btn-success px-4">Solicitar Evaluación</a>
+                            <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => console.log('hover started!')}
+                            className="btn btn-success px-4"
+                            >
+                            <Link to={"/agendar-cita"}>
+                                Agendar Cita
+                            </Link>
+                            </motion.button>
                         </div>
 
                         </div>
@@ -89,7 +99,7 @@ const TipoTerapia = () => {
                         <div class="row align-items-center">
                         
                         <div class="col-md-6">
-                            <img src="img/pediatrica.jpg" class="img-fluid rounded shadow" alt="Fisioterapia Pediátrica" />
+                            <img src="/img/fisioPedia.png" class="img-fluid rounded shadow" alt="Fisioterapia Pediátrica" />
                         </div>
 
                         <div class="col-md-6">
@@ -106,7 +116,16 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Seguimiento del desarrollo</li>
                             </ul>
 
-                            <a href="#" class="btn btn-warning text-white px-4">Agendar Consulta</a>
+                            <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => console.log('hover started!')}
+                            className="btn btn-warning text-white px-4"
+                            >
+                            <Link to={"/agendar-cita"}>
+                                Agendar Cita
+                            </Link>
+                            </motion.button>
                         </div>
 
                         </div>
@@ -121,7 +140,7 @@ const TipoTerapia = () => {
                         <div class="row align-items-center">
 
                         <div class="col-md-6 order-md-2">
-                            <img src="img/reumatologica.jpg" class="img-fluid rounded shadow" alt="Fisioterapia Reumatológica" />
+                            <img src="/img/fisioReuma.jpg" class="img-fluid rounded shadow" alt="Fisioterapia Reumatológica" />
                         </div>
 
                         <div class="col-md-6 order-md-1">
@@ -138,7 +157,16 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Ejercicios terapéuticos personalizados</li>
                             </ul>
 
-                            <a href="#" class="btn btn-danger px-4">Reservar Cita</a>
+                            <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => console.log('hover started!')}
+                            className="btn btn-danger px-4"
+                            >
+                            <Link to={"/agendar-cita"}>
+                                Agendar Cita
+                            </Link>
+                            </motion.button>
                         </div>
 
                         </div>
