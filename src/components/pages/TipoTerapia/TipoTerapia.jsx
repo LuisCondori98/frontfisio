@@ -1,3 +1,5 @@
+import { useParams } from "react-router-dom"
+
 const TipoTerapia = () => {
 
     const {terapia} = useParams()
@@ -5,7 +7,7 @@ const TipoTerapia = () => {
     console.log(terapia)
 
     return (
-        <></>
+        <>{terapia}</>
     )
 }
 
