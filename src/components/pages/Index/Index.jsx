@@ -79,7 +79,7 @@ const Index = () => {
               <p className="text-muted">
                 Diseñada para adultos mayores, ayudando a mantener la autonomía y prevenir caídas.
               </p>
-              <Link className="btn btn-warning" to={`/tratamiento/terapia-geriatrica`}>Ver mas</Link>
+              <Link className="btn btn-primary" to={`/tratamiento/terapia-geriatrica`}>Ver mas</Link>
             </div>
           </div>
 
