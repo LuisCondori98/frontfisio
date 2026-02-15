@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom"
+import { motion } from "motion/react"
 
 const TipoTerapia = () => {
 
@@ -33,7 +34,15 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Fortalecimiento muscular</li>
                             </ul>
 
-                            <a href="#" class="btn btn-primary px-4">Agendar Cita</a>
+                            <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => console.log('hover started!')}
+                            className="btn btn-primary px-4"
+                            >
+                            Agendar Cita
+                            </motion.button>
+
                         </div>
 
                         </div>
