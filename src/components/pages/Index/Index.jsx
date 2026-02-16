@@ -31,7 +31,7 @@ const Index = () => {
     obtenerFisios();
 
   }, []);
-console.log(fisio)
+  
   return (
     <main>
       {/* Sección principal con fondo inspirador */}
