@@ -110,7 +110,18 @@ console.log(id)
                       </span>
                     </p>
                   </div>
-
+                  {
+                    c.estado === "confirmada" ? 
+                    <button
+                    type="button"
+                    disabled
+                    className="btn btn-success w-100"
+                    data-bs-toggle="modal"
+                    data-bs-target={`#cobrarModal-${c._id}`}
+                  >
+                    Cobrar
+                  </button>
+                  :
                   <button
                     type="button"
                     className="btn btn-success w-100"
@@ -119,6 +130,15 @@ console.log(id)
                   >
                     Cobrar
                   </button>
+                  }
+                  {/*<button
+                    type="button"
+                    className="btn btn-success w-100"
+                    data-bs-toggle="modal"
+                    data-bs-target={`#cobrarModal-${c._id}`}
+                  >
+                    Cobrar
+                  </button>*/}
                 </div>
 
 
