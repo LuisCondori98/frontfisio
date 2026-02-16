@@ -66,7 +66,10 @@ const NavBar = () => {
               </li>
             }
             {
-            cita.estado === "pendiente" ?
+              pendient.map(p => (
+                <div>{p.precio}</div>
+              ))
+              (/*cita.estado === "pendiente" ?
               (
                 <Link to={"checkout"} className="text-white">
                   <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
@@ -78,7 +81,7 @@ const NavBar = () => {
                 <></>
               )
               :
-              <></>
+              <></>*/)
             }
           </ul>
         </div>
