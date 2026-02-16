@@ -110,9 +110,9 @@ console.log(fisio)
 
         <div className="row">
           {
-            fisio.map(() => (
+            fisio.map((f) => (
             <motion.div
-              key={fisio._id}
+              key={f._id}
               className="col-md-4 mb-4"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -126,14 +126,14 @@ console.log(fisio)
                 <img
                   src={""}
                   className="card-img-top"
-                  alt={fisio.nombre}
+                  alt={f.nombre}
                 />
                 <div className="card-body">
                   <h5 className="card-title fw-bold">
-                    {fisio.nombre}
+                    {f.nombre}
                   </h5>
                   <p className="card-text text-muted">
-                    {fisio.especialidad}
+                    {f.especialidad}
                   </p>
                   <button className="btn btn-primary btn-sm">
                     Ver Perfil
