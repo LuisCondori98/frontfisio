@@ -5,8 +5,10 @@ import { CartContext } from "../../context/CartContext";
 
 const NavBar = () => {
 
-  const {isAuthenticated, logout, user} = useContext(AuthContext)
+  const {isAuthenticated, user} = useContext(AuthContext)
   const {total, cita} = useContext(CartContext)
+
+  console.log(cita)
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
