@@ -64,21 +64,16 @@ const NavBar = () => {
               </li>
             }
             {
-              cita.map(c => (
-                c.estado === "pendiente" ?
-                (
-                  <Link to={"checkout"} className="text-white">
-                    <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
-                  </Link>
+                cita.map(c => 
+                  c.estado === "pendiente" ?
+                  (
+                    <Link to="checkout" className="text-white" key={c._id}>
+                      <button className="btn btn-success">
+                        S/. {total}
+                      </button>
+                    </Link>
+                  ) : null
                 )
-                :
-                c.estado === "confirmada" ?
-                (
-                  <></>
-                )
-                :
-                  <></>
-              ))
               (/*cita.estado === "pendiente" ?
               (
                 <Link to={"checkout"} className="text-white">
