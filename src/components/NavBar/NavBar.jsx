@@ -64,11 +64,19 @@ const NavBar = () => {
               </li>
             }
             {
-              cita.length > 0 &&  (
+              cita.estado === "pendiente" ?
+              (
                 <Link to={"checkout"} className="text-white">
                   <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
                 </Link>
               )
+              :
+              cita.estado === "confirmada" ?
+              (
+                <></>
+              )
+              :
+              <></>
             }
           </ul>
         </div>
