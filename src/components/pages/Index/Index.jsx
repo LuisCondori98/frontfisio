@@ -10,7 +10,7 @@ const Index = () => {
   const [fisio, setFisios] = useState([])
 
   document.title = "Inicio"
-console.log(fisio)
+
   useEffect(() => {
 
     const obtenerFisios = async () => {
@@ -20,7 +20,7 @@ console.log(fisio)
         const response = await axios.get(
           "https://back-fisioterapia.onrender.com/api/fisioterapeuta"
         );
-        console.log(response)
+
         setFisios(response.data);
       } catch (err) {
 
@@ -31,7 +31,7 @@ console.log(fisio)
     obtenerFisios();
 
   }, []);
-
+console.log(fisio)
   return (
     <main>
       {/* Sección principal con fondo inspirador */}
