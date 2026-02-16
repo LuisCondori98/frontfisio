@@ -7,13 +7,10 @@ const NavBar = () => {
 
   const {isAuthenticated, user} = useContext(AuthContext)
   const {total, cita} = useContext(CartContext)
-  const [pendiente, setPendiente] = useState(null)
 
   const pendient = cita.filter(c => c.estado === "pendiente")
 
-  setPendiente(pendient)
-
-  console.log(pendiente)
+  console.log(pendient)
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
