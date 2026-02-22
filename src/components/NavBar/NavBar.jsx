@@ -8,10 +8,6 @@ const NavBar = () => {
   const {isAuthenticated, user} = useContext(AuthContext)
   const {total, cita} = useContext(CartContext)
 
-  const pendient = cita.filter(c => c.estado === "pendiente")
-
-  console.log(pendient)
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -66,10 +62,7 @@ const NavBar = () => {
               </li>
             }
             {
-              pendient.map(p => (
-                <div>{p.precio}</div>
-              ))
-              (/*cita.estado === "pendiente" ?
+              cita.estado === "pendiente" ?
               (
                 <Link to={"checkout"} className="text-white">
                   <button className="btn btn-success" style={{marginRight: "5px"}}>S/. {total}</button>
@@ -81,7 +74,7 @@ const NavBar = () => {
                 <></>
               )
               :
-              <></>*/)
+              <></>
             }
           </ul>
         </div>
