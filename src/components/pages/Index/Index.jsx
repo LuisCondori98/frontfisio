@@ -154,7 +154,7 @@ const Index = () => {
                   </p>
                   <button
                     className="btn btn-primary btn-sm"
-                    onClick={() => handlePerfilFisio(fisio._id)}
+                    onClick={() => handlePerfilFisio(f._id)}
                     data-bs-toggle="modal"
                     data-bs-target="#modalFisio"
                   >
