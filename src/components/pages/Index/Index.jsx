@@ -144,6 +144,7 @@ const Index = () => {
                   src={`/img/${f.img}`}
                   className="card-img-top"
                   alt={f.nombre}
+                  style={{ height: "450px", objectFit: "cover" }}
                 />
                 <div className="card-body">
                   <h5 className="card-title fw-bold">
