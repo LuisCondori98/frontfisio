@@ -15,9 +15,6 @@ const Servicios = () => {
           En <strong>Vivir en Movimiento</strong> trabajamos con tratamientos personalizados
           para ayudarte a recuperar tu movilidad y calidad de vida.
         </p>
-        <Link to="/contacto" className="btn btn-light mt-3 px-4">
-          Agendar Cita
-        </Link>
       </div>
     </div>
 
@@ -25,6 +22,7 @@ const Servicios = () => {
     <div className="container my-5">
       <div className="row text-center">
         <div className="col-md-4">
+          <img src="/img/eva-inicial.avif" alt="evaluacion inicial" />
           <i className="bi bi-clipboard-check fs-1 text-success"></i>
           <h5 className="fw-bold mt-3">Evaluación Inicial</h5>
           <p className="text-muted">
@@ -33,6 +31,7 @@ const Servicios = () => {
         </div>
 
         <div className="col-md-4">
+          <img src="/img/plan-personalizado.jpg" alt="plan personalizado" />
           <i className="bi bi-heart-pulse fs-1 text-success"></i>
           <h5 className="fw-bold mt-3">Plan Personalizado</h5>
           <p className="text-muted">
@@ -41,6 +40,7 @@ const Servicios = () => {
         </div>
 
         <div className="col-md-4">
+          <img src="/img/seguimiento.jpg" alt="seguimiento profesional" />
           <i className="bi bi-graph-up fs-1 text-success"></i>
           <h5 className="fw-bold mt-3">Seguimiento Profesional</h5>
           <p className="text-muted">
