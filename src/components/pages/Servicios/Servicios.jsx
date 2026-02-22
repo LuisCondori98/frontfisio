@@ -5,6 +5,51 @@ const Servicios = () => {
   document.title = "Servicios"
 
   return (
+    <>
+
+    {/* HERO SUPERIOR */}
+    <div className="bg-success text-white text-center py-5">
+      <div className="container">
+        <h1 className="fw-bold">Servicios de Fisioterapia Especializada</h1>
+        <p className="lead mt-3">
+          En <strong>Vivir en Movimiento</strong> trabajamos con tratamientos personalizados
+          para ayudarte a recuperar tu movilidad y calidad de vida.
+        </p>
+        <Link to="/contacto" className="btn btn-light mt-3 px-4">
+          Agendar Cita
+        </Link>
+      </div>
+    </div>
+
+    {/* SECCIÓN PROCESO */}
+    <div className="container my-5">
+      <div className="row text-center">
+        <div className="col-md-4">
+          <i className="bi bi-clipboard-check fs-1 text-success"></i>
+          <h5 className="fw-bold mt-3">Evaluación Inicial</h5>
+          <p className="text-muted">
+            Analizamos tu condición física para diseñar el mejor tratamiento.
+          </p>
+        </div>
+
+        <div className="col-md-4">
+          <i className="bi bi-heart-pulse fs-1 text-success"></i>
+          <h5 className="fw-bold mt-3">Plan Personalizado</h5>
+          <p className="text-muted">
+            Creamos un plan adaptado a tus necesidades específicas.
+          </p>
+        </div>
+
+        <div className="col-md-4">
+          <i className="bi bi-graph-up fs-1 text-success"></i>
+          <h5 className="fw-bold mt-3">Seguimiento Profesional</h5>
+          <p className="text-muted">
+            Monitoreamos tu progreso para asegurar resultados efectivos.
+          </p>
+        </div>
+      </div>
+    </div>
+    {/* ======================================================================================= */}
     <div className="container my-5">
       <div className="text-center mb-5">
         <h2 className="fw-bold text-success">Nuestros Servicios</h2>
@@ -30,7 +75,7 @@ const Servicios = () => {
                 Tratamientos personalizados para aliviar el dolor muscular, mejorar la movilidad y fortalecer tu cuerpo.
               </p>
             </div>
-            <Link className="btn btn-success">Ver Especialistas</Link>
+            <Link className="btn btn-dark">Ver Especialistas</Link>
           </div>
         </div>
 
@@ -49,6 +94,7 @@ const Servicios = () => {
                 Recupera tu fuerza y movilidad tras lesiones musculares o articulares con apoyo de nuestros especialistas.
               </p>
             </div>
+            <Link className="btn btn-dark">Ver Especialistas</Link>
           </div>
         </div>
 
@@ -67,6 +113,7 @@ const Servicios = () => {
                 Masajes terapéuticos que alivian tensiones, reducen el estrés y favorecen la circulación sanguínea.
               </p>
             </div>
+            <Link className="btn btn-dark">Ver Especialistas</Link>
           </div>
         </div>
 
@@ -85,6 +132,7 @@ const Servicios = () => {
                 Atención especializada para niños con alteraciones motoras o necesidades especiales de desarrollo.
               </p>
             </div>
+            <Link className="btn btn-dark">Ver Especialistas</Link>
           </div>
         </div>
 
@@ -103,6 +151,7 @@ const Servicios = () => {
                 Prevención y recuperación de lesiones deportivas para mejorar tu rendimiento físico y movilidad.
               </p>
             </div>
+            <Link className="btn btn-dark">Ver Especialistas</Link>
           </div>
         </div>
 
@@ -121,6 +170,7 @@ const Servicios = () => {
                 Entrenamiento para retomar tus actividades cotidianas con independencia y confianza.
               </p>
             </div>
+            <Link className="btn btn-dark">Ver Especialistas</Link>
           </div>
         </div>
       </div>
@@ -133,6 +183,7 @@ const Servicios = () => {
         </a>
       </div>
     </div>
+    </>
   )
 }
 
