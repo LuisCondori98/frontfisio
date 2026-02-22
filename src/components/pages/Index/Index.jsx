@@ -314,7 +314,7 @@ const Index = () => {
                   {/* FOTO */}
                   <div className="col-md-4 text-center">
                     <img
-                      src={`/img/${fisioById.img}` || "/img/default-user.png"}
+                      src={`/img/${fisioById.img}`}
                       alt={fisioById.nombre}
                       className="img-fluid rounded shadow-sm mb-3"
                       style={{ height: "250px", objectFit: "cover" }}
