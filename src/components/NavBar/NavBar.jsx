@@ -64,7 +64,7 @@ const NavBar = () => {
               </li>
             }
             {
-              <li>{total}</li>
+              <li className="btn btn-warning text-white" style={{marginLeft: "2px"}}>{total}</li>
             }
           </ul>
         </div>
