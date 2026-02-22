@@ -325,7 +325,7 @@ const Index = () => {
                   <div className="col-md-8">
 
                     <h4 className="fw-bold text-success">
-                      {fisioById.nombre}
+                      {fisioById.nombre} {fisioById.apellidoPaterno} {fisioById.apellidoMaterno}
                     </h4>
 
                     <p className="text-muted mb-2">
@@ -333,11 +333,11 @@ const Index = () => {
                     </p>
 
                     <p className="text-muted mb-2">
-                      <strong>Teléfono:</strong> {fisioById.celular}
+                      <strong>Teléfono:</strong> {fisioById.telefono}
                     </p>
 
                     <p className="text-muted mb-2">
-                      <strong>Email:</strong> {fisioById.correo}
+                      <strong>Email:</strong> {fisioById.email}
                     </p>
 
                   </div>
