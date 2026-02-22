@@ -20,27 +20,45 @@ const Servicios = () => {
 
     {/* SECCIÓN PROCESO */}
     <div className="container my-5">
-      <div className="row text-center">
-        <div className="col-md-4">
-          <img src="/img/eva-inicial.avif" alt="evaluacion inicial" />
+    <div className="row text-center">
+
+      <div className="col-12 col-md-4 mb-4">
+        <div className="process-card">
+          <img 
+            src="/img/eva-inicial.avif" 
+            alt="evaluacion inicial" 
+            className="img-fluid process-img mb-3"
+          />
           <i className="bi bi-clipboard-check fs-1 text-success"></i>
           <h5 className="fw-bold mt-3">Evaluación Inicial</h5>
           <p className="text-muted">
             Analizamos tu condición física para diseñar el mejor tratamiento.
           </p>
         </div>
+      </div>
 
-        <div className="col-md-4">
-          <img src="/img/plan-personalizado.jpg" alt="plan personalizado" />
+      <div className="col-12 col-md-4 mb-4">
+        <div className="process-card">
+          <img 
+            src="/img/plan-personalizado.jpg" 
+            alt="plan personalizado" 
+            className="img-fluid process-img mb-3"
+          />
           <i className="bi bi-heart-pulse fs-1 text-success"></i>
           <h5 className="fw-bold mt-3">Plan Personalizado</h5>
           <p className="text-muted">
             Creamos un plan adaptado a tus necesidades específicas.
           </p>
         </div>
+      </div>
 
-        <div className="col-md-4">
-          <img src="/img/seguimiento.jpg" alt="seguimiento profesional" />
+      <div className="col-12 col-md-4 mb-4">
+        <div className="process-card">
+          <img 
+            src="/img/seguimiento.jpg" 
+            alt="seguimiento profesional" 
+            className="img-fluid process-img mb-3"
+          />
           <i className="bi bi-graph-up fs-1 text-success"></i>
           <h5 className="fw-bold mt-3">Seguimiento Profesional</h5>
           <p className="text-muted">
@@ -48,7 +66,9 @@ const Servicios = () => {
           </p>
         </div>
       </div>
+
     </div>
+  </div>
     {/* ======================================================================================= */}
     <div className="container my-5">
       <div className="text-center mb-5">
