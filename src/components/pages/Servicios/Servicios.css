@@ -1,0 +1,16 @@
+.hero-servicios {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                    url('/img/servicios-wall.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  color: white;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  max-width: 750px;
+  backdrop-filter: blur(4px);
+}
