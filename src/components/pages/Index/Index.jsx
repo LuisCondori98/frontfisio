@@ -33,23 +33,21 @@ const Index = () => {
 
   }, []);
 
-  useEffect(() => {
 
-    const handlePerfilFisio = async (id) => {
 
-      try {
+  const handlePerfilFisio = async (id) => {
 
-        const response = await axios.get(`https://back-fisioterapia.onrender.com/api/fisioterapeuta/${id}`)
+    try {
 
-        setFisioById(response.data)
-      } catch(err) {
+      const response = await axios.get(`https://back-fisioterapia.onrender.com/api/fisioterapeuta/${id}`)
 
-        console.error("Error" + err)
-      }
+      setFisioById(response.data)
+      console.log(response.data)
+    } catch(err) {
+
+      console.error("Error" + err)
     }
-
-    handlePerfilFisio()
-  }, [])
+  }
   
   return (
     <main>
