@@ -141,7 +141,7 @@ const Index = () => {
                 className="card shadow border-0"
               >
                 <img
-                  src={""}
+                  src={`/img/${f.img}`}
                   className="card-img-top"
                   alt={f.nombre}
                 />
@@ -314,7 +314,7 @@ const Index = () => {
                   {/* FOTO */}
                   <div className="col-md-4 text-center">
                     <img
-                      src={fisioById.foto || "/img/default-user.png"}
+                      src={`/img/${fisioById.img}` || "/img/default-user.png"}
                       alt={fisioById.nombre}
                       className="img-fluid rounded shadow-sm mb-3"
                       style={{ height: "250px", objectFit: "cover" }}
