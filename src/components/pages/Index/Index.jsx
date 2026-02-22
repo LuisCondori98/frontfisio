@@ -341,6 +341,14 @@ const Index = () => {
                       <strong>Email:</strong> {fisioById.email}
                     </p>
 
+                    <p className="text-muted mb-2">
+                      <strong>Universidad:</strong> {fisioById.universidad}
+                    </p>
+
+                    <p className="text-muted mb-2">
+                      <strong>Descripcion Profesional:</strong> {fisioById.descProfesional}
+                    </p>
+
                   </div>
                 </div>
               ) : (
