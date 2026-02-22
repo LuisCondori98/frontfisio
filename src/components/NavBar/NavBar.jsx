@@ -8,6 +8,8 @@ const NavBar = () => {
   const {isAuthenticated, user} = useContext(AuthContext)
   const {total, cita} = useContext(CartContext)
 
+  console.log(cita)
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
