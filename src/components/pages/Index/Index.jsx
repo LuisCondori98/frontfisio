@@ -294,7 +294,7 @@ const Index = () => {
           <div className="modal-content">
 
             {/* HEADER */}
-            <div className="modal-header bg-success text-white">
+            <div className="modal-header bg-info text-white">
               <h5 className="modal-title" id="modalFisioLabel">
                 Perfil del Fisioterapeuta
               </h5>
