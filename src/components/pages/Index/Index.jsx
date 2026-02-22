@@ -150,7 +150,7 @@ const Index = () => {
                     {f.nombre}
                   </h5>
                   <p className="card-text text-muted">
-                    {f.especialidad}
+                    Fisioterapeuta
                   </p>
                   <button
                     className="btn btn-primary btn-sm"
