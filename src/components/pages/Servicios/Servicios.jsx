@@ -14,7 +14,7 @@ const Servicios = () => {
 
       <div className="row g-4">
         {/* Servicio 1 */}
-        <div className="col-md-4">
+        <div className="col-md-4" data-aos="zoom-in">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
               src="https://images.unsplash.com/photo-1594381898411-846e7d193883"
@@ -32,7 +32,7 @@ const Servicios = () => {
         </div>
 
         {/* Servicio 2 */}
-        <div className="col-md-4">
+        <div className="col-md-4" data-aos="zoom-in">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
               src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1"
@@ -50,7 +50,7 @@ const Servicios = () => {
         </div>
 
         {/* Servicio 3 */}
-        <div className="col-md-4">
+        <div className="col-md-4" data-aos="zoom-in">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
               src="/img/MASOTERAPIA.jpg"
@@ -68,7 +68,7 @@ const Servicios = () => {
         </div>
 
         {/* Servicio 4 */}
-        <div className="col-md-4">
+        <div className="col-md-4" data-aos="zoom-in">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
               src="/img/fisioPedia.png"
@@ -86,7 +86,7 @@ const Servicios = () => {
         </div>
 
         {/* Servicio 5 */}
-        <div className="col-md-4">
+        <div className="col-md-4" data-aos="zoom-in">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
               src="/img/fisioDeportivo.webp"
@@ -104,7 +104,7 @@ const Servicios = () => {
         </div>
 
         {/* Servicio 6 */}
-        <div className="col-md-4">
+        <div className="col-md-4" data-aos="zoom-in">
           <div className="card border-0 shadow-sm h-100 text-center p-3">
             <img
               src="/img/fisioOcupa.jpg"
