@@ -64,7 +64,10 @@ const NavBar = () => {
               </li>
             }
             {
-              <li className="btn btn-warning text-white" style={{marginLeft: "2px"}}>{total}</li>
+              total ?
+              <Link className="btn btn-success" style={{marginLeft: "2px"}}>{total}</Link>
+              :
+              <></>
             }
           </ul>
         </div>
