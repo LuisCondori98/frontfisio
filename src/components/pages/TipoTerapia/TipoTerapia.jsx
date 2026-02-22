@@ -81,10 +81,11 @@ const TipoTerapia = () => {
                             onHoverStart={() => console.log('hover started!')}
                             className="btn btn-success px-4"
                             >
-                            <Link to={"/agendar-cita"} className="text-decoration-none text-white">
+                            <Link to={"/generar-cita"} className="text-decoration-none text-white">
                                 Agendar Cita
                             </Link>
                             </motion.button>
+                            <Link to={"/"} className="btn btn-primary">Volver</Link>
                         </div>
 
                         </div>

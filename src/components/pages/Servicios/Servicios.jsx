@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Servicios = () => {
 
   document.title = "Servicios"
@@ -28,6 +30,7 @@ const Servicios = () => {
                 Tratamientos personalizados para aliviar el dolor muscular, mejorar la movilidad y fortalecer tu cuerpo.
               </p>
             </div>
+            <Link className="btn btn-success">Ver Especialistas</Link>
           </div>
         </div>
 
