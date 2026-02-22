@@ -8,6 +8,7 @@ import { useEffect } from "react"
 const Index = () => {
 
   const [fisio, setFisios] = useState([])
+  const [fisioById, setFisioById] = useState(null)
 
   document.title = "Inicio"
 
@@ -31,6 +32,24 @@ const Index = () => {
     obtenerFisios();
 
   }, []);
+
+  useEffect(() => {
+
+    const handlePerfilFisio = async (id) => {
+
+      try {
+
+        const response = await axios.get(`https://back-fisioterapia.onrender.com/api/fisioterapeuta/${id}`)
+
+        setFisioById(response.data)
+      } catch(err) {
+
+        console.error("Error" + err)
+      }
+    }
+
+    handlePerfilFisio()
+  }, [])
   
   return (
     <main>
@@ -135,7 +154,12 @@ const Index = () => {
                   <p className="card-text text-muted">
                     {f.especialidad}
                   </p>
-                  <button className="btn btn-primary btn-sm">
+                  <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => handlePerfilFisio(fisio._id)}
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalFisio"
+                  >
                     Ver Perfil
                   </button>
                 </div>
@@ -246,6 +270,103 @@ const Index = () => {
           </a>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* MODAL PERFIL FISIOTERAPEUTA */}
+      <div 
+        className="modal fade" 
+        id="modalFisio" 
+        tabIndex="-1" 
+        aria-labelledby="modalFisioLabel" 
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-lg modal-dialog-centered">
+          <div className="modal-content">
+
+            {/* HEADER */}
+            <div className="modal-header bg-success text-white">
+              <h5 className="modal-title" id="modalFisioLabel">
+                Perfil del Fisioterapeuta
+              </h5>
+              <button 
+                type="button" 
+                className="btn-close btn-close-white" 
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            {/* BODY */}
+            <div className="modal-body">
+
+              {fisioById ? (
+                <div className="row">
+
+                  {/* FOTO */}
+                  <div className="col-md-4 text-center">
+                    <img
+                      src={fisioById.foto || "/img/default-user.png"}
+                      alt={fisioById.nombre}
+                      className="img-fluid rounded shadow-sm mb-3"
+                      style={{ height: "250px", objectFit: "cover" }}
+                    />
+                  </div>
+
+                  {/* INFORMACIÓN */}
+                  <div className="col-md-8">
+
+                    <h4 className="fw-bold text-success">
+                      {fisioById.nombre}
+                    </h4>
+
+                    <p className="text-muted mb-2">
+                      <strong>Especialidad:</strong> {fisioById.especialidad}
+                    </p>
+
+                    <p className="text-muted mb-2">
+                      <strong>Teléfono:</strong> {fisioById.celular}
+                    </p>
+
+                    <p className="text-muted mb-2">
+                      <strong>Email:</strong> {fisioById.correo}
+                    </p>
+
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <div className="spinner-border text-success"></div>
+                  <p className="mt-2">Cargando información...</p>
+                </div>
+              )}
+
+            </div>
+
+            {/* FOOTER */}
+            <div className="modal-footer">
+              <button 
+                type="button" 
+                className="btn btn-secondary" 
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </main>
   )
 }
