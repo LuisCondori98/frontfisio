@@ -324,7 +324,7 @@ const Index = () => {
                   {/* INFORMACIÓN */}
                   <div className="col-md-8">
 
-                    <h4 className="fw-bold text-success">
+                    <h4 className="fw-bold text-dark">
                       {fisioById.nombre} {fisioById.apellidoPaterno} {fisioById.apellidoMaterno}
                     </h4>
 
