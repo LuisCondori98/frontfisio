@@ -38,19 +38,19 @@ const NavBar = () => {
           <ul className="navbar-nav ms-auto gap-lg-4">
 
             <li className="nav-item">
-              <NavLink className={({isActive}) => isActive ? "nav-link btn btn-dark" : "nav-link text-white"} to="/" onClick={cerrarMenu}>
+              <NavLink className={({isActive}) => isActive ? "nav-link btn btn-light" : "nav-link text-white"} to="/" onClick={cerrarMenu}>
                 Inicio
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/servicios" onClick={cerrarMenu}>
+              <Link className={({isActive}) => isActive ? "nav-link btn btn-light" : "nav-link text-white"} to="/servicios" onClick={cerrarMenu}>
                 Servicios
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/contacto" onClick={cerrarMenu}>
+              <Link className={({isActive}) => isActive ? "nav-link btn btn-light" : "nav-link text-white"} to="/contacto" onClick={cerrarMenu}>
                 Contacto
               </Link>
             </li>
