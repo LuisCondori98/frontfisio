@@ -110,7 +110,7 @@ const Contacto = () => {
                       <label className="form-label">Nombre completo</label>
                       <input type="text"
                             className="form-control"
-                            value={user.nombre}
+                            value={user.nombre || nombre}
                             onChange={e => setNombre(e.target.value)}
                             name="nombres"
                             placeholder="Tu nombre"
@@ -119,7 +119,7 @@ const Contacto = () => {
                     <div className="col-md-6">
                         <label className="form-label">Correo electrónico</label>
                         <input type="email" className="form-control"
-                        value={user.correo}
+                        value={user.correo || correo}
                         onChange={e => setCorreo(e.target.value)}
                         name="correo" placeholder="correo@ejemplo.com" required />
                       </div>
@@ -127,7 +127,7 @@ const Contacto = () => {
                         <label className="form-label">Teléfono</label>
                         <input type="text"
                                className="form-control"
-                               value={user.celular}
+                               value={user.celular || telefono}
                                onChange={e => setTelefono(e.target.value)}
                                name="telefono" placeholder="+51 999 999 999" />
                       </div>
