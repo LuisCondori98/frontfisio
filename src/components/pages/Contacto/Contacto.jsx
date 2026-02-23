@@ -138,6 +138,7 @@ const Contacto = () => {
                       <label className="form-label">Nombre completo</label>
                       <input type="text"
                              className="form-control"
+                             value={nombre}
                              onChange={e => setNombre(e.target.value)}
                              name="nombres"
                              placeholder="Tu nombre"
@@ -147,6 +148,7 @@ const Contacto = () => {
                       <label className="form-label">Correo electrónico</label>
                       <input type="email"
                              className="form-control"
+                             value={correo}
                              onChange={e => setCorreo(e.target.value)}
                              name="correo"
                              placeholder="correo@ejemplo.com"
@@ -156,6 +158,7 @@ const Contacto = () => {
                       <label className="form-label">Teléfono</label>
                       <input type="text"
                              className="form-control"
+                             value={telefono}
                              onChange={e => setTelefono(e.target.value)}
                              name="telefono" />
                     </div>
@@ -163,12 +166,16 @@ const Contacto = () => {
                 }
                 <div className="col-md-6">
                   <label className="form-label">Asunto</label>
-                  <input type="text" className="form-control" onChange={e => setAsunto(e.target.value)}
+                  <input
+                          type="text"
+                          className="form-control"
+                          value={asunto}
+                          onChange={e => setAsunto(e.target.value)}
                   name="asunto" placeholder="Reserva de cita / Consulta" />
                 </div>
                 <div className="col-12">
                   <label className="form-label">Mensaje</label>
-                  <textarea className="form-control" onChange={e => setMensaje(e.target.value)}
+                  <textarea className="form-control" value={mensaje} onChange={e => setMensaje(e.target.value)}
                   rows="4" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
                 </div>
                 <div className="col-12 text-center mt-3">
