@@ -44,13 +44,13 @@ const Contacto = () => {
             background: "linear-gradient(to right, #6c6b6d5d, #3f3f3f51)",
           }
         }).showToast();
-      }
 
-      setNombre("")
-      setCorreo("")
-      setTelefono("")
-      setAsunto("")
-      setMensaje("")
+        setNombre("")
+        setCorreo("")
+        setTelefono("")
+        setAsunto("")
+        setMensaje("")
+      }
 
     } catch (err) {
 
