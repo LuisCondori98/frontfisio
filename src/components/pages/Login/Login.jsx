@@ -63,13 +63,11 @@ const Login = () => {
       console.log("Credentials send:", formValues);
 
       try {
-        const response = axios.post("https://back-fisioterapia.onrender.com/api/user/pass-recovery", {
+        const response = await axios.post("https://back-fisioterapia.onrender.com/api/user/pass-recovery", {
           correo: formValues.email,
           password: formValues.password,
 
         })
-
-        console.log(response)
 
         Swal.fire({
           icon: "success",
