@@ -38,7 +38,7 @@ const Profile = () => {
     }
 
     fetchUsers()
-  }, [rol, nombre])
+  }, [])
 
   useEffect(() => {
 
