@@ -22,8 +22,8 @@ const CheckOut = () => {
     );
   }
 
-  if (!user) {
-    
+  if (user === null) {
+
     return navigate("/login")
   }
 
