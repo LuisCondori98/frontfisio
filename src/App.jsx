@@ -15,7 +15,6 @@ import EditProfile from './components/pages/EditProfile/EditProfile'
 import { CartProvider } from './context/CartContext'
 import CheckOut from './components/CheckOut/CheckOut'
 import TipoTerapia from './components/pages/TipoTerapia/TipoTerapia'
-import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -39,7 +38,6 @@ function App() {
         <Route path={"/register"} element={<Register />} />
         <Route path={"/checkout"} element={<CheckOut />} />
       </Routes>
-      <Footer />
       </BrowserRouter>
     </CartProvider>
     </AuthProvider>

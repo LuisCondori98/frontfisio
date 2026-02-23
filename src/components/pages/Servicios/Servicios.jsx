@@ -31,6 +31,7 @@ const Servicios = () => {
               src="/img/eva-inicial.avif" 
               alt="evaluacion inicial" 
               className="img-fluid process-img mb-3"
+              style={{ height: "200px", objectFit: "cover" }}
             />
             <i className="bi bi-clipboard-check fs-1 text-success"></i>
             <h5 className="fw-bold mt-3">Evaluación Inicial</h5>
@@ -46,6 +47,7 @@ const Servicios = () => {
               src="/img/plan-personalizado.jpg" 
               alt="plan personalizado" 
               className="img-fluid process-img mb-3"
+              style={{ height: "200px", objectFit: "cover" }}
             />
             <i className="bi bi-heart-pulse fs-1 text-success"></i>
             <h5 className="fw-bold mt-3">Plan Personalizado</h5>
@@ -61,6 +63,7 @@ const Servicios = () => {
               src="/img/seguimiento.jpg" 
               alt="seguimiento profesional" 
               className="img-fluid process-img mb-3"
+              style={{ height: "200px", objectFit: "cover" }}
             />
             <i className="bi bi-graph-up fs-1 text-success"></i>
             <h5 className="fw-bold mt-3">Seguimiento Profesional</h5>

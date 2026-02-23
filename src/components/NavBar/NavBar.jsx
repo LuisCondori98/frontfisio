@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
 
@@ -38,9 +38,9 @@ const NavBar = () => {
           <ul className="navbar-nav ms-auto gap-lg-4">
 
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/" onClick={cerrarMenu}>
+              <NavLink className={({isActive}) => isActive ? "nav-link btn btn-dark" : "nav-link text-white"} to="/" onClick={cerrarMenu}>
                 Inicio
-              </Link>
+              </NavLink>
             </li>
 
             <li className="nav-item">

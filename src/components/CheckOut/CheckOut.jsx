@@ -22,11 +22,6 @@ const CheckOut = () => {
     );
   }
 
-  if (user === null) {
-
-    return navigate("/login")
-  }
-
   return (
     <div className="container py-5">
       <div className="row g-4">

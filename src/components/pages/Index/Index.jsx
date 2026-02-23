@@ -262,26 +262,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-
-        <div className="text-center mt-5">
-          <a href="/contacto" className="btn btn-outline-success px-4 py-2">
-            <i className="bi bi-calendar-check me-2"></i> Agenda tu evaluación gratuita
-          </a>
-        </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       {/* MODAL PERFIL FISIOTERAPEUTA */}
       <div 
@@ -342,11 +323,11 @@ const Index = () => {
                     </p>
 
                     <p className="text-muted mb-2">
-                      <strong>Universidad:</strong> {fisioById.universidad}
+                      <strong>Estudios:</strong> {fisioById.universidad}
                     </p>
 
                     <p className="text-muted mb-2">
-                      <strong>Descripcion Profesional:</strong> {fisioById.descProfesional}
+                      <strong>Experiencia:</strong> {fisioById.descProfesional}
                     </p>
 
                   </div>
