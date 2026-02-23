@@ -1,24 +1,30 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
-import "./NavBar.css"
 
 const NavBar = () => {
 
   const { isAuthenticated, user } = useContext(AuthContext);
   const { total } = useContext(CartContext);
 
+  const collapseRef = useRef(null);
+
+  const cerrarMenu = () => {
+    const bsCollapse = new window.bootstrap.Collapse(collapseRef.current, {
+      toggle: false
+    });
+    bsCollapse.hide();
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
       <div className="container">
 
-        {/* Logo */}
-        <Link className="navbar-brand fw-bold" to="/">
+        <Link className="navbar-brand fw-bold" to="/" onClick={cerrarMenu}>
           Vivir en Movimiento
         </Link>
 
-        {/* Botón hamburguesa */}
         <button
           className="navbar-toggler"
           type="button"
@@ -28,37 +34,44 @@ const NavBar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Menú */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <div className="collapse navbar-collapse" id="navbarNav" ref={collapseRef}>
+          <ul className="navbar-nav ms-auto gap-lg-4">
 
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/">
+              <Link className="nav-link text-white" to="/" onClick={cerrarMenu}>
                 Inicio
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/servicios">
+              <Link className="nav-link text-white" to="/servicios" onClick={cerrarMenu}>
                 Servicios
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/contacto">
+              <Link className="nav-link text-white" to="/contacto" onClick={cerrarMenu}>
                 Contacto
               </Link>
             </li>
 
             {isAuthenticated ? (
               <li className="nav-item mt-2 mt-lg-0">
-                <Link className="btn btn-primary w-100 w-lg-auto" to="/perfil">
+                <Link
+                  className="btn btn-primary w-100 w-lg-auto"
+                  to="/perfil"
+                  onClick={cerrarMenu}
+                >
                   {user.nombre}
                 </Link>
               </li>
             ) : (
               <li className="nav-item mt-2 mt-lg-0">
-                <Link className="btn btn-success w-100 w-lg-auto" to="/login">
+                <Link
+                  className="btn btn-success w-100 w-lg-auto"
+                  to="/login"
+                  onClick={cerrarMenu}
+                >
                   Iniciar sesión
                 </Link>
               </li>
@@ -66,7 +79,11 @@ const NavBar = () => {
 
             {total > 0 && (
               <li className="nav-item mt-2 mt-lg-0">
-                <Link className="btn btn-warning w-100 w-lg-auto" to="/checkout">
+                <Link
+                  className="btn btn-warning w-100 w-lg-auto"
+                  to="/checkout"
+                  onClick={cerrarMenu}
+                >
                   Costo S/ {total}
                 </Link>
               </li>
