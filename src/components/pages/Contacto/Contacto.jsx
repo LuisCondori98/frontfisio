@@ -40,13 +40,11 @@ const Contacto = () => {
           duration: 3000,
           style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+          callback: function() {
+            navigate("/contacto")
           }
         }).showToast();
-
-        setTimeout(() => {
-
-          navigate("/contacto");
-        }, 3000);
       }
 
     } catch (err) {
