@@ -12,6 +12,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate()
+  
   ///////////////////////////////////////////////////////////////////////////
   const handleSubmit = async (e) => {
 
@@ -23,8 +24,6 @@ const Login = () => {
 
       navigate("/")
     } catch (err) {
-
-      console.log("error" + err)
 
       navigate("/login")
     }
@@ -60,16 +59,12 @@ const Login = () => {
 
     if (formValues) {
 
-      console.log("Credentials send:", formValues);
-
       try {
         const response = await axios.post("https://back-fisioterapia.onrender.com/api/user/pass-recovery", {
           correo: formValues.email,
           password: formValues.password,
 
         })
-
-        console.log(response)
 
         if(response.status === 200) {
 
@@ -82,20 +77,12 @@ const Login = () => {
 
       } catch (error) {
 
-        console.error(error);
-
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "No se pudo cambiar la contraseña usuario no encontrado",
+          text: `Correo ${formValues.email} no encontrado`,
         });
       }
-
-      // Swal.fire({
-      //   icon: "success",
-      //   title: "Contraseña Cambiada",
-      //   text: `Correo: ${formValues.email}`,
-      // });
     }
   }
 

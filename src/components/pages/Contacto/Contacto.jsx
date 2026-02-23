@@ -16,18 +16,47 @@ const Contacto = () => {
 
   const navigate = useNavigate()
 
-  const handleContacto = () => {
+  const handleContacto = async () => {
 
-    axios.post("https://back-fisioterapia.onrender.com/api/contacto", {
-      nombres: nombre,
-      correo,
-      telefono,
-      asunto,
-      mensaje
-    })
-      .then(response => response.data)
+    try{
 
-    navigate("/contacto")
+      const response = await axios.post("https://back-fisioterapia.onrender.com/api/contacto", {
+        nombres: nombre,
+        correo,
+        telefono,
+        asunto,
+        mensaje
+      })
+        .then(response => response.data)
+
+      console.log(response)
+
+      if(response.status === 200){
+
+        Toastify({
+          text: "Enviado correctamente",
+          duration: 3000,
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)", // verde success
+          }
+        }).showToast();
+
+        setTimeout(() => {
+
+          navigate("/contacto")
+        }, 3000)
+      }
+
+    } catch(err) {
+
+      Toastify({
+        text: `No enviado faltan datos`,
+        duration: 3000,
+        style: {
+          background: "linear-gradient(to right, #ff416c, #ff4b2b)", // rojo error
+        }
+      }).showToast();
+    }
   }
 
   return (
