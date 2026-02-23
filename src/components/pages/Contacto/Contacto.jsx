@@ -42,11 +42,15 @@ const Contacto = () => {
           duration: 3000,
           style: {
             background: "linear-gradient(to right, #6c6b6d5d, #3f3f3f51)",
-          },callback: function() {
-            navigate("/contacto");
           }
         }).showToast();
       }
+
+      setNombre("")
+      setCorreo("")
+      setTelefono("")
+      setAsunto("")
+      setMensaje("")
 
     } catch (err) {
 
