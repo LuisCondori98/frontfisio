@@ -25,7 +25,8 @@ const Footer = () => {
               fontWeight: "bold"
             }}
           >
-            VM
+            <img src="/img/logo.jpg" alt="logo
+            " />
           </div>
 
           <h3 className="fw-bold mt-3" style={{ color: "#0f172a" }}>
