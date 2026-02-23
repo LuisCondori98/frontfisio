@@ -128,10 +128,12 @@ const CheckOut = () => {
                 className="img-fluid rounded mb-3"
               />
 
-              <h6 className="fw-medium">Nombre del Tratamiento</h6>
-              <p className="text-muted small">
-                Breve descripción del tratamiento seleccionado.
-              </p>
+              <h6 className="fw-medium">Tratamiento terapeutico</h6>
+              {
+                cita.map(c => (
+                  <p className="text-muted small">{c.motivo}</p>
+                ))
+              }
 
               <hr />
 
@@ -141,8 +143,8 @@ const CheckOut = () => {
               </div>
 
               <div className="d-flex justify-content-between mb-3">
-                <span>IGV</span>
-                <span>S/ 18.00</span>
+                <h5>IGV</h5>
+                <h5>S/ 18.00</h5>
               </div>
 
               <hr />
