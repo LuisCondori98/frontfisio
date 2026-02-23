@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom"
 import { CartContext } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -8,6 +9,8 @@ const CheckOut = () => {
   const {user} = useContext(AuthContext)
 
   const {total, cita} = useContext(CartContext)
+
+  const navigate = useNavigate()
 
   if (!total || total === 0 || cita.length === 0) {
     return (
@@ -20,7 +23,8 @@ const CheckOut = () => {
   }
 
   if (!user) {
-    return <Navigate to="/login" />;
+    
+    return navigate("/login")
   }
 
   return (
