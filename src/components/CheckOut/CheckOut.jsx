@@ -127,11 +127,14 @@ const CheckOut = () => {
                 alt="Tratamiento"
                 className="img-fluid rounded mb-3"
               />
-
-              <h6 className="fw-medium">Tratamiento terapeutico</h6>
               {
                 cita.map(c => (
-                  <p className="text-muted small">{c.motivo}</p>
+                  <>
+                    <h6 className="fw-medium">Tratamiento terapeutico</h6>
+
+                    <p className="text-muted small">{c.motivo}</p>
+                    <p>Fecha y Hora: {new Date(c.fecha).toLocaleDateString()} {c.hora}</p>
+                  </>
                 ))
               }
 
