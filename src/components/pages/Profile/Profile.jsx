@@ -21,7 +21,7 @@ const Profile = () => {
 
         const token = localStorage.getItem("token")
 
-        const response = await axios.get(`https://back-fisioterapia.onrender.com/api/user/find/?rol=${rol}&name=${nombre}`, {
+        const response = await axios.get(`https://back-fisioterapia.onrender.com/api/user`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
