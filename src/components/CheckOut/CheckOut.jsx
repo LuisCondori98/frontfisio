@@ -133,7 +133,7 @@ const CheckOut = () => {
                     <h6 className="fw-medium">Tratamiento terapeutico</h6>
 
                     <p className="text-muted small">{c.motivo}</p>
-                    <p>Fecha y Hora: {new Date(c.fecha).toDateString()} {c.hora}</p>
+                    <p>Fecha y Hora: {new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})} {c.hora}</p>
                   </>
                 ))
               }
