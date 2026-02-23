@@ -9,8 +9,36 @@ const Profile = () => {
   const { user } = useContext(AuthContext)
   const {cita} = useContext(CartContext)
   const [citas, setCitas] = useState([])
+  const [users, setUsers] = useState([])
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+
+    const fetchUsers = async () => {
+
+      try {
+
+        const token = localStorage.getItem("token")
+
+        const response = await axios.get(`https://back-fisioterapia.onrender.com/api/user/find/?rol=${rol}&name=${nombre}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+
+        const data = response.data
+        const normalized = Array.isArray(data) ? data : (data ? [data] : [])
+        setUsers(normalized)
+
+      } catch(err) {
+
+        setError("No eres admin")
+      }
+    }
+
+    fetchUsers()
+  }, [rol, nombre])
 
   useEffect(() => {
 
@@ -248,7 +276,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{statsData.admin.totalUsuarios}</h4>
+                        <h4 className="mb-0">{users.length}</h4>
                         <p className="mb-0">Total Usuarios</p>
                       </div>
                       <i className="bi bi-people display-6 opacity-50"></i>
