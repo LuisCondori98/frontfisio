@@ -5,7 +5,7 @@ const Footer = () => {
     <footer
       className="pt-5 pb-4 mt-5"
       style={{
-        background: "#f8fafc",
+        background: "#939393",
         borderTop: "1px solid #e2e8f0"
       }}
     >
