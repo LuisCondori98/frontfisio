@@ -80,12 +80,6 @@ const Login = () => {
           });
         }
 
-        Swal.fire({
-          icon: "error",
-          title: "Usuario no encontrado",
-          text: `No existe una cuenta con el correo: ${formValues.email}`,
-        });
-
       } catch (error) {
 
         console.error(error);
@@ -93,7 +87,7 @@ const Login = () => {
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "No se pudo cambiar la contraseña",
+          text: "No se pudo cambiar la contraseña usuario no encontrado",
         });
       }
 
