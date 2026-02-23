@@ -126,7 +126,7 @@ const Citas = () => {
                     </p>
                   </div>
                   {
-                    c.estado === "confirmada" ? 
+                    c.estado === "confirmada" || c.estado === "completada" ? 
                     <button
                     type="button"
                     disabled
@@ -220,9 +220,6 @@ const Citas = () => {
                     </div>
                   </div>
                 </div>
-
-
-
               </div>
             ))}
           </div>
@@ -232,7 +229,8 @@ const Citas = () => {
           <div>
             <div className="container mt-4">
               <div className="row">
-                {cita.map((c) => (
+                {
+                  cita.map((c) => (
                   <div key={c._id} className="col-md-6 col-lg-4 mb-4">
                     <div className="card shadow-sm h-100">
                       <div className="card-body">
