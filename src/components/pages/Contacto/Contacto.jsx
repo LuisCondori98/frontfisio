@@ -16,7 +16,9 @@ const Contacto = () => {
 
   const navigate = useNavigate()
 
-  const handleContacto = async () => {
+  const handleContacto = async (e) => {
+
+    e.preventDefault()
 
     try {
 
