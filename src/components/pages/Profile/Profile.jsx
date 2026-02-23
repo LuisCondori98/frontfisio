@@ -162,36 +162,6 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="col-md-4 mb-3">
-                <div className="card h-100 shadow border-info">
-                  <div className="card-body text-center p-4">
-                    <div className="mb-3">
-                      <i className="bi bi-clock-history display-4 text-info"></i>
-                    </div>
-                    <h5 className="card-title text-info">Mis Citas</h5>
-                    <p className="card-text text-muted">Revisa tu historial de citas anteriores</p>
-                    <button className="btn btn-info btn-lg w-100 text-white">
-                      <i className="bi bi-list-ul me-2"></i>Ver Historial
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-4 mb-3">
-                <div className="card h-100 shadow border-warning">
-                  <div className="card-body text-center p-4">
-                    <div className="mb-3">
-                      <i className="bi bi-file-medical display-4 text-warning"></i>
-                    </div>
-                    <h5 className="card-title text-warning">Mi Tratamiento</h5>
-                    <p className="card-text text-muted">Consulta tu plan de tratamiento y ejercicios</p>
-                    <button className="btn btn-warning btn-lg w-100">
-                      <i className="bi bi-clipboard-check me-2"></i>Ver Plan
-                    </button>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="row">
@@ -216,42 +186,16 @@ const Profile = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>18/10/2024</td>
-                            <td>11:30 AM</td>
-                            <td>Dr. Carlos López</td>
-                            <td>Evaluación Inicial</td>
-                            <td><span className="badge bg-success">Completada</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-eye"></i> Ver
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>11/10/2024</td>
-                            <td>09:00 AM</td>
-                            <td>Dra. Ana García</td>
-                            <td>Seguimiento</td>
-                            <td><span className="badge bg-success">Completada</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-eye"></i> Ver
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>04/10/2024</td>
-                            <td>03:00 PM</td>
-                            <td>Dr. Carlos López</td>
-                            <td>Terapia Manual</td>
-                            <td><span className="badge bg-success">Completada</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-eye"></i> Ver
-                              </button>
-                            </td>
-                          </tr>
+                            {
+                              cita.map(c => (
+                                <tr>
+                                  <td>{new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}</td>
+                                  <td>{c.hora}</td>
+                                  <td>{c.terapeuta.nombre}</td>
+                                  <td>{c.motivo}</td>
+                                </tr>
+                              ))
+                            }
                         </tbody>
                       </table>
                     </div>
