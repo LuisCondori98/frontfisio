@@ -124,23 +124,12 @@ const Usuarios = () => {
         }}
         data-aos="flip-right"
       >
-        <img
-          src={
-            u?.img
-              ? u.img
-              : u?.genero === "masculino"
-              ? "/img/profileman.png"
-              : u?.genero === "femenino"
-              ? "/img/profilewoman.png"
-              : "/img/profiledefault.png"
-          }
-          alt="Foto de perfil"
-          className="rounded-circle shadow"
-          style={{ width: "120px", height: "120px", objectFit: "cover" }}
-          onError={(e) => {
-            e.target.src = "/img/profiledefault.png";
-          }}
-        />
+        {
+          u.genero == "masculino" ?
+            <img src="/img/profileman.png" />
+          :
+            <img src="/img/profilewoman.png"/>
+        }
         <div className="card-body">
           <label><strong>Nombres: </strong> {u.nombre}</label><br />
           <label><strong>Apellidos: </strong> {u.apellidoPaterno} {u.apellidoMaterno}</label><br />
