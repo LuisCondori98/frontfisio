@@ -71,13 +71,23 @@ const Login = () => {
 
         console.log(response)
 
+        if(response.status === 200) {
+
+          Swal.fire({
+            icon: "success",
+            title: "Contraseña Cambiada",
+            text: `Correo: ${formValues.email}`,
+          });
+        }
+
         Swal.fire({
-          icon: "success",
-          title: "Contraseña Cambiada",
-          text: `Correo: ${formValues.email}`,
+          icon: "error",
+          title: "Usuario no encontrado",
+          text: `No existe una cuenta con el correo: ${formValues.email}`,
         });
 
       } catch (error) {
+
         console.error(error);
 
         Swal.fire({
