@@ -6,7 +6,15 @@ const CheckOut = () => {
 
   const {total, cita} = useContext(CartContext)
 
-  console.log(total, cita)
+  if (!total || total === 0 || cita.length === 0) {
+    return (
+    <div className="container py-5 text-center">
+      <div className="alert alert-warning">
+        No hay ningun cita por pagar
+      </div>
+    </div>
+    );
+  }
 
   return (
     <div className="container py-5">
