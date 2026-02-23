@@ -1,0 +1,7 @@
+.navbar {
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
