@@ -65,7 +65,7 @@ const NavBar = () => {
             }
             {
               total ?
-              <Link className="btn btn-success" to={"/checkout"} style={{marginLeft: "2px"}}>{total}</Link>
+              <Link className="btn btn-success" to={"/checkout"} style={{marginLeft: "2px"}}>Costo</Link>
               :
               <></>
             }
