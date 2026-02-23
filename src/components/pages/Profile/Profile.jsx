@@ -407,7 +407,7 @@ const Profile = () => {
                 <div className="col-md-6 text-md-end">
                   <div className="d-flex align-items-center justify-content-md-end gap-3">
                     <span className="badge bg-light text-dark fs-6">Fisioterapeuta</span>
-                    <button onClick={handleLogout} className="btn btn-outline-light">
+                    <button onClick={handleLogout} className="btn btn-danger">
                       <i className="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
                     </button>
                     <Link to={`/edit-perfil/${user.dni}`} className="btn btn-success">Editar Perfil</Link>
@@ -438,7 +438,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{statsData.fisioterapeuta.pacientesActivos}</h4>
+                        <h4 className="mb-0">0</h4>
                         <p className="mb-0">Pacientes Activos</p>
                       </div>
                       <i className="bi bi-people display-6 opacity-50"></i>
@@ -451,7 +451,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{statsData.fisioterapeuta.citasSemana}</h4>
+                        <h4 className="mb-0">0</h4>
                         <p className="mb-0">Citas Esta Semana</p>
                       </div>
                       <i className="bi bi-calendar-week display-6 opacity-50"></i>
@@ -464,7 +464,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{statsData.fisioterapeuta.proximaCita}</h4>
+                        <h4 className="mb-0">0</h4>
                         <p className="mb-0">Próxima Cita</p>
                       </div>
                       <i className="bi bi-clock display-6 opacity-50"></i>

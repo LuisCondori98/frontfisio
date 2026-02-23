@@ -12,7 +12,8 @@ const Citas = () => {
   const [dni, setDni] = useState("")
 
   const handleCobrarTerapia = async (id) => {
-console.log(id)
+
+  
     await axios.put(`https://back-fisioterapia.onrender.com/api/cita/update/${id}`, {
       estado: "confirmada"
     })
@@ -20,6 +21,20 @@ console.log(id)
     Swal.fire({
       title: "Pago exitoso",
       text: "Realizado con exito",
+      icon: "success"
+    });
+  }
+
+  const handleTerapiaCompletada = async (id) => {
+
+  
+    await axios.put(`https://back-fisioterapia.onrender.com/api/cita/update/${id}`, {
+      estado: "completada"
+    })
+
+    Swal.fire({
+      title: "Cita completada",
+      text: "lavada de manos Xd",
       icon: "success"
     });
   }
@@ -254,6 +269,11 @@ console.log(id)
                             {c.estado}
                           </span>
                         </p>
+                        <button type="button"
+                          className="btn btn-success"
+                          onClick={() => handleTerapiaCompletada(c._id)}>
+                          Completado...?
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -261,7 +281,7 @@ console.log(id)
               </div>
             </div>
           <div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Registrar cita</button>
+            <button type="button" className="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Registrar cita</button>
           </div>
 
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
