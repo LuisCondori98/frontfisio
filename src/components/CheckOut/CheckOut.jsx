@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const CheckOut = () => {
   const [metodo, setMetodo] = useState("");
+
+  const {user} = useContext(AuthContext)
 
   const {total, cita} = useContext(CartContext)
 
@@ -14,6 +17,10 @@ const CheckOut = () => {
       </div>
     </div>
     );
+  }
+
+  if (!user) {
+    return <Navigate to="/login" />;
   }
 
   return (
