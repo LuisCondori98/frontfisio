@@ -184,7 +184,7 @@ const Citas = () => {
                       <div className="modal-body">
                         <p><strong>Paciente:</strong> {c.paciente?.nombre} {c.paciente?.apePaterno}</p>
                         <p><strong>Terapeuta:</strong> {c.terapeuta?.nombre} {c.terapeuta?.apellidoPaterno}</p>
-                        <p><strong>Fecha:</strong> {new Date(c.fecha).toLocaleDateString()}</p>
+                        <p><strong>Fecha:</strong> {new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}</p>
                         <p><strong>Hora:</strong> {c.hora}</p>
                         <p><strong>Precio:</strong> {c.precio}</p>
 

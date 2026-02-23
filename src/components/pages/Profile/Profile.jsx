@@ -422,30 +422,22 @@ const Profile = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>Juan Pérez</td>
-                            <td>25/10/2024</td>
-                            <td>10:00 AM</td>
-                            <td>Dra. Ana García</td>
-                            <td><span className="badge bg-warning">Pendiente</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-eye"></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>María López</td>
-                            <td>25/10/2024</td>
-                            <td>11:30 AM</td>
-                            <td>Dr. Carlos Ruiz</td>
-                            <td><span className="badge bg-success">Confirmada</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-eye"></i>
-                              </button>
-                            </td>
-                          </tr>
+                          {
+                            citas.map(c => (
+                              <tr>
+                                <td>{c.paciente.nombre} {c.paciente.apellidoPaterno}</td>
+                                <td>{new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}</td>
+                                <td>{c.hora}</td>
+                                <td>{c.terapeuta.nombre} {c.terapeuta.apellidoPaterno}</td>
+                                <td>{c.estado}</td>
+                                <td>
+                                  <button className="btn btn-sm btn-outline-primary">
+                                    <i className="bi bi-eye"></i>
+                                  </button>
+                                </td>
+                              </tr>
+                            ))
+                          }
                         </tbody>
                       </table>
                     </div>
