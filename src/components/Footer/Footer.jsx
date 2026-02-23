@@ -54,9 +54,9 @@ const Footer = () => {
 
           <div className="col-md-4 mb-3">
             <h6 className="fw-bold text-primary mb-3">Contacto</h6>
-            <p className="text-dark mb-1">📍 Huancayo - Perú</p>
-            <p className="text-dark mb-1">📞 +51 900 000 000</p>
-            <p className="text-dark">✉ contacto@vivirenmovimiento.com</p>
+            <p className="text-dark mb-1">Av. Los Fisios 123, Lima, Perú Lima - Perú</p>
+            <p className="text-dark mb-1">+51 900 000 000</p>
+            <p className="text-dark">contacto@vivirenmovimiento.com</p>
           </div>
 
           <div className="col-md-4 mb-3">
