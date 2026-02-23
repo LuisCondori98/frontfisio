@@ -81,9 +81,11 @@ const EditProfile = () => {
                 placeholder={`${user.correo}`}
                 />
             </div>
-            <Link to={"/perfil"} className="btn btn-danger">Volver</Link>
             <div className="mb-3">
-                <input type="submit" value="Actualizar" className="btn btn-success" />
+                <Link to={"/perfil"} className="btn btn-danger">Volver</Link>
+                <div className="mb-3">
+                    <input type="submit" value="Actualizar" className="btn btn-success" />
+                </div>
             </div>
         </form>
     )
