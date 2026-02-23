@@ -93,7 +93,7 @@ const Profile = () => {
   let totalCitas = 0
 
   citas.forEach(c => {
-    totalCitas =+ c.precio
+    totalCitas += c.precio
   })
 
   const statsData = {
