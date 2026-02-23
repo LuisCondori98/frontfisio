@@ -10,6 +10,7 @@ const Profile = () => {
   const {cita} = useContext(CartContext)
   const [citas, setCitas] = useState([])
   const [users, setUsers] = useState([])
+  const [pacientes, setPacientes] = useState([])
 
   const navigate = useNavigate()
 
@@ -42,6 +43,33 @@ const Profile = () => {
 
   useEffect(() => {
 
+    const usersPacientes = async () => {
+
+      try {
+
+        const token = localStorage.getItem("token")
+
+        const response = await axios.get(`https://back-fisioterapia.onrender.com/api/user/find?rol=paciente`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+
+        const data = response.data
+        const normalized = Array.isArray(data) ? data : (data ? [data] : [])
+        setPacientes(normalized)
+
+      } catch(err) {
+
+        setError("No eres admin")
+      }
+    }
+
+    usersPacientes()
+  }, [])
+
+  useEffect(() => {
+
     axios.get("https://back-fisioterapia.onrender.com/api/cita")
       .then(response => setCitas(response.data))
   }, [])
@@ -61,6 +89,12 @@ const Profile = () => {
 
     window.location.href = "/perfil"
   }
+
+  let totalCitas = 0
+
+  citas.forEach(c => {
+    totalCitas =+ c.precio
+  })
 
   const statsData = {
     admin: {
@@ -304,7 +338,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">S/ {statsData.admin.ingresosMes}</h4>
+                        <h4 className="mb-0">{totalCitas}</h4>
                         <p className="mb-0">Ingresos Mes</p>
                       </div>
                       <i className="bi bi-currency-dollar display-6 opacity-50"></i>
@@ -317,7 +351,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{statsData.admin.pacientesActivos}</h4>
+                        <h4 className="mb-0">{pacientes.length}</h4>
                         <p className="mb-0">Pacientes Activos</p>
                       </div>
                       <i className="bi bi-heart-pulse display-6 opacity-50"></i>
