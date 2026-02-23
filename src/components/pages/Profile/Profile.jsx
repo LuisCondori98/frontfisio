@@ -188,12 +188,21 @@ const Profile = () => {
                         <tbody>
                             {
                               cita.map(c => (
+                                c.estado === "completada"?
                                 <tr>
                                   <td>{new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}</td>
                                   <td>{c.hora}</td>
                                   <td>{c.terapeuta.nombre}</td>
                                   <td>{c.motivo}</td>
+                                  <td>{c.estado}</td>
+                                  <td>
+                                    <button className="btn btn-sm btn-outline-primary">
+                                      <i className="bi bi-eye"></i>
+                                    </button>
+                                  </td>
                                 </tr>
+                                :
+                                <></>
                               ))
                             }
                         </tbody>
