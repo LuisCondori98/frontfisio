@@ -44,15 +44,15 @@ const NavBar = () => {
             </li>
 
             <li className="nav-item">
-              <Link className={({isActive}) => isActive ? "nav-link btn btn-light" : "nav-link text-white"} to="/servicios" onClick={cerrarMenu}>
+              <NavLink className={({isActive}) => isActive ? "nav-link btn btn-light" : "nav-link text-white"} to="/servicios" onClick={cerrarMenu}>
                 Servicios
-              </Link>
+              </NavLink>
             </li>
 
             <li className="nav-item">
-              <Link className={({isActive}) => isActive ? "nav-link btn btn-light" : "nav-link text-white"} to="/contacto" onClick={cerrarMenu}>
+              <NavLink className={({isActive}) => isActive ? "nav-link btn btn-light" : "nav-link text-white"} to="/contacto" onClick={cerrarMenu}>
                 Contacto
-              </Link>
+              </NavLink>
             </li>
 
             {isAuthenticated ? (
