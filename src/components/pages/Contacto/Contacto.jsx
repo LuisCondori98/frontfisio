@@ -1,5 +1,5 @@
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useContext, useState } from "react"
 import { AuthContext } from "../../../context/AuthContext"
 
@@ -41,7 +41,7 @@ const Contacto = () => {
           text: "Enviado correctamente",
           duration: 3000,
           style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "linear-gradient(to right, #6c6b6d5d, #3f3f3f51)",
           }
         }).showToast();
 
