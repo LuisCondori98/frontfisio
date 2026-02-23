@@ -18,6 +18,13 @@ const Contacto = () => {
 
   const handleContacto = async () => {
 
+    window.Toastify({
+      text: "Enviado correctamente",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+    }).showToast();
+
     try {
 
       const response = await axios.post(
@@ -35,7 +42,7 @@ const Contacto = () => {
 
       if (response.status === 200) {
 
-        Toastify({
+        window.Toastify({
           text: "Enviado correctamente",
           duration: 3000,
           style: {
@@ -49,15 +56,13 @@ const Contacto = () => {
 
     } catch (err) {
 
-      Toastify({
+      window.Toastify({
         text: "No enviado, faltan datos o error del servidor",
         duration: 3000,
         style: {
           background: "linear-gradient(to right, #ff416c, #ff4b2b)",
         }
       }).showToast();
-
-      console.log(err.response?.status)
     }
   };
 
