@@ -49,7 +49,7 @@ const Citas = () => {
 
   useEffect(() => {
 
-    axios.get(`https://back-fisioterapia.onrender.com/api/cita/${user.id}`)
+    axios.get(`https://back-fisioterapia.onrender.com/api/cita/${Number(user.id)}`)
       .then(response => setCita(response.data))
   }, [])
 
