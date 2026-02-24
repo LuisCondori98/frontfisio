@@ -89,6 +89,16 @@ const Usuarios = () => {
     return edad;
   };
 
+  const handleEliminar = (id) => {
+
+    console.log(`Elimnado por id: ${id}`)
+  }
+
+  const handleEditar = (id) => {
+
+    console.log(`Editado por id ${id}`)
+  }
+
   return (
     <main className="usuarios-layout" style={{ display: "flex", gap: "2rem", padding: "20px" }}>
   {/* 🔹 Columna izquierda (filtros) */}
@@ -113,51 +123,72 @@ const Usuarios = () => {
 
   {/* 🔹 Columna derecha (usuarios) */}
   <section style={{ flex: "3", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1rem" }}>
-    {users.map((u) => (
-      <div
-        key={u._id}
-        className="card text-bg-light"
-        style={{
-          padding: "1rem",
-          borderRadius: "10px",
-          boxShadow: "0 0 5px rgba(0,0,0,0.1)",
-        }}
-        data-aos="flip-right"
-      >
-        {
-          u.genero == "masculino" ?
-            <img src="/img/profileman.png" />
-          :
-            <img src="/img/profilewoman.png"/>
-        }
-        <div className="card-body">
-          <label><strong>Nombres: </strong> {u.nombre}</label><br />
-          <label><strong>Apellidos: </strong> {u.apellidoPaterno} {u.apellidoMaterno}</label><br />
-          <label><strong>DNI: </strong> {u.dni}</label><br />
-          <label><strong>Edad: </strong> {calcularEdad(u.cumpleanios)}</label><br />
-          <label><strong>Correo: </strong> {u.correo}</label><br />
-          <label><strong>Telefono: </strong> {u.celular}</label><br />
-          <label><strong>Direccion: </strong> {u.direccion}</label><br />
-          {u.rol === "admin" && (
-            <label><strong>Cargo:</strong> {u.cargo}</label>
-          )}
+    {
+      users.map((u) => (
+        <div
+          key={u._id}
+          className="card text-bg-light"
+          style={{
+            padding: "1rem",
+            borderRadius: "10px",
+            boxShadow: "0 0 5px rgba(0,0,0,0.1)",
+          }}
+          data-aos="flip-right"
+        >
+          {
+            u.genero == "masculino" ?
+              <img src="/img/profileman.png" />
+            :
+              <img src="/img/profilewoman.png"/>
+          }
+          <div className="card-body">
+            <label><strong>Nombres: </strong> {u.nombre}</label><br />
+            <label><strong>Apellidos: </strong> {u.apellidoPaterno} {u.apellidoMaterno}</label><br />
+            <label><strong>DNI: </strong> {u.dni}</label><br />
+            <label><strong>Edad: </strong> {calcularEdad(u.cumpleanios)}</label><br />
+            <label><strong>Correo: </strong> {u.correo}</label><br />
+            <label><strong>Telefono: </strong> {u.celular}</label><br />
+            <label><strong>Direccion: </strong> {u.direccion}</label><br />
+            {u.rol === "admin" && (
+              <label><strong>Cargo:</strong> {u.cargo}</label>
+            )}
 
-          {u.rol === "paciente" && (
-            <>
-              <label><strong>Alergias:</strong> {u.alergias}</label><br />
-              <label><strong>Historial Medico: </strong> {u.historialmedico}</label>
-            </>
-          )}
+            {u.rol === "paciente" && (
+              <>
+                <label><strong>Alergias:</strong> {u.alergias}</label><br />
+                <label><strong>Historial Medico: </strong> {u.historialmedico}</label>
+              </>
+            )}
 
-          {u.rol === "fisioterapeuta" && (
-            <>
-              <label><strong>Especialidad:</strong> {u.especialidad}</label><br />
-              <label><strong>Colegiatura:</strong> {u.colegiatura}</label>
-            </>
-          )}
+            {u.rol === "fisioterapeuta" && (
+              <>
+                <label><strong>Especialidad:</strong> {u.especialidad}</label><br />
+                <label><strong>Colegiatura:</strong> {u.colegiatura}</label>
+              </>
+            )}
+            <div className="d-flex justify-content-between mt-3 gap-2">
+
+            <button
+              type="button"
+              className="btn btn-outline-primary w-50"
+              onClick={() => handleEditar(u._id)}
+            >
+              Editar
+            </button>
+
+            <button
+              type="button"
+              className="btn btn-outline-danger w-50"
+              onClick={() => handleEliminar(u._id)}
+            >
+              Eliminar
+            </button>
+
+          </div>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </section>
 </main>
   )
