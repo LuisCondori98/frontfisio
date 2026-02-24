@@ -165,7 +165,7 @@ const Usuarios = () => {
         {/* Header avatar */}
         <div
           style={{
-            background: "linear-gradient(135deg, #4e73df, #1cc88a)",
+            background: "linear-gradient(135deg, #444444, #b3b3b3)",
             borderTopLeftRadius: "18px",
             borderTopRightRadius: "18px",
             padding: "1.5rem",
