@@ -516,7 +516,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">0</h4>
+                        <h4 className="mb-0">{users.length}</h4>
                         <p className="mb-0">Pacientes Activos</p>
                       </div>
                       <i className="bi bi-people display-6 opacity-50"></i>
@@ -614,42 +614,22 @@ const Profile = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>09:00 AM</td>
-                            <td>Carlos Rodríguez</td>
-                            <td>Rehabilitación</td>
-                            <td>45 min</td>
-                            <td><span className="badge bg-success">En Progreso</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-play-circle"></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>10:30 AM</td>
-                            <td>Ana Martínez</td>
-                            <td>Terapia Manual</td>
-                            <td>60 min</td>
-                            <td><span className="badge bg-warning">Pendiente</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-eye"></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>02:00 PM</td>
-                            <td>Luis García</td>
-                            <td>Evaluación</td>
-                            <td>30 min</td>
-                            <td><span className="badge bg-secondary">Programada</span></td>
-                            <td>
-                              <button className="btn btn-sm btn-outline-primary">
-                                <i className="bi bi-eye"></i>
-                              </button>
-                            </td>
-                          </tr>
+                          {
+                            citaUserNow.map(cu => (
+                              <tr>
+                                <td>{cu.hora}</td>
+                                <td>{cu.paciente.nombre}</td>
+                                <td>Terapia Type</td>
+                                <td>20 min</td>
+                                <td>{cu.estado}</td>
+                                <td>
+                                  <button className="btn btn-sm btn-outline-primary">
+                                    <i className="bi bi-eye"></i>
+                                  </button>
+                                </td>
+                              </tr>
+                            ))
+                          }
                         </tbody>
                       </table>
                     </div>
