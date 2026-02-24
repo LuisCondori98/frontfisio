@@ -287,7 +287,7 @@ const Citas = () => {
                           </span>
                         </p>
                         {
-                          c.estado === "completado"?
+                          c.estado === "completada"?
                           <button type="button"
                             className="btn btn-success"
                             disabled>
