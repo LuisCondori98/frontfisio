@@ -174,6 +174,7 @@ const Usuarios = () => {
         >
           <img
             src={
+              u.img ? `/img/${u.img}`:
               u.genero === "masculino"
                 ? "/img/profileman.png"
                 : "/img/profilewoman.png"
