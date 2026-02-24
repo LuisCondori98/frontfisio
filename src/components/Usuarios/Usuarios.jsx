@@ -99,7 +99,7 @@ const Usuarios = () => {
 
     try {
 
-      const response = await axios.post(`https://back-fisioterapia.onrender.com/api/paciente/update-paciente/${id}`, {
+      const response = await axios.post(`https://back-fisioterapia.onrender.com/api/user/update-status/${id}`, {
         estado: nuevoEstado
       })
 
