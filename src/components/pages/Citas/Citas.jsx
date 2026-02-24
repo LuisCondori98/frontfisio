@@ -55,13 +55,13 @@ const Citas = () => {
 
       try {
         const response = await axios.get(
-          `https://back-fisioterapia.onrender.com/api/cita/${user.id}`
+          `https://back-fisioterapia.onrender.com/api/cita/${Number(user.id)}`
         );
 
         setCita(response.data);
 
       } catch (error) {
-        
+
         console.log(error);
       }
     };
