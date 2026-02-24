@@ -115,7 +115,7 @@ const Citas = () => {
                     </p>
 
                     <p className="card-text mb-1">
-                      <strong>Paciente:</strong> {c.paciente?.nombre} {c.paciente?.apePaterno}
+                      <strong>Paciente:</strong> {c.paciente?.nombre} {c.paciente.apellidoPaterno}
                     </p>
 
                     <p className="card-text mb-1">
