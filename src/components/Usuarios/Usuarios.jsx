@@ -93,12 +93,14 @@ const Usuarios = () => {
     return edad;
   };
 
-  const handleInactivo = async (id) => {
+  const handleEstado = async (id, estadoActual) => {
     
+    const nuevoEstado = estadoActual === "activo" ? "inactivo" : "activo";
+
     try {
 
       const response = await axios.post(`https://back-fisioterapia.onrender.com/api/paciente/update-paciente/${id}`, {
-        estado: "inactivo"
+        estado: nuevoEstado
       })
 
       if(response.status === 200) {
@@ -243,10 +245,10 @@ const Usuarios = () => {
 
             <button
               type="button"
-              className="btn btn-danger flex-fill rounded-pill"
-              onClick={() => handleInactivo(u._id)}
+              className={`btn ${u.estado === "activo" ? "btn-danger" : "btn-success"}`}
+              onClick={() => handleEstado(u._id, u.estado)}
             >
-              Inactivo
+              {u.estado === "activo" ? "Desactivar" : "Reactivar"}
             </button>
           </div>
 
