@@ -364,7 +364,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{totalCitas}</h4>
+                        <h4 className="mb-0">S/. {totalCitas}</h4>
                         <p className="mb-0">Ingresos Mes</p>
                       </div>
                       <i className="bi bi-currency-dollar display-6 opacity-50"></i>

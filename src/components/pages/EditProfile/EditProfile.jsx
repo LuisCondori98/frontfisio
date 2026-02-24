@@ -17,76 +17,91 @@ const EditProfile = () => {
     console.log(user)
 
     return (
-        <form action="https://back-fisioterapia.onrender.com/api/user/user-update" method="POST" className="container mt-4" style={{ maxWidth: "600px" }}>
-            <div>
-                <input type="hidden" name="id" value={user._id} />
-            </div>
-             <div className="mb-3">
-                <label htmlFor="nombre" className="form-label">Nombre completo</label>
-                <input
-                type="text"
-                className="form-control"
-                id="nombre"
-                name="nombre"
-                placeholder={`${user.nombre}`}
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="apellido" className="form-label">Apellido Paterno</label>
-                <input
-                type="text"
-                className="form-control"
-                id="apePaterno"
-                name="apePaterno"
-                placeholder={`${user.apellidoPaterno}`}
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="apellido" className="form-label">Apellido Materno</label>
-                <input
-                type="text"
-                className="form-control"
-                id="apeMaterno"
-                name="apeMaterno"
-                placeholder={`${user.apellidoMaterno}`}
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="apellido" className="form-label">Celular</label>
-                <input
-                type="text"
-                className="form-control"
-                id="calular"
-                name="celular"
-                placeholder={`${user.celular}`}
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="apellido" className="form-label">Direccion</label>
-                <input
-                type="text"
-                className="form-control"
-                id="direccion"
-                name="direccion"
-                placeholder={`${user.direccion}`}
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="apellido" className="form-label">Correo</label>
-                <input
-                type="text"
-                className="form-control"
-                id="correo"
-                name="correo"
-                placeholder={`${user.correo}`}
-                />
-            </div>
-            <div className="mb-3">
-                <Link to={"/perfil"} className="btn btn-danger">Volver</Link>
-                <div className="mb-3">
-                    <input type="submit" value="Actualizar" className="btn btn-success" />
-                </div>
-            </div>
+        <form
+        action="https://back-fisioterapia.onrender.com/api/user/user-update"
+        method="POST"
+        className="container mt-4"
+        style={{ maxWidth: "600px" }}
+        >
+
+        <input type="hidden" name="id" value={user._id} />
+
+        <div className="mb-3">
+            <label htmlFor="nombre" className="form-label">Nombre</label>
+            <input
+            type="text"
+            className="form-control"
+            id="nombre"
+            name="nombre"
+            defaultValue={user.nombre}
+            />
+        </div>
+
+        <div className="mb-3">
+            <label htmlFor="apePaterno" className="form-label">Apellido Paterno</label>
+            <input
+            type="text"
+            className="form-control"
+            id="apePaterno"
+            name="apePaterno"
+            defaultValue={user.apellidoPaterno}
+            />
+        </div>
+
+        <div className="mb-3">
+            <label htmlFor="apeMaterno" className="form-label">Apellido Materno</label>
+            <input
+            type="text"
+            className="form-control"
+            id="apeMaterno"
+            name="apeMaterno"
+            defaultValue={user.apellidoMaterno}
+            />
+        </div>
+
+        <div className="mb-3">
+            <label htmlFor="celular" className="form-label">Celular</label>
+            <input
+            type="tel"
+            className="form-control"
+            id="celular"
+            name="celular"
+            defaultValue={user.celular}
+            />
+        </div>
+
+        <div className="mb-3">
+            <label htmlFor="direccion" className="form-label">Dirección</label>
+            <input
+            type="text"
+            className="form-control"
+            id="direccion"
+            name="direccion"
+            defaultValue={user.direccion}
+            />
+        </div>
+
+        <div className="mb-4">
+            <label htmlFor="correo" className="form-label">Correo</label>
+            <input
+            type="email"
+            className="form-control"
+            id="correo"
+            name="correo"
+            defaultValue={user.correo}
+            />
+        </div>
+
+        <div className="d-flex justify-content-between">
+            <Link to="/perfil" className="btn btn-outline-danger">
+            Volver
+            </Link>
+
+            <button type="submit" className="btn btn-success">
+            Actualizar
+            </button>
+        </div>
+
         </form>
     )
 }
