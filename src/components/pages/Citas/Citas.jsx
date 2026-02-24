@@ -253,7 +253,7 @@ const Citas = () => {
                     <div className="card shadow-sm h-100">
                       <div className="card-body">
                         <h5 className="card-title">
-                          📅 {new Date(c.fecha).toLocaleString("es-PE", {timeZone: "UTC"})}
+                          📅 {new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}
                         </h5>
 
                         <h6 className="card-subtitle mb-2 text-muted">
