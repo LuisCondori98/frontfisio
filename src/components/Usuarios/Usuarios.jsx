@@ -101,7 +101,7 @@ const Usuarios = () => {
 
       if(response.status === 200) {
 
-        navigate("/usuarios")
+        window.location.reload()
       }
 
     } catch(err) {
@@ -157,7 +157,7 @@ const Usuarios = () => {
             :
               <img src="/img/profilewoman.png"/>
           }
-          <div className="card-body">
+          <div className="card-body d-flex flex-column">
             <label><strong>Nombres: </strong> {u.nombre}</label><br />
             <label><strong>Apellidos: </strong> {u.apellidoPaterno} {u.apellidoMaterno}</label><br />
             <label><strong>DNI: </strong> {u.dni}</label><br />
@@ -186,7 +186,7 @@ const Usuarios = () => {
 
             <button
               type="button"
-              className="btn btn-outline-primary w-50"
+              className="btn btn-outline-primary flex-fill"
               onClick={() => handleEditar(u._id)}
             >
               Editar
@@ -194,7 +194,7 @@ const Usuarios = () => {
 
             <button
               type="button"
-              className="btn btn-outline-danger w-50"
+              className="btn btn-outline-danger flex-fill"
               onClick={() => handleEliminar(u._id)}
             >
               Eliminar
