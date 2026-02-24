@@ -244,131 +244,196 @@ const Citas = () => {
         </div>
         ): user.rol === "fisioterapeuta" ?
         (
-          <div>
-            <div className="container mt-4">
-              <div className="row">
-                {
-                  cita.map((c) => (
-                  <div key={c._id} className="col-md-6 col-lg-4 mb-4">
-                    <div className="card shadow-sm h-100">
-                      <div className="card-body">
-                        <h5 className="card-title">
-                          📅 {new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}
-                        </h5>
+          <div className="bg-light min-vh-100 py-4">
 
-                        <h6 className="card-subtitle mb-2 text-muted">
-                          ⏰ {c.hora}
-                        </h6>
+            <div className="container">
 
-                        <p className="card-text mb-1">
-                          <strong>Paciente:</strong>{" "}
+              {/* Header */}
+              <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+                <h3 className="fw-bold text-primary mb-3 mb-md-0">
+                  Gestión de Citas
+                </h3>
+
+                <button
+                  type="button"
+                  className="btn btn-primary px-4 shadow-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  + Registrar cita
+                </button>
+              </div>
+
+              {/* Cards */}
+              <div className="row g-4">
+                {cita.map((c) => (
+                  <div key={c._id} className="col-12 col-sm-6 col-lg-4">
+
+                    <div className="card border-0 shadow-lg h-100 rounded-4">
+                      <div className="card-body d-flex flex-column">
+
+                        <div className="mb-3">
+                          <h5 className="fw-bold mb-1">
+                            📅 {new Date(c.fecha).toLocaleDateString("es-PE", { timeZone: "UTC" })}
+                          </h5>
+
+                          <small className="text-muted">
+                            ⏰ {c.hora}
+                          </small>
+                        </div>
+
+                        <hr />
+
+                        <p className="mb-2">
+                          <strong>Paciente:</strong><br />
                           {c.paciente?.nombre} {c.paciente?.apellidoPaterno}
                         </p>
 
-                        <p className="card-text mb-1">
-                          <strong>Motivo:</strong> {c.motivo}
+                        <p className="mb-2">
+                          <strong>Motivo:</strong><br />
+                          {c.motivo}
                         </p>
 
-                        <p className="card-text">
-                          <strong>Estado:</strong>{" "}
-                          <span
-                            className={`badge ${
-                              c.estado === "pendiente"
-                                ? "bg-warning text-dark"
-                                : c.estado === "confirmada"
-                                ? "bg-success"
-                                : c.estado === "cancelada"
-                                ? "bg-danger"
-                                : "bg-secondary"
-                            }`}
-                          >
-                            {c.estado}
-                          </span>
-                        </p>
-                        {
-                          c.estado === "completada"?
-                          <>
-                          </>
-                          :
-                          <button type="button"
-                            className="btn btn-success"
-                            onClick={() => handleTerapiaCompletada(c._id)}>
-                            Completado...?
-                          </button>
-                        }
+                        <div className="mt-auto">
+
+                          <p className="mb-3">
+                            <strong>Estado:</strong>{" "}
+                            <span
+                              className={`badge px-3 py-2 ${
+                                c.estado === "pendiente"
+                                  ? "bg-warning text-dark"
+                                  : c.estado === "confirmada"
+                                  ? "bg-success"
+                                  : c.estado === "cancelada"
+                                  ? "bg-danger"
+                                  : "bg-secondary"
+                              }`}
+                            >
+                              {c.estado}
+                            </span>
+                          </p>
+
+                          {c.estado !== "completada" && (
+                            <button
+                              type="button"
+                              className="btn btn-success w-100 rounded-pill"
+                              onClick={() => handleTerapiaCompletada(c._id)}
+                            >
+                              Marcar como completada
+                            </button>
+                          )}
+
+                        </div>
+
                       </div>
                     </div>
+
                   </div>
                 ))}
               </div>
             </div>
-          <div>
-            <button type="button" className="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Registrar cita</button>
-          </div>
 
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar cita</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form action={"https://back-fisioterapia.onrender.com/api/cita"} method="POST">
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Buscar:</label>
-                    <input type="number" value={dni} onChange={e => setDni(e.target.value)} class="form-control" id="recipient-name" />
+            {/* MODAL */}
+            <div
+              className="modal fade"
+              id="exampleModal"
+              tabIndex="-1"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog modal-dialog-centered modal-lg">
+                <div className="modal-content rounded-4 border-0 shadow-lg">
+
+                  <div className="modal-header bg-primary text-white rounded-top-4">
+                    <h5 className="modal-title">Registrar cita</h5>
+                    <button
+                      type="button"
+                      className="btn-close btn-close-white"
+                      data-bs-dismiss="modal"
+                    ></button>
                   </div>
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Paciente:</label>
-                    <input type="text"
+
+                  <div className="modal-body p-4">
+
+                    <form action={"https://back-fisioterapia.onrender.com/api/cita"} method="POST">
+
+                      <div className="row g-3">
+
+                        <div className="col-md-6">
+                          <label className="form-label">Buscar DNI</label>
+                          <input
+                            type="number"
+                            value={dni}
+                            onChange={e => setDni(e.target.value)}
+                            className="form-control"
+                          />
+                        </div>
+
+                        <div className="col-md-6">
+                          <label className="form-label">Paciente</label>
+                          <input
+                            type="text"
                             readOnly
-                            name="paciente"
                             disabled
-                            value={`${users?.nombre ?? ""} ${users?.apellidoPaterno ?? ""} ${users?.apellidoMaterno ?? ""}`} class="form-control" id="recipient-name" />
-                    <input
-                      type="hidden"
-                      name="paciente"
-                      value={users?._id ?? ""}
-                    />        
-                  </div>
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Motivo:</label>
-                    <input type="text" class="form-control" id="recipient-name" name="motivo" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Fecha:</label>
-                    <input type="date" class="form-control" id="message-text" name="fecha"></input>
-                  </div>
-                  <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Hora:</label>
-                    <input type="time" class="form-control" id="message-text" name="hora"></input>
-                  </div>
-                  <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Precio:</label>
-                    <input type="number" class="form-control" name="precio"></input>
-                  </div>
-                  <div class="mb-3">
-                    <select class="form-control" name="terapeuta">
-                      <option value="">-- Elige uno --</option>
+                            className="form-control bg-light"
+                            value={`${users?.nombre ?? ""} ${users?.apellidoPaterno ?? ""} ${users?.apellidoMaterno ?? ""}`}
+                          />
+                          <input
+                            type="hidden"
+                            name="paciente"
+                            value={users?._id ?? ""}
+                          />
+                        </div>
 
-                      {
-                        terapeuta.map((t) => (
-                          <option key={t._id} value={t._id}>
-                            {t.nombre} {t.apePaterno}
-                          </option>
-                        ))
-                      }
-                    </select>
+                        <div className="col-md-6">
+                          <label className="form-label">Motivo</label>
+                          <input type="text" className="form-control" name="motivo" />
+                        </div>
+
+                        <div className="col-md-3">
+                          <label className="form-label">Fecha</label>
+                          <input type="date" className="form-control" name="fecha" />
+                        </div>
+
+                        <div className="col-md-3">
+                          <label className="form-label">Hora</label>
+                          <input type="time" className="form-control" name="hora" />
+                        </div>
+
+                        <div className="col-md-4">
+                          <label className="form-label">Precio</label>
+                          <input type="number" className="form-control" name="precio" />
+                        </div>
+
+                        <div className="col-md-8">
+                          <label className="form-label">Terapeuta</label>
+                          <select className="form-select" name="terapeuta">
+                            <option value="">-- Elige uno --</option>
+                            {terapeuta.map((t) => (
+                              <option key={t._id} value={t._id}>
+                                {t.nombre} {t.apePaterno}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                      </div>
+
+                      <div className="text-end mt-4">
+                        <input
+                          type="submit"
+                          value="Generar cita"
+                          className="btn btn-success px-4 rounded-pill"
+                        />
+                      </div>
+
+                    </form>
+
                   </div>
-                  <div>
-                    <input type="submit" value="Generar" className="btn btn-success" />
-                  </div>
-                </form>
+
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+
           </div>
         ) : null
       }      
