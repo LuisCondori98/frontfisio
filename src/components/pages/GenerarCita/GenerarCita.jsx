@@ -29,6 +29,20 @@ const GenerarCita = () => {
 
     try {
 
+    const response = await axios.post(`https://back-fisioterapia.onrender.com/api/user/update-status/${pacienteId}`, {
+      estado: "activo"
+    })
+
+    if(response.status === 200) {
+
+      await Swal.fire({
+        icon: "success",
+        title: "Usuario reactivado",
+        text: "El usuario fue activado nuevamente correctamente",
+        confirmButtonColor: "#198754"
+      });
+    }
+
     await axios.post("https://back-fisioterapia.onrender.com/api/cita", {
       paciente: pacienteId,
       fecha,

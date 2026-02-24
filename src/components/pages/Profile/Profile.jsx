@@ -120,32 +120,6 @@ const Profile = () => {
     totalCitas += c.precio
   })
 
-  const statsData = {
-    admin: {
-      totalUsuarios: 156,
-      citasHoy: 23,
-      ingresosMes: 12500,
-      pacientesActivos: 89
-    },
-    fisioterapeuta: {
-      citasHoy: 8,
-      pacientesActivos: 15,
-      proximaCita: "10:00 AM",
-      citasSemana: 32
-    },
-    recepcionista: {
-      citasPendientes: 12,
-      nuevosPacientes: 5,
-            citasHoy: 18
-    },
-    gerente: {
-      ingresosMes: 12500,
-      crecimiento: 15,
-      pacientesNuevos: 28,
-      eficiencia: 92
-    }
-  }
-
   return (
     <main className="min-vh-100 bg-light">
       {
