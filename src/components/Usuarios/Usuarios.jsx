@@ -138,75 +138,118 @@ const Usuarios = () => {
   </section>
 
   {/* 🔹 Columna derecha (usuarios) */}
-  <section style={{ flex: "3", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1rem" }}>
-    {
-      users.map((u) => (
+  <section
+    style={{
+      flex: "3",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+      gap: "1.5rem",
+    }}
+  >
+    {users.map((u) => (
+      <div
+        key={u._id}
+        className="card border-0 shadow-sm h-100"
+        style={{
+          borderRadius: "18px",
+          transition: "all 0.3s ease",
+        }}
+        data-aos="fade-up"
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.transform = "translateY(-5px)")
+        }
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.transform = "translateY(0)")
+        }
+      >
+        {/* Header avatar */}
         <div
-          key={u._id}
-          className="card text-bg-light"
           style={{
-            padding: "1rem",
-            borderRadius: "10px",
-            boxShadow: "0 0 5px rgba(0,0,0,0.1)",
+            background: "linear-gradient(135deg, #4e73df, #1cc88a)",
+            borderTopLeftRadius: "18px",
+            borderTopRightRadius: "18px",
+            padding: "1.5rem",
+            textAlign: "center",
           }}
-          data-aos="flip-right"
         >
-          {
-            u.genero == "masculino" ?
-              <img src="/img/profileman.png" />
-            :
-              <img src="/img/profilewoman.png"/>
-          }
-          <div className="card-body ">
-            <label><strong>Nombres: </strong> {u.nombre}</label><br />
-            <label><strong>Apellidos: </strong> {u.apellidoPaterno} {u.apellidoMaterno}</label><br />
-            <label><strong>DNI: </strong> {u.dni}</label><br />
-            <label><strong>Edad: </strong> {calcularEdad(u.cumpleanios)}</label><br />
-            <label><strong>Correo: </strong> {u.correo}</label><br />
-            <label><strong>Telefono: </strong> {u.celular}</label><br />
-            <label><strong>Direccion: </strong> {u.direccion}</label><br />
+          <img
+            src={
+              u.genero === "masculino"
+                ? "/img/profileman.png"
+                : "/img/profilewoman.png"
+            }
+            alt="profile"
+            style={{
+              width: "110px",
+              height: "110px",
+              borderRadius: "50%",
+              objectFit: "cover",
+              border: "4px solid white",
+              background: "white",
+            }}
+          />
+        </div>
+
+        <div className="card-body d-flex flex-column">
+
+          {/* Nombre principal */}
+          <h5 className="fw-bold text-center mb-3">
+            {u.nombre} {u.apellidoPaterno}
+          </h5>
+
+          <div className="small text-muted mb-3 text-center">
+            DNI: {u.dni} • Edad: {calcularEdad(u.cumpleanios)}
+          </div>
+
+          <hr />
+
+          {/* Información */}
+          <div className="small">
+            <p className="mb-1"><strong>Correo:</strong> {u.correo}</p>
+            <p className="mb-1"><strong>Teléfono:</strong> {u.celular}</p>
+            <p className="mb-1"><strong>Dirección:</strong> {u.direccion}</p>
+
             {u.rol === "admin" && (
-              <label><strong>Cargo:</strong> {u.cargo}</label>
+              <p className="mb-1"><strong>Cargo:</strong> {u.cargo}</p>
             )}
 
             {u.rol === "paciente" && (
               <>
-                <label><strong>Alergias:</strong> {u.alergias}</label><br />
-                <label><strong>Historial Medico: </strong> {u.historialmedico}</label>
+                <p className="mb-1"><strong>Alergias:</strong> {u.alergias}</p>
+                <p className="mb-1"><strong>Historial:</strong> {u.historialmedico}</p>
               </>
             )}
 
             {u.rol === "fisioterapeuta" && (
               <>
-                <label><strong>Especialidad:</strong> {u.especialidad}</label><br />
-                <label><strong>Colegiatura:</strong> {u.colegiatura}</label>
+                <p className="mb-1"><strong>Especialidad:</strong> {u.especialidad}</p>
+                <p className="mb-1"><strong>Colegiatura:</strong> {u.colegiatura}</p>
               </>
             )}
-            <div className="d-flex justify-content-between mt-3 gap-2">
-
-            <div className="d-flex gap-2 mt-3">
-              <button
-                type="button"
-                className="btn btn-outline-primary flex-fill"
-                onClick={() => handleEditar(u._id)}
-              >
-                Editar
-              </button>
-
-              <button
-                type="button"
-                className="btn btn-outline-danger flex-fill"
-                onClick={() => handleEliminar(u._id)}
-              >
-                Eliminar
-              </button>
-            </div>
-
           </div>
+
+          {/* Botones */}
+          <div className="mt-auto pt-3 d-flex gap-2">
+            <button
+              type="button"
+              className="btn btn-primary flex-fill rounded-pill"
+              onClick={() => handleEditar(u._id)}
+            >
+              Editar
+            </button>
+
+            <button
+              type="button"
+              className="btn btn-danger flex-fill rounded-pill"
+              onClick={() => handleEliminar(u._id)}
+            >
+              Eliminar
+            </button>
           </div>
+
         </div>
-      ))
-    }
+      </div>
+    ))}
   </section>
 </main>
   )
