@@ -12,6 +12,7 @@ const Citas = () => {
   const [dni, setDni] = useState("")
 
   console.log(cita)
+  console.log(user)
 
   const handleCobrarTerapia = async (id) => {
   
