@@ -286,11 +286,20 @@ const Citas = () => {
                             {c.estado}
                           </span>
                         </p>
-                        <button type="button"
-                          className="btn btn-success"
-                          onClick={() => handleTerapiaCompletada(c._id)}>
-                          Completado...?
-                        </button>
+                        {
+                          c.estado === "completado"?
+                          <button type="button"
+                            className="btn btn-success"
+                            disabled>
+                            Completado...?
+                          </button>
+                          :
+                          <button type="button"
+                            className="btn btn-success"
+                            onClick={() => handleTerapiaCompletada(c._id)}>
+                            Completado...?
+                          </button>
+                        }
                       </div>
                     </div>
                   </div>
