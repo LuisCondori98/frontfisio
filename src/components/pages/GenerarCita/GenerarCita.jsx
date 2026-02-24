@@ -37,8 +37,8 @@ const GenerarCita = () => {
 
       await Swal.fire({
         icon: "success",
-        title: "Usuario reactivado",
-        text: "El usuario fue activado nuevamente correctamente",
+        title: "Gracias por confiar nuevamente",
+        text: "Fuiste activado nuevamente correctamente",
         confirmButtonColor: "#198754"
       });
     }
