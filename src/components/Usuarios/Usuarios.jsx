@@ -114,8 +114,10 @@ const Usuarios = () => {
     }
   }
 
-  const handleEditar = (id) => {
-    console.log(`Editado por id ${id}`)
+  const handleEditar = (dni) => {
+
+    navigate(`/edit-perfil/${dni}`)
+    console.log(`Editado por id ${dni}`)
   }
 
   return (
@@ -237,7 +239,7 @@ const Usuarios = () => {
             <button
               type="button"
               className="btn btn-primary flex-fill rounded-pill"
-              onClick={() => handleEditar(u._id)}
+              onClick={() => handleEditar(u.dni)}
             >
               Editar
             </button>
