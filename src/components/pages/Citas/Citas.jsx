@@ -11,6 +11,8 @@ const Citas = () => {
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
 
+  console.log(user)
+
   const handleCobrarTerapia = async (id) => {
 
   
@@ -47,7 +49,7 @@ const Citas = () => {
 
   useEffect(() => {
 
-    axios.get(`https://back-fisioterapia.onrender.com/api/cita/${user.id}`)
+    axios.get(`https://back-fisioterapia.onrender.com/api/cita/${user._id}`)
       .then(response => setCita(response.data))
   }, [])
 

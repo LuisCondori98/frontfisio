@@ -183,7 +183,7 @@ const Profile = () => {
                               <h4 className="text-success mb-3">Terapia de Rehabilitación</h4>
                                 <div className="row">
                                   <div className="col-sm-6">
-                                    <p className="mb-2"><strong>Fecha:</strong><br /> {new Date(c.fecha).toLocaleDateString()}</p>
+                                    <p className="mb-2"><strong>Fecha:</strong><br /> {new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}</p>
                                     <p className="mb-2"><strong>Hora:</strong><br /> {c.hora}</p>
                                   </div>
                                   <div className="col-sm-6">
