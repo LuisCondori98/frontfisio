@@ -97,7 +97,9 @@ const Usuarios = () => {
     
     try {
 
-      const response = await axios.delete(`https://back-fisioterapia.onrender.com/api/user/delete-user/${id}`)
+      const response = await axios.post(`https://back-fisioterapia.onrender.com/api/paciente/update-paciente/${id}`, {
+        estado: "inactivo"
+      })
 
       if(response.status === 200) {
 
@@ -239,20 +241,13 @@ const Usuarios = () => {
               Editar
             </button>
 
-            {
-              users.map(u => (
-                u.rol === "paciente" && (
-                  <button
-                    type="button"
-                    className="btn btn-danger flex-fill rounded-pill"
-                    onClick={() => handleInactivo(u._id)}
-                  >
-                    Inactivo
-                  </button>
-                )
-              ))
-            }
-            
+            <button
+              type="button"
+              className="btn btn-danger flex-fill rounded-pill"
+              onClick={() => handleInactivo(u._id)}
+            >
+              Inactivo
+            </button>
           </div>
 
         </div>
