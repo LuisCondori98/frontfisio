@@ -374,6 +374,7 @@ const Citas = () => {
                             type="text"
                             readOnly
                             disabled
+                            name="paciente"
                             className="form-control bg-light"
                             value={`${users?.nombre ?? ""} ${users?.apellidoPaterno ?? ""} ${users?.apellidoMaterno ?? ""}`}
                           />
@@ -399,20 +400,10 @@ const Citas = () => {
                           <input type="time" className="form-control" name="hora" />
                         </div>
 
-                        <div className="col-md-4">
-                          <label className="form-label">Precio</label>
-                          <input type="number" className="form-control" name="precio" />
-                        </div>
-
                         <div className="col-md-8">
                           <label className="form-label">Terapeuta</label>
                           <select className="form-select" name="terapeuta">
-                            <option value="">-- Elige uno --</option>
-                            {terapeuta.map((t) => (
-                              <option key={t._id} value={t._id}>
-                                {t.nombre} {t.apePaterno}
-                              </option>
-                            ))}
+                            <option value={user._id}>{user.nombre}</option>
                           </select>
                         </div>
 
