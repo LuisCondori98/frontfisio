@@ -11,7 +11,7 @@ const Citas = () => {
   const [terapeuta, setTerapeuta] = useState([])
   const [dni, setDni] = useState("")
 
-  
+  console.log(user)
 
   const handleCobrarTerapia = async (id) => {
   
