@@ -329,7 +329,7 @@ const Profile = () => {
           <div className="container py-4">
 
             <div className="row mb-4">
-              <div className="col-md-3 mb-3">
+              <div className="col-md-6 mb-3">
                 <div className="card bg-primary text-white">
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
@@ -342,12 +342,13 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3 mb-3">
+
+              <div className="col-md-6 mb-3">
                 <div className="card bg-success text-white">
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <Link to="/cita" className="text-white no-underline">
+                        <Link to="/cita" className="text-white text-decoration-none">
                           <h4 className="mb-0">{citas.length}</h4>
                           <p className="mb-0">Citas</p>
                         </Link>
@@ -357,7 +358,8 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3 mb-3">
+
+              <div className="col-md-6 mb-3">
                 <div className="card bg-info text-white">
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
@@ -370,7 +372,8 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3 mb-3">
+
+              <div className="col-md-6 mb-3">
                 <div className="card bg-warning text-white">
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
