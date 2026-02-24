@@ -157,7 +157,7 @@ const Usuarios = () => {
             :
               <img src="/img/profilewoman.png"/>
           }
-          <div className="card-body d-flex flex-column">
+          <div className="card-body ">
             <label><strong>Nombres: </strong> {u.nombre}</label><br />
             <label><strong>Apellidos: </strong> {u.apellidoPaterno} {u.apellidoMaterno}</label><br />
             <label><strong>DNI: </strong> {u.dni}</label><br />
@@ -184,21 +184,23 @@ const Usuarios = () => {
             )}
             <div className="d-flex justify-content-between mt-3 gap-2">
 
-            <button
-              type="button"
-              className="btn btn-outline-primary flex-fill"
-              onClick={() => handleEditar(u._id)}
-            >
-              Editar
-            </button>
+            <div className="d-flex gap-2 mt-3">
+              <button
+                type="button"
+                className="btn btn-outline-primary flex-fill"
+                onClick={() => handleEditar(u._id)}
+              >
+                Editar
+              </button>
 
-            <button
-              type="button"
-              className="btn btn-outline-danger flex-fill"
-              onClick={() => handleEliminar(u._id)}
-            >
-              Eliminar
-            </button>
+              <button
+                type="button"
+                className="btn btn-outline-danger flex-fill"
+                onClick={() => handleEliminar(u._id)}
+              >
+                Eliminar
+              </button>
+            </div>
 
           </div>
           </div>
