@@ -11,8 +11,32 @@ const Profile = () => {
   const [citas, setCitas] = useState([])
   const [users, setUsers] = useState([])
   const [pacientes, setPacientes] = useState([])
+  const [citaUserNow, setCitaUserNow] = useState([])
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+
+    const fetchCita = async () => {
+
+      if (!user?.id) return;
+
+      try {
+        const response = await axios.get(
+          `https://back-fisioterapia.onrender.com/api/cita/${user.id}`
+        );
+
+        setCitaUserNow(response.data);
+
+      } catch (error) {
+
+        console.log("Error" + error.message);
+      }
+    };
+
+    fetchCita();
+
+  }, [user]);
 
   useEffect(() => {
 
@@ -479,7 +503,7 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex justify-content-between">
                       <div>
-                        <h4 className="mb-0">{citas.length}</h4>
+                        <h4 className="mb-0">{citaUserNow.length}</h4>
                         <p className="mb-0">Citas</p>
                       </div>
                       <i className="bi bi-calendar-day display-6 opacity-50"></i>
