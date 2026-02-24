@@ -288,11 +288,8 @@ const Citas = () => {
                         </p>
                         {
                           c.estado === "completada"?
-                          <button type="button"
-                            className="btn btn-success"
-                            disabled>
-                            Completado...?
-                          </button>
+                          <>
+                          </>
                           :
                           <button type="button"
                             className="btn btn-success"
