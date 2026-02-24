@@ -116,6 +116,7 @@ const Usuarios = () => {
 
   const handleEditar = (id) => {
 
+    navigate(`/edit-perfil/${id}`)
     console.log(`Editado por id ${id}`)
   }
 
