@@ -1,7 +1,7 @@
 import axios from "axios"
 import "./Usuarios.css"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Usuarios = () => {
 
@@ -9,6 +9,8 @@ const Usuarios = () => {
   const [rol, setRol] = useState("")
   const [nombre, setNombre] = useState("")
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -79,9 +81,11 @@ const Usuarios = () => {
   const calcularEdad = (cumpleanios) => {
 
     const hoy = new Date();
+
     const cumple = new Date(cumpleanios);
-    console.log(cumple)
+
     let edad = hoy.getFullYear() - cumple.getFullYear();
+
     const mes = hoy.getMonth() - cumple.getMonth();
 
     if (mes < 0 || (mes === 0 && hoy.getDate() < cumple.getDate())) edad--;
@@ -89,9 +93,21 @@ const Usuarios = () => {
     return edad;
   };
 
-  const handleEliminar = (id) => {
+  const handleEliminar = async (id) => {
 
-    console.log(`Elimnado por id: ${id}`)
+    try {
+
+      const response = await axios.delete(`https://back-fisioterapia.onrender.com/api/user/delete-user/${id}`)
+
+      if(response.status === 200) {
+
+        navigate("/usuarios")
+      }
+
+    } catch(err) {
+
+      console.error("Error", err)
+    }
   }
 
   const handleEditar = (id) => {
