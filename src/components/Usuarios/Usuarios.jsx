@@ -241,16 +241,15 @@ const Usuarios = () => {
 
             {
               users.map(u => (
-                u.rol === "paciente" ?
-                <button
-                  type="button"
-                  className="btn btn-danger flex-fill rounded-pill"
-                  onClick={() => handleInactivo(u._id)}
-                >
-                  Inactivo
-                </button>
-                :
-                <></>
+                u.rol === "paciente" && (
+                  <button
+                    type="button"
+                    className="btn btn-danger flex-fill rounded-pill"
+                    onClick={() => handleInactivo(u._id)}
+                  >
+                    Inactivo
+                  </button>
+                )
               ))
             }
             
