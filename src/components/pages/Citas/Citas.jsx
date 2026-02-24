@@ -313,16 +313,18 @@ const Citas = () => {
                             </span>
                           </p>
 
-                          {c.estado !== "completada" && (
-                            <button
-                              type="button"
-                              className="btn btn-success w-100 rounded-pill"
-                              onClick={() => handleTerapiaCompletada(c._id)}
-                            >
-                              Marcar como completada
-                            </button>
-                          )}
-
+                          {
+                            c.estado !== "completada" && (
+                              <button
+                                type="button"
+                                className="btn btn-success w-100 rounded-pill"
+                                onClick={() => c.estado === "confirmada" && handleTerapiaCompletada(c._id)}
+                                disabled={c.estado !== "confirmada"}
+                              >
+                                Marcar como completada
+                              </button>
+                            )
+                          }
                         </div>
 
                       </div>
