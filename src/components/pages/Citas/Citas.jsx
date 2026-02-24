@@ -49,11 +49,26 @@ const Citas = () => {
 
   useEffect(() => {
 
-    if (!user?.id) return;
+    const fetchCita = async () => {
 
-    axios.get(`https://back-fisioterapia.onrender.com/api/cita/${Number(user.id)}`)
-      .then(response => setCita(response.data))
-  }, [user])
+      if (!user?.id) return;
+
+      try {
+        const response = await axios.get(
+          `https://back-fisioterapia.onrender.com/api/cita/${user.id}`
+        );
+
+        setCita(response.data);
+
+      } catch (error) {
+        
+        console.log(error);
+      }
+    };
+
+    fetchCita();
+
+  }, [user]);
 
   useEffect(() => {
 
