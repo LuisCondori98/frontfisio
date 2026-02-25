@@ -1,6 +1,7 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { createContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export const AuthContext = createContext()
 
@@ -8,6 +9,8 @@ export const AuthProvider = ({children}) => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({})
+
+  const navigate = useNavigate()
 
   const login = async (email, password) => {
 
@@ -20,10 +23,23 @@ export const AuthProvider = ({children}) => {
 
       localStorage.setItem("token", response.data)
 
-      window.location.reload()
+      Swal.fire({
+        icon: "success",
+        title: "¡Sesión iniciada!",
+        text: "Bienvenido al sistema",
+        showConfirmButton: false,
+        timer: 2000
+      });
+
+      setTimeout(() => {
+
+        window.location.reload()
+      }, 3000)
+
     } catch (error) {
 
-      alert("Error al iniciar sesión");
+      navigate("/login")
+
       console.error(error);
     }
   }
