@@ -22,7 +22,7 @@ const ViewContacto = () => {
 
         setContactoMsgs(data)
 
-        
+        setLoading(false)
 
       } catch(err) {
 
