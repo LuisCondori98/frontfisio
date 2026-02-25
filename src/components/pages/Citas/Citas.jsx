@@ -144,7 +144,7 @@ const Citas = () => {
                     </p>
                   </div>
                   {
-                    c.estado === "cancelado" ? (
+                    c.estado === "cancelada" ? (
 
                       <button
                         type="button"
