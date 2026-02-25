@@ -256,7 +256,7 @@ const Profile = () => {
                                 <tr>
                                   <td>{new Date(c.fecha).toLocaleDateString("es-PE", {timeZone: "UTC"})}</td>
                                   <td>{c.hora}</td>
-                                  <td>{c.terapeuta.nombre}</td>
+                                  <td>{c.terapeuta.nombre} {c.terapeuta.apellidoPaterno}</td>
                                   <td>{c.motivo}</td>
                                   <td>{c.estado}</td>
                                   <td>
@@ -596,7 +596,7 @@ const Profile = () => {
                             citaUserNow.map(cu => (
                               <tr>
                                 <td>{cu.hora}</td>
-                                <td>{cu.paciente.nombre}</td>
+                                <td>{cu.paciente.nombre} {cu.paciente.apellidoPaterno}</td>
                                 <td>Terapia Type</td>
                                 <td>20 min</td>
                                 <td>{cu.estado}</td>
