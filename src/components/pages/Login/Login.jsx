@@ -18,7 +18,7 @@ const Login = () => {
 
     e.preventDefault();
 
-      login(email, password)
+      await login(email, password)
 
       setEmail("")
       setPassword("")
