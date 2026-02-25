@@ -113,11 +113,9 @@ const Login = () => {
 
       const idToken = await user.getIdToken();
 
-      const response = await axios.post('https://back-fisioterapia.onrender.com/auth/login-social', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ idToken })
-      });
+      const response = await axios.post("https://back-fisioterapia.onrender.com/auth/login-social",
+        { idToken }
+      );
 
       const data = await response.json();
 
