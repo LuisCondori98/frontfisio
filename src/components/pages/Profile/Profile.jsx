@@ -178,7 +178,7 @@ const Profile = () => {
                   <div className="card-body">
                         {
                           cita.map(c => (
-                            c.estado !== "completada"?
+                            c.estado !== "completada" && c.estado !== "cancelada" ?
                             <div className="row align-items-center">
                               <div className="col-md-8">
                               <h4 className="text-success mb-3">Terapia de Rehabilitación</h4>
