@@ -37,8 +37,8 @@ const GenerarCita = () => {
 
       await Swal.fire({
         icon: "success",
-        title: "Gracias por confiar nuevamente",
-        text: "Fuiste activado nuevamente correctamente",
+        title: "Cita Generada",
+        text: "cita generadamente exitosa solo falta pagar",
         confirmButtonColor: "#198754"
       });
     }
