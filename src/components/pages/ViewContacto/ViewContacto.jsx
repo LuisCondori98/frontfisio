@@ -12,10 +12,12 @@ const ViewContacto = () => {
 
         try {
 
-        const token = await localStorage.getItem("token")
+        const token = localStorage.getItem("token")
 
-        const response = axios.get("https://back-fisioterapia.onrender.com/api/contacto",{
-          Authorization: `Bearer ${token}`
+        const response = await axios.get("https://back-fisioterapia.onrender.com/api/contacto",{
+          headers:{
+            Authorization: `Bearer ${token}`
+          }
         })
 
         const data = response.data
@@ -27,6 +29,7 @@ const ViewContacto = () => {
       } catch(err) {
 
         console.log("No eres admin", err)
+        setLoading(false)
       }
     }
 
