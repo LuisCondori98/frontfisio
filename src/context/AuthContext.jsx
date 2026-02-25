@@ -23,7 +23,27 @@ export const AuthProvider = ({children}) => {
 
       localStorage.setItem("token", response.data)
 
+      await Swal.fire({
+        icon: "success",
+        title: "¡Sesión iniciada!",
+        text: "Bienvenido al sistema",
+        showConfirmButton: false,
+        timer: 3000
+      });
+
+      setTimeout(() => {
+
+        navigate("/")
+      }, 3000)
+
     } catch (error) {
+
+      Swal.fire({
+        icon: "error",
+        title: "Acceso denegado",
+        text: "Credenciales incorrectas",
+        confirmButtonColor: "#d33",
+      });
 
       navigate("/login")
 

@@ -22,18 +22,6 @@ const Login = () => {
 
       login(email, password)
 
-      Swal.fire({
-        icon: "success",
-        title: "¡Sesión iniciada!",
-        text: "Bienvenido al sistema",
-        showConfirmButton: false,
-        timer: 3000
-      });
-
-      setTimeout(() => {
-
-        navigate("/")
-      }, 3000)
     } catch (err) {
 
       Swal.fire({
