@@ -170,7 +170,7 @@ const Login = () => {
 
           </form>
           <button onClick={handleRecoveryPass} className="btn btn-success">Restablecer contraseña</button>
-          <button
+          {/*<button
             onClick={handleGoogleLogin}
             style={{
               padding: '10px 20px',
@@ -183,7 +183,7 @@ const Login = () => {
             }}
           >
             Iniciar sesión con Google
-          </button>
+          </button>*/}
         </div>
       </div>
       }
