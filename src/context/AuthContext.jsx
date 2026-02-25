@@ -23,6 +23,12 @@ export const AuthProvider = ({children}) => {
 
       localStorage.setItem("token", response.data)
 
+      const decoded = jwtDecode(response.data)
+
+      setUser(decoded)
+
+      setIsAuthenticated(true)
+
       await Swal.fire({
         icon: "success",
         title: "¡Sesión iniciada!",
@@ -46,12 +52,10 @@ export const AuthProvider = ({children}) => {
       });
 
       navigate("/login")
-
-      console.error(error);
     }
   }
 
-  useEffect(() => {
+  /*useEffect(() => {
 
     const token = localStorage.getItem("token")
 
@@ -76,7 +80,7 @@ export const AuthProvider = ({children}) => {
 
       setIsAuthenticated(false)
     }
-  }, [])
+  }, [])*/
 
   const logout = () => {
 
