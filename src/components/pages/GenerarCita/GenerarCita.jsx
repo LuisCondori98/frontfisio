@@ -66,8 +66,6 @@ const GenerarCita = () => {
       .catch((err) => console.error("Error cargando fisioterapeutas", err));
   }, []);
 
-  console.log(user.id)
-
   return (
     <form className="card p-4" onSubmit={handleSubmit}>
       <h5 className="mb-3">Registrar Cita</h5>
