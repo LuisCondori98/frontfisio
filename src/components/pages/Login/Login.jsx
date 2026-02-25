@@ -117,7 +117,7 @@ const Login = () => {
         { idToken }
       );
 
-      const data = await response.json();
+      const data = await response.data;
 
       console.log(data)
 
@@ -127,7 +127,7 @@ const Login = () => {
 
       console.error(error);
     }
-};
+  };
 
   return (
     <main>
