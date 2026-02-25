@@ -152,7 +152,7 @@ const Citas = () => {
                     data-bs-toggle="modal"
                     data-bs-target={`#cobrarModal-${c._id}`}
                   >
-                    Cobrar
+                    Pagado
                   </button>
                   :
                   <button
