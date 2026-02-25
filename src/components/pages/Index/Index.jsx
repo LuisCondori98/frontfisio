@@ -253,7 +253,26 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Tarjeta 4 */}
+          {/* Tarjeta 5 */}
+          <div
+            className="card border-0 shadow-lg overflow-hidden"
+            data-aos="flip-right"
+          >
+            <img
+              className="w-100"
+              src="/img/fisioNeurologica.webp"
+              alt="Fisioterapia reumatológica"
+              style={{ height: "220px", objectFit: "cover" }}
+            />
+            <div className="card-body text-center">
+              <h4 className="text-success fw-bold">Fisioterapia Neurologica</h4>
+              <p className="text-muted">
+                Trata alteraciones del sistema nervioso (cerebro, médula espinal y nervios) que afectan el movimiento, el equilibrio, la coordinación y la fuerza.
+              </p>
+              <Link className="btn btn-primary" to={`/tratamiento/terapia-neurologica`}>Ver mas</Link>
+            </div>
+          </div>
+
           <div
             className="card border-0 shadow-lg overflow-hidden"
             data-aos="flip-right"

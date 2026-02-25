@@ -175,6 +175,55 @@ const TipoTerapia = () => {
                     </section>
                 )
                 :
+                terapia === "terapia-neurologica" ?
+                (
+                    <section className="py-5 bg-light">
+                        <div className="container">
+                            <div className="row align-items-center">
+
+                            <div className="col-md-6">
+                                <img 
+                                src="/img/fisioNeurologica.webp" 
+                                className="img-fluid rounded shadow" 
+                                alt="Terapia Neurológica" 
+                                />
+                            </div>
+
+                            <div className="col-md-6">
+                                <h2 className="fw-bold mb-3 text-primary">Terapia Neurológica</h2>
+                                <p className="text-muted">
+                                Tratamiento especializado para pacientes con afecciones del sistema nervioso 
+                                como ACV, Parkinson, lesiones medulares y parálisis cerebral. 
+                                Enfocada en recuperar movilidad, equilibrio y calidad de vida.
+                                </p>
+
+                                <ul className="list-group list-group-flush mb-4">
+                                <li className="list-group-item">✔ Rehabilitación post-ACV</li>
+                                <li className="list-group-item">✔ Terapia para Parkinson</li>
+                                <li className="list-group-item">✔ Entrenamiento de equilibrio y coordinación</li>
+                                <li className="list-group-item">✔ Reeducación neuromuscular</li>
+                                </ul>
+
+                                <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="btn btn-primary px-4"
+                                >
+                                <Link 
+                                    to={"/agendar-cita"} 
+                                    className="text-decoration-none text-white"
+                                >
+                                    Agendar Cita
+                                </Link>
+                                </motion.button>
+
+                            </div>
+
+                            </div>
+                        </div>
+                    </section>
+                )
+                :
                 <>Terapia no encontrada</>
             }
         </main>
