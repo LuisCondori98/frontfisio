@@ -8,6 +8,7 @@ const Profile = () => {
   
   const { user } = useContext(AuthContext)
   const {cita} = useContext(CartContext)
+  const [error, setError] = useState("")
   const [citas, setCitas] = useState([])
   const [users, setUsers] = useState([])
   const [pacientes, setPacientes] = useState([])
