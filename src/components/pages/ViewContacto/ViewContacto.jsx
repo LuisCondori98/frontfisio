@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 const ViewContacto = () => {
 
   const [contactoMsgs, setContactoMsgs] = useState([])
+  const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const ViewContacto = () => {
 
       } catch(err) {
 
-        console.log("No eres admin", err)
+        setError("No eres administrador")
         setLoading(false)
       }
     }
@@ -43,6 +44,17 @@ const ViewContacto = () => {
         <div className="spinner-border text-primary" role="status"></div>
         <p className="mt-3 text-muted">Cargando consultas...</p>
       </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mt-5 text-center">
+      <div className="alert alert-danger">
+        <h4>{error}</h4>
+        <p>No tienes permisos para acceder a esta sección.</p>
+      </div>
+    </div>
     );
   }
 
