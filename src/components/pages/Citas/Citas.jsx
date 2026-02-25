@@ -144,25 +144,40 @@ const Citas = () => {
                     </p>
                   </div>
                   {
-                    c.estado === "confirmada" || c.estado === "completada" ? 
-                    <button
-                    type="button"
-                    disabled
-                    className="btn btn-success w-100"
-                    data-bs-toggle="modal"
-                    data-bs-target={`#cobrarModal-${c._id}`}
-                  >
-                    Pagado
-                  </button>
-                  :
-                  <button
-                    type="button"
-                    className="btn btn-success w-100"
-                    data-bs-toggle="modal"
-                    data-bs-target={`#cobrarModal-${c._id}`}
-                  >
-                    Cobrar
-                  </button>
+                    c.estado === "cancelado" ? (
+
+                      <button
+                        type="button"
+                        className="btn btn-danger w-100"
+                        onClick={() => eliminarCita(c._id)}
+                      >
+                        Eliminar
+                      </button>
+
+                    ) : c.estado === "confirmada" || c.estado === "completada" ? (
+
+                      <button
+                        type="button"
+                        disabled
+                        className="btn btn-success w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target={`#cobrarModal-${c._id}`}
+                      >
+                        Pagado
+                      </button>
+
+                    ) : (
+
+                      <button
+                        type="button"
+                        className="btn btn-success w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target={`#cobrarModal-${c._id}`}
+                      >
+                        Cobrar
+                      </button>
+
+                    )
                   }
                   {/*<button
                     type="button"
