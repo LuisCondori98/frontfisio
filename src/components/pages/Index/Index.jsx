@@ -127,44 +127,55 @@ const Index = () => {
 
         <div className="row">
           {
-            fisio.map((f) => (
-            <motion.div
-              key={f._id}
-              className="col-md-4 mb-4"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="card shadow border-0"
-              >
-                <img
-                  src={`/img/${f.img}`}
-                  className="card-img-top"
-                  alt={f.nombre}
-                  style={{ height: "370px", objectFit: "cover" }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title fw-bold">
-                    {f.nombre}
-                  </h5>
-                  <p className="card-text text-muted">
-                    Fisioterapeuta
-                  </p>
-                  <button
-                    className="btn btn-primary btn-sm"
-                    onClick={() => handlePerfilFisio(f._id)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalFisio"
-                  >
-                    Ver Perfil
-                  </button>
+            fisio.length === 0 ?
+            (
+              <div className="d-flex justify-content-center my-5">
+                <div className="spinner-border text-primary" role="status">
+                  <span className="visually-hidden">Cargando...</span>
                 </div>
-              </motion.div>
-            </motion.div>
-          ))}
+              </div>
+            ) :
+            (
+              fisio.map((f) => (
+                <motion.div
+                  key={f._id}
+                  className="col-md-4 mb-4"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="card shadow border-0"
+                  >
+                    <img
+                      src={`/img/${f.img}`}
+                      className="card-img-top"
+                      alt={f.nombre}
+                      style={{ height: "370px", objectFit: "cover" }}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title fw-bold">
+                        {f.nombre}
+                      </h5>
+                      <p className="card-text text-muted">
+                        Fisioterapeuta
+                      </p>
+                      <button
+                        className="btn btn-primary btn-sm"
+                        onClick={() => handlePerfilFisio(f._id)}
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalFisio"
+                      >
+                        Ver Perfil
+                      </button>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))
+            )
+          }
         </div>
       </div>
     </section>
