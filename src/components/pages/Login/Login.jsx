@@ -18,19 +18,7 @@ const Login = () => {
 
     e.preventDefault();
 
-    try {
-
       login(email, password)
-
-    } catch (err) {
-
-      Swal.fire({
-        icon: "error",
-        title: "Acceso denegado",
-        text: "Credenciales incorrectas",
-        confirmButtonColor: "#d33",
-      });
-    }
   };
 
   ///////////////////////////////////////////////////////////////////////////
