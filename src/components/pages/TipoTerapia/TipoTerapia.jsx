@@ -1,11 +1,8 @@
 import { Link, useParams } from "react-router-dom"
-import { motion } from "motion/react"
 
 const TipoTerapia = () => {
 
     const {terapia} = useParams()
-
-    console.log(terapia)
 
     return (
         <main>
@@ -33,17 +30,6 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Terapia manual avanzada</li>
                             <li class="list-group-item">✔ Fortalecimiento muscular</li>
                             </ul>
-
-                            <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            onHoverStart={() => console.log('hover started!')}
-                            className="btn btn-primary px-4"
-                            >
-                            <Link to={"/agendar-cita"} className="text-decoration-none text-white">
-                                Agendar Cita
-                            </Link>
-                            </motion.button>
                         </div>
 
                         </div>
@@ -74,18 +60,6 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Terapia para artrosis</li>
                             <li class="list-group-item">✔ Mejora del equilibrio</li>
                             </ul>
-
-                            <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            onHoverStart={() => console.log('hover started!')}
-                            className="btn btn-success px-4"
-                            >
-                            <Link to={"/generar-cita"} className="text-decoration-none text-white">
-                                Agendar Cita
-                            </Link>
-                            </motion.button>
-                            <Link to={"/"} className="btn btn-primary">Volver</Link>
                         </div>
 
                         </div>
@@ -116,17 +90,6 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Reeducación postural</li>
                             <li class="list-group-item">✔ Seguimiento del desarrollo</li>
                             </ul>
-
-                            <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            onHoverStart={() => console.log('hover started!')}
-                            className="btn btn-warning text-white px-4"
-                            >
-                            <Link to={"/agendar-cita"} className="text-decoration-none text-white">
-                                Agendar Cita
-                            </Link>
-                            </motion.button>
                         </div>
 
                         </div>
@@ -157,17 +120,6 @@ const TipoTerapia = () => {
                             <li class="list-group-item">✔ Movilización articular</li>
                             <li class="list-group-item">✔ Ejercicios terapéuticos personalizados</li>
                             </ul>
-
-                            <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            onHoverStart={() => console.log('hover started!')}
-                            className="btn btn-danger px-4"
-                            >
-                            <Link to={"/agendar-cita"} className="text-decoration-none text-white">
-                                Agendar Cita
-                            </Link>
-                            </motion.button>
                         </div>
 
                         </div>
@@ -203,20 +155,6 @@ const TipoTerapia = () => {
                                 <li className="list-group-item">✔ Entrenamiento de equilibrio y coordinación</li>
                                 <li className="list-group-item">✔ Reeducación neuromuscular</li>
                                 </ul>
-
-                                <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="btn btn-primary px-4"
-                                >
-                                <Link 
-                                    to={"/agendar-cita"} 
-                                    className="text-decoration-none text-white"
-                                >
-                                    Agendar Cita
-                                </Link>
-                                </motion.button>
-
                             </div>
 
                             </div>
