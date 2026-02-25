@@ -1,110 +1,155 @@
 import axios from "axios";
-import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const EditProfile = () => {
 
-    const [user, setUser] = useState({})
+  const { dni } = useParams();
+  const navigate = useNavigate();
 
-    const {dni} = useParams()
+  const [user, setUser] = useState({
+    nombre: "",
+    apellidoPaterno: "",
+    apellidoMaterno: "",
+    celular: "",
+    direccion: "",
+    correo: "",
+  });
 
-    useEffect(() => {
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(
+          `https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`
+        );
+        setUser(response.data);
+      } catch (error) {
+        console.error("Error al obtener usuario:", error);
+      }
+    };
 
-        axios.get(`https://back-fisioterapia.onrender.com/api/user/getdni/${dni}`)
-            .then(response => setUser(response.data))
-    }, [])
+    fetchUser();
+  }, [dni]);
 
-    return (
-        <form
-        action="https://back-fisioterapia.onrender.com/api/user/user-update"
-        method="POST"
-        className="container mt-4"
-        style={{ maxWidth: "600px" }}
-        >
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
 
-        <input type="hidden" name="id" value={user._id} />
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        <div className="mb-3">
-            <label htmlFor="nombre" className="form-label">Nombre</label>
-            <input
-            type="text"
-            className="form-control"
-            id="nombre"
-            name="nombre"
-            defaultValue={user.nombre}
-            style={{ textTransform: "uppercase" }}
-            />
-        </div>
+    try {
+      await axios.post(
+        "https://back-fisioterapia.onrender.com/api/user/user-update",
+        { ...user, id: user._id }
+      );
 
-        <div className="mb-3">
-            <label htmlFor="apePaterno" className="form-label">Apellido Paterno</label>
-            <input
-            type="text"
-            className="form-control"
-            id="apePaterno"
-            name="apePaterno"
-            defaultValue={user.apellidoPaterno}
-            style={{ textTransform: "uppercase" }}
-            />
-        </div>
+      await Swal.fire({
+        icon: "success",
+        title: "Usuario actualizado",
+        timer: 1500,
+        showConfirmButton: false,
+      });
 
-        <div className="mb-3">
-            <label htmlFor="apeMaterno" className="form-label">Apellido Materno</label>
-            <input
-            type="text"
-            className="form-control"
-            id="apeMaterno"
-            name="apeMaterno"
-            defaultValue={user.apellidoMaterno}
-            style={{ textTransform: "uppercase" }}
-            />
-        </div>
+      navigate("/perfil");
 
-        <div className="mb-3">
-            <label htmlFor="celular" className="form-label">Celular</label>
-            <input
-            type="tel"
-            className="form-control"
-            id="celular"
-            name="celular"
-            defaultValue={user.celular}
-            />
-        </div>
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error al actualizar usuario",
+      });
+    }
+  };
 
-        <div className="mb-3">
-            <label htmlFor="direccion" className="form-label">Dirección</label>
-            <input
-            type="text"
-            className="form-control"
-            id="direccion"
-            name="direccion"
-            defaultValue={user.direccion}
-            />
-        </div>
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="container mt-4"
+      style={{ maxWidth: "600px" }}
+    >
 
-        <div className="mb-4">
-            <label htmlFor="correo" className="form-label">Correo</label>
-            <input
-            type="email"
-            className="form-control"
-            id="correo"
-            name="correo"
-            defaultValue={user.correo}
-            />
-        </div>
+      <div className="mb-3">
+        <label className="form-label">Nombre</label>
+        <input
+          type="text"
+          className="form-control text-uppercase"
+          name="nombre"
+          value={user.nombre}
+          onChange={handleChange}
+        />
+      </div>
 
-        <div className="d-flex justify-content-between">
-            <Link to="/perfil" className="btn btn-outline-danger">
-            Volver
-            </Link>
+      <div className="mb-3">
+        <label className="form-label">Apellido Paterno</label>
+        <input
+          type="text"
+          className="form-control text-uppercase"
+          name="apellidoPaterno"
+          value={user.apellidoPaterno}
+          onChange={handleChange}
+        />
+      </div>
 
-            <button type="submit" className="btn btn-success">
-            Actualizar
-            </button>
-        </div>
+      <div className="mb-3">
+        <label className="form-label">Apellido Materno</label>
+        <input
+          type="text"
+          className="form-control text-uppercase"
+          name="apellidoMaterno"
+          value={user.apellidoMaterno}
+          onChange={handleChange}
+        />
+      </div>
 
-        </form>
-    )
-}
+      <div className="mb-3">
+        <label className="form-label">Celular</label>
+        <input
+          type="tel"
+          className="form-control"
+          name="celular"
+          value={user.celular}
+          onChange={handleChange}
+        />
+      </div>
 
-export default EditProfile
+      <div className="mb-3">
+        <label className="form-label">Dirección</label>
+        <input
+          type="text"
+          className="form-control"
+          name="direccion"
+          value={user.direccion}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="form-label">Correo</label>
+        <input
+          type="email"
+          className="form-control"
+          name="correo"
+          value={user.correo}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="d-flex justify-content-between">
+        <Link to="/perfil" className="btn btn-outline-danger">
+          Volver
+        </Link>
+
+        <button type="submit" className="btn btn-success">
+          Actualizar
+        </button>
+      </div>
+
+    </form>
+  );
+};
+
+export default EditProfile;
