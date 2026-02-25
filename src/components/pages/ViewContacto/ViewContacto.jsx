@@ -7,12 +7,25 @@ const ViewContacto = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    
-    axios.get("https://back-fisioterapia.onrender.com/api/contacto")
-    .then(response => setContactoMsgs(response.data))
-    .finally(() => {
-      setLoading(false)}
-    )
+
+    try {
+
+      const token = localStorage.getItem("token")
+
+      const response = axios.get("https://back-fisioterapia.onrender.com/api/contacto",{
+        Authorization: `Bearer ${token}`
+      })
+
+      const data = response.data
+
+      setContactoMsgs(data)
+
+      
+
+    } catch(err) {
+
+      console.log("No eres admin", err)
+    }
   })
 
   if(loading) {
