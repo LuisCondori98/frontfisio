@@ -255,7 +255,24 @@ const Register = () => {
                         name="colegiatura"
                         value={formData.colegiatura}
                         onChange={handleChange}
-                        className="form-control" placeholder="Ej: 12345-CMP" />
+                        className="form-control" placeholder="Ej: 12345-CMP"
+                  />
+                  <label className="form-label fw-semibold">Estudios</label>
+                  <input type="text"
+                        name="universidad"
+                        value={formData.universidad}
+                        onChange={handleChange}
+                        className="form-control" placeholder="Universidad..."
+                  />
+                  <label className="form-label fw-semibold">Experiencia</label>
+                  <textarea
+                    name="descProfesional"
+                    value={formData.descProfesional}
+                    onChange={handleChange}
+                    className="form-control"
+                    rows={4}
+                    placeholder="Describe tu experiencia profesional..."
+                  ></textarea>
                 </div>
               )
             }
