@@ -23,19 +23,6 @@ export const AuthProvider = ({children}) => {
 
       localStorage.setItem("token", response.data)
 
-      Swal.fire({
-        icon: "success",
-        title: "¡Sesión iniciada!",
-        text: "Bienvenido al sistema",
-        showConfirmButton: false,
-        timer: 2000
-      });
-
-      setTimeout(() => {
-
-        navigate("/")
-      }, 3000)
-
     } catch (error) {
 
       navigate("/login")

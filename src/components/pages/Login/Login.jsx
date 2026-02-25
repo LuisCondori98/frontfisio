@@ -21,9 +21,27 @@ const Login = () => {
     try {
 
       login(email, password)
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Sesión iniciada!",
+        text: "Bienvenido al sistema",
+        showConfirmButton: false,
+        timer: 3000
+      });
+
+      setTimeout(() => {
+
+        navigate("/")
+      }, 3000)
     } catch (err) {
 
-      navigate("/login")
+      Swal.fire({
+        icon: "error",
+        title: "Acceso denegado",
+        text: "Credenciales incorrectas",
+        confirmButtonColor: "#d33",
+      });
     }
   };
 
