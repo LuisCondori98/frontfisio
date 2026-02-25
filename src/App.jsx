@@ -19,28 +19,28 @@ import TipoTerapia from './components/pages/TipoTerapia/TipoTerapia'
 function App() {
 
   return (
-    <AuthProvider>
-    <CartProvider>
-      <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path={"/"} element={<Index />} />
-        <Route path={"/tratamiento/:terapia"} element={<TipoTerapia />} />
-        <Route path={"/perfil"} element={<Profile />} />
-        <Route path={"/edit-perfil/:dni"} element={<EditProfile />} />
-        <Route path={"/usuarios"} element={<Usuarios />} />
-        <Route path={"/login"} element={<Login />} />
-        <Route path={"/cita"} element={<Citas />} />
-        <Route path={"/servicios"} element={<Servicios />} />
-        <Route path={"/contacto"} element={<Contacto />} />
-        <Route path={"/vista-contacto"} element={<ViewContacto />} />
-        <Route path={"/generar-cita"} element={<GenerarCita />} />
-        <Route path={"/register"} element={<Register />} />
-        <Route path={"/checkout"} element={<CheckOut />} />
-      </Routes>
-      </BrowserRouter>
-    </CartProvider>
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+      <CartProvider>
+        <NavBar />
+        <Routes>
+          <Route path={"/"} element={<Index />} />
+          <Route path={"/tratamiento/:terapia"} element={<TipoTerapia />} />
+          <Route path={"/perfil"} element={<Profile />} />
+          <Route path={"/edit-perfil/:dni"} element={<EditProfile />} />
+          <Route path={"/usuarios"} element={<Usuarios />} />
+          <Route path={"/login"} element={<Login />} />
+          <Route path={"/cita"} element={<Citas />} />
+          <Route path={"/servicios"} element={<Servicios />} />
+          <Route path={"/contacto"} element={<Contacto />} />
+          <Route path={"/vista-contacto"} element={<ViewContacto />} />
+          <Route path={"/generar-cita"} element={<GenerarCita />} />
+          <Route path={"/register"} element={<Register />} />
+          <Route path={"/checkout"} element={<CheckOut />} />
+        </Routes>
+      </CartProvider>
+      </AuthProvider>
+    </BrowserRouter>
   )
 }
 

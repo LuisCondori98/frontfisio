@@ -33,7 +33,7 @@ export const AuthProvider = ({children}) => {
 
       setTimeout(() => {
 
-        window.location.reload()
+        navigate("/")
       }, 3000)
 
     } catch (error) {
