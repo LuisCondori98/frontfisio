@@ -55,7 +55,7 @@ export const AuthProvider = ({children}) => {
     }
   }
 
-  /*useEffect(() => {
+  useEffect(() => {
 
     const token = localStorage.getItem("token")
 
@@ -80,7 +80,7 @@ export const AuthProvider = ({children}) => {
 
       setIsAuthenticated(false)
     }
-  }, [])*/
+  }, [])
 
   const logout = () => {
 
