@@ -153,7 +153,7 @@ const Index = () => {
                       src={`/img/${f.img}`}
                       className="card-img-top"
                       alt={f.nombre}
-                      style={{ height: "310px", objectFit: "cover" }}
+                      style={{ height: "270px", objectFit: "cover" }}
                     />
                     <div className="card-body">
                       <h5 className="card-title fw-bold">
@@ -329,7 +329,7 @@ const Index = () => {
                       src={`/img/${fisioById.img}`}
                       alt={fisioById.nombre}
                       className="img-fluid rounded shadow-sm mb-3"
-                      style={{ height: "250px", objectFit: "cover" }}
+                      style={{ height: "370px", objectFit: "cover" }}
                     />
                   </div>
 
@@ -345,15 +345,15 @@ const Index = () => {
                     </p>
 
                     <p className="text-muted mb-2">
-                      <strong>Teléfono:</strong> {fisioById.telefono}
-                    </p>
-
-                    <p className="text-muted mb-2">
                       <strong>Email:</strong> {fisioById.email}
                     </p>
 
                     <p className="text-muted mb-2">
                       <strong>Estudios:</strong> {fisioById.universidad}
+                    </p>
+
+                    <p className="text-muted mb-2">
+                      <strong>Colegiatura:</strong> {fisioById.colegiatura}
                     </p>
 
                     <p className="text-muted mb-2">

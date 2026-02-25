@@ -131,7 +131,7 @@ const Usuarios = () => {
         {/* 🔹 SIDEBAR FILTROS */}
         <aside className="col-lg-3">
           <div className="card border-0 shadow-sm rounded-4 p-4">
-            <h5 className="fw-bold mb-3 text-primary">🔎 Filtros</h5>
+            <h5 className="fw-bold mb-3 text-primary">Filtros</h5>
 
             <div className="mb-3">
               <label className="form-label fw-semibold">Rol</label>
@@ -257,18 +257,18 @@ const Usuarios = () => {
                     <div className="d-flex gap-2">
                       <button
                         type="button"
-                        className="btn btn-outline-primary flex-fill rounded-pill"
+                        className="btn btn-primary flex-fill rounded-pill"
                         onClick={() => handleEditar(u.dni)}
                       >
-                        ✏ Editar
+                        Editar
                       </button>
 
                       <button
                         type="button"
                         className={`btn ${
                           u.estado === "activo"
-                            ? "btn-outline-danger"
-                            : "btn-outline-success"
+                            ? "btn-danger"
+                            : "btn-success"
                         } rounded-pill`}
                         onClick={() => handleEstado(u._id, u.estado)}
                       >
@@ -285,7 +285,6 @@ const Usuarios = () => {
 
           </div>
         </section>
-
       </div>
     </main>
   )
