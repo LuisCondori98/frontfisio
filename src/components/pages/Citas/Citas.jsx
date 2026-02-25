@@ -405,7 +405,7 @@ const Citas = () => {
                         <div className="col-md-8">
                           <label className="form-label">Terapeuta</label>
                           <select className="form-select" name="terapeuta">
-                            <option value={user.id}>{user.nombre} {user.apePaterno}</option>
+                            <option value={user.id}>{user.nombre} {user.apePaterno} {user.especialidad}</option>
                           </select>
                         </div>
 
