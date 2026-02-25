@@ -197,7 +197,7 @@ const Usuarios = () => {
                     </h5>
 
                     <small className="text-light">
-                      {u.rol.toUpperCase()}
+                      {u.rol}
                     </small>
                   </div>
 
