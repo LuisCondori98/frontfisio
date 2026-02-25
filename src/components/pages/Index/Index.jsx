@@ -157,7 +157,7 @@ const Index = () => {
                     />
                     <div className="card-body">
                       <h5 className="card-title fw-bold">
-                        {(f.nombre).toLowerCase().split(" ").charAt(0).toUpperCase()}
+                        {f.nombre} {f.apellidoPaterno}
                       </h5>
                       <p className="card-text text-muted">
                         Fisioterapeuta
