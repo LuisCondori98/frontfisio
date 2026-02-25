@@ -21,8 +21,6 @@ const Login = () => {
     try {
 
       login(email, password)
-
-      navigate("/")
     } catch (err) {
 
       navigate("/login")
