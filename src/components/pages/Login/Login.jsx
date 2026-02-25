@@ -2,6 +2,9 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
+import { auth, googleProvider } from "../../Firebase/Firebase"
+import { signInWithPopup } from "firebase/auth";
+
 
 const Login = () => {
 
@@ -100,6 +103,37 @@ const Login = () => {
       }
   }
 
+  const handleGoogleLogin = async () => {
+
+    try {
+
+      const result = await signInWithPopup(auth, googleProvider);
+
+      const user = result.user;
+
+      console.log(user)
+
+      const idToken = await user.getIdToken();
+
+      console.log("ID Token:", idToken);
+
+      const response = await fetch('https://back-fisioterapia.onrender.com/auth/login-social', {
+
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken })
+      });
+
+      const data = await response.json();
+
+      console.log("JWT backend:", data.token);
+
+    } catch (error) {
+
+      console.error(error);
+    }
+};
+
   return (
     <main>
       {
@@ -141,6 +175,20 @@ const Login = () => {
 
           </form>
           <button onClick={handleRecoveryPass} className="btn btn-success">Restablecer contraseña</button>
+          <button
+            onClick={handleGoogleLogin}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#4285F4',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontWeight: 'bold'
+            }}
+          >
+            Iniciar sesión con Google
+          </button>
         </div>
       </div>
       }
