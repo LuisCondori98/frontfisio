@@ -14,8 +14,6 @@ const EditProfile = () => {
             .then(response => setUser(response.data))
     }, [])
 
-    console.log(user)
-
     return (
         <form
         action="https://back-fisioterapia.onrender.com/api/user/user-update"
@@ -34,6 +32,7 @@ const EditProfile = () => {
             id="nombre"
             name="nombre"
             defaultValue={user.nombre}
+            style={{ textTransform: "uppercase" }}
             />
         </div>
 
@@ -45,6 +44,7 @@ const EditProfile = () => {
             id="apePaterno"
             name="apePaterno"
             defaultValue={user.apellidoPaterno}
+            style={{ textTransform: "uppercase" }}
             />
         </div>
 
@@ -56,6 +56,7 @@ const EditProfile = () => {
             id="apeMaterno"
             name="apeMaterno"
             defaultValue={user.apellidoMaterno}
+            style={{ textTransform: "uppercase" }}
             />
         </div>
 
