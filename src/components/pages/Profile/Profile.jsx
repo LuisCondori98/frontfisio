@@ -394,9 +394,9 @@ const Profile = () => {
                     <i className="bi bi-graph-up display-4 text-info mb-3"></i>
                     <h5 className="card-title">Reportes</h5>
                     <p className="card-text">Generar reportes y estadísticas</p>
-                    <button className="btn btn-info w-100 text-white">
-                      <i className="bi bi-file-bar-graph me-2"></i>Ver Reportes
-                    </button>
+                    <Link to={"/vista-contacto"} className="btn btn-info w-100 text-white">
+                      <i className="bi bi-file-bar-graph me-2"></i>Consulta Usuarios
+                    </Link>
                   </div>
                 </div>
               </div>

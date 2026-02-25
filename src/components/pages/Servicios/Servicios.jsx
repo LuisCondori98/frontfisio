@@ -200,14 +200,6 @@ const Servicios = () => {
           </div>
         </div>
       </div>
-
-      <div className="text-center mt-5">
-        <h4 className="fw-bold text-success">¿No sabes qué terapia necesitas?</h4>
-        <p className="text-muted mb-3">Agenda una evaluación gratuita con nuestros fisioterapeutas.</p>
-        <a href="/contacto" className="btn btn-success px-4 py-2">
-          <i className="bi bi-calendar-check me-2"></i> Agendar Evaluación
-        </a>
-      </div>
     </div>
     </>
   )
